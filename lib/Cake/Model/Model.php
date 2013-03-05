@@ -7,12 +7,13 @@
  * PHP versions 5
  *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       Cake.Model
  * @since         CakePHP(tm) v 0.10.0.0
@@ -817,7 +818,7 @@ class Model extends Object implements CakeEventListener {
 				$className = empty($this->__backAssociation[$type][$name]['className']) ?
 					$name : $this->__backAssociation[$type][$name]['className'];
 				break;
-			} elseif ($type == 'hasAndBelongsToMany') {
+			} elseif ($type === 'hasAndBelongsToMany') {
 				foreach ($this->{$type} as $k => $relation) {
 					if (empty($relation['with'])) {
 						continue;
@@ -1060,7 +1061,7 @@ class Model extends Object implements CakeEventListener {
 					break;
 
 					case 'foreignKey':
-						$data = (($type == 'belongsTo') ? Inflector::underscore($assocKey) : Inflector::singularize($this->table)) . '_id';
+						$data = (($type === 'belongsTo') ? Inflector::underscore($assocKey) : Inflector::singularize($this->table)) . '_id';
 					break;
 
 					case 'associationForeignKey':
@@ -1261,7 +1262,7 @@ class Model extends Object implements CakeEventListener {
 		if (isset($data['hour']) && isset($data['meridian']) && $data['hour'] == 12 && 'am' == $data['meridian']) {
 			$data['hour'] = '00';
 		}
-		if ($type == 'time') {
+		if ($type === 'time') {
 			foreach ($timeFields as $key => $val) {
 				if (!isset($data[$val]) || $data[$val] === '0' || $data[$val] === '00') {
 					$data[$val] = '00';
@@ -1276,9 +1277,9 @@ class Model extends Object implements CakeEventListener {
 			}
 		}
 
-		if ($type == 'datetime' || $type == 'timestamp' || $type == 'date') {
+		if ($type === 'datetime' || $type === 'timestamp' || $type === 'date') {
 			foreach ($dateFields as $key => $val) {
-				if ($val == 'hour' || $val == 'min' || $val == 'sec') {
+				if ($val === 'hour' || $val === 'min' || $val === 'sec') {
 					if (!isset($data[$val]) || $data[$val] === '0' || $data[$val] === '00') {
 						$data[$val] = '00';
 					} else {
@@ -1625,6 +1626,7 @@ class Model extends Object implements CakeEventListener {
 		$this->set($data);
 
 		if (empty($this->data) && !$this->hasField(array('created', 'updated', 'modified'))) {
+			$this->whitelist = $_whitelist;
 			return false;
 		}
 
@@ -2609,19 +2611,20 @@ class Model extends Object implements CakeEventListener {
 /**
  * Queries the datasource and returns a result set array.
  *
- * Also used to perform notation finds, where the first argument is type of find operation to perform
+ * Used to perform find operations, where the first argument is type of find operation to perform
  * (all / first / count / neighbors / list / threaded),
  * second parameter options for finding ( indexed array, including: 'conditions', 'limit',
- * 'recursive', 'page', 'fields', 'offset', 'order')
+ * 'recursive', 'page', 'fields', 'offset', 'order', 'callbacks')
  *
  * Eg:
  * {{{
- * 	find('all', array(
- * 		'conditions' => array('name' => 'Thomas Anderson'),
- * 		'fields' => array('name', 'email'),
- * 		'order' => 'field3 DESC',
- * 		'recursive' => 2,
- * 		'group' => 'type'
+ * $model->find('all', array(
+ *   'conditions' => array('name' => 'Thomas Anderson'),
+ *   'fields' => array('name', 'email'),
+ *   'order' => 'field3 DESC',
+ *   'recursive' => 2,
+ *   'group' => 'type',
+ *   'callbacks' => false,
  * ));
  * }}}
  *
@@ -2630,32 +2633,43 @@ class Model extends Object implements CakeEventListener {
  * joins that should be part of the query.
  *
  * {{{
- * find('all', array(
- * 		'conditions' => array('name' => 'Thomas Anderson'),
- * 		'joins' => array(
- *			array(
- * 				'alias' => 'Thought',
- * 				'table' => 'thoughts',
- * 				'type' => 'LEFT',
- * 				'conditions' => '`Thought`.`person_id` = `Person`.`id`'
- *			)
- * 		)
+ * $model->find('all', array(
+ *   'conditions' => array('name' => 'Thomas Anderson'),
+ *   'joins' => array(
+ *     array(
+ *       'alias' => 'Thought',
+ *       'table' => 'thoughts',
+ *       'type' => 'LEFT',
+ *       'conditions' => '`Thought`.`person_id` = `Person`.`id`'
+ *     )
+ *   )
  * ));
  * }}}
  *
+ * ### Disabling callbacks
+ *
+ * The `callbacks` key allows you to disable or specify the callbacks that should be run. To
+ * disable beforeFind & afterFind callbacks set `'callbacks' => false` in your options. You can
+ * also set the callbacks option to 'before' or 'after' to enable only the specified callback.
+ *
+ * ### Adding new find types
+ *
  * Behaviors and find types can also define custom finder keys which are passed into find().
+ * See the documentation for custom find types
+ * (http://book.cakephp.org/2.0/en/models/retrieving-your-data.html#creating-custom-find-types)
+ * for how to implement custom find types.
  *
  * Specifying 'fields' for notation 'list':
  *
- *  - If no fields are specified, then 'id' is used for key and 'model->displayField' is used for value.
- *  - If a single field is specified, 'id' is used for key and specified field is used for value.
- *  - If three fields are specified, they are used (in order) for key, value and group.
- *  - Otherwise, first and second fields are used for key and value.
+ * - If no fields are specified, then 'id' is used for key and 'model->displayField' is used for value.
+ * - If a single field is specified, 'id' is used for key and specified field is used for value.
+ * - If three fields are specified, they are used (in order) for key, value and group.
+ * - Otherwise, first and second fields are used for key and value.
  *
- *  Note: find(list) + database views have issues with MySQL 5.0. Try upgrading to MySQL 5.1 if you
- *  have issues with database views.
+ * Note: find(list) + database views have issues with MySQL 5.0. Try upgrading to MySQL 5.1 if you
+ * have issues with database views.
  *
- *  Note: find(count) has its own return values.
+ * Note: find(count) has its own return values.
  *
  * @param string $type Type of find operation (all / first / count / neighbors / list / threaded)
  * @param array $query Option fields (conditions / fields / joins / limit / offset / order / page / group / callbacks)

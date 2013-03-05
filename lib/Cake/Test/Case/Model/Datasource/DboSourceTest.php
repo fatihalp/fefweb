@@ -5,12 +5,12 @@
  * PHP 5
  *
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
- * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  *	Licensed under The Open Group Test Suite License
  *	Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://book.cakephp.org/2.0/en/development/testing.html CakePHP(tm) Tests
  * @package       Cake.Test.Case.Model.Datasource
  * @since         CakePHP(tm) v 1.2.0.4206
@@ -1117,6 +1117,42 @@ class DboSourceTest extends CakeTestCase {
 		$db->expects($this->any())
 			->method('getSchemaName')
 			->will($this->returnValue('cakephp'));
+		$result = $db->buildJoinStatement($join);
+		$this->assertEquals($expected, $result);
+	}
+
+/**
+ * data provider for testBuildJoinStatementWithTablePrefix
+ *
+ * @return array
+ */
+	public static function joinStatementsWithPrefix($schema) {
+		return array(
+			array(array(
+				'type' => 'LEFT',
+				'alias' => 'PostsTag',
+				'table' => 'posts_tags',
+				'conditions' => array('PostsTag.post_id = Post.id')
+			), 'LEFT JOIN pre_posts_tags AS PostsTag ON (PostsTag.post_id = Post.id)'),
+				array(array(
+					'type' => 'LEFT',
+					'alias' => 'Stock',
+					'table' => '(SELECT Stock.article_id, sum(quantite) quantite FROM stocks AS Stock GROUP BY Stock.article_id)',
+					'conditions' => 'Stock.article_id = Article.id'
+				), 'LEFT JOIN (SELECT Stock.article_id, sum(quantite) quantite FROM stocks AS Stock GROUP BY Stock.article_id) AS Stock ON (Stock.article_id = Article.id)')
+			);
+	}
+
+/**
+ * Test buildJoinStatement()
+ * ensure that prefix is not added when table value is a subquery
+ *
+ * @dataProvider joinStatementsWithPrefix
+ * @return void
+ */
+	public function testBuildJoinStatementWithTablePrefix($join, $expected) {
+		$db = new DboTestSource;
+		$db->config['prefix'] = 'pre_';
 		$result = $db->buildJoinStatement($join);
 		$this->assertEquals($expected, $result);
 	}

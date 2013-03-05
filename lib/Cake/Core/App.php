@@ -5,12 +5,13 @@
  * PHP 5
  *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       Cake.Core
  * @since         CakePHP(tm) v 1.2.0.6001
@@ -432,7 +433,7 @@ class App {
 			$type = 'plugins';
 		}
 
-		if ($type == 'plugins') {
+		if ($type === 'plugins') {
 			$extension = '/.*/';
 			$includeDirectories = true;
 		}
@@ -636,11 +637,11 @@ class App {
 			return self::_loadClass($name, $plugin, $type, $originalType, $parent);
 		}
 
-		if ($originalType == 'file' && !empty($file)) {
+		if ($originalType === 'file' && !empty($file)) {
 			return self::_loadFile($name, $plugin, $search, $file, $return);
 		}
 
-		if ($originalType == 'vendor') {
+		if ($originalType === 'vendor') {
 			return self::_loadVendor($name, $plugin, $file, $ext);
 		}
 
@@ -659,7 +660,7 @@ class App {
  * @return boolean true indicating the successful load and existence of the class
  */
 	protected static function _loadClass($name, $plugin, $type, $originalType, $parent) {
-		if ($type == 'Console/Command' && $name == 'Shell') {
+		if ($type === 'Console/Command' && $name === 'Shell') {
 			$type = 'Console';
 		} elseif (isset(self::$types[$originalType]['suffix'])) {
 			$suffix = self::$types[$originalType]['suffix'];
