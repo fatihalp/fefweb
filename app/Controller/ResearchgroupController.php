@@ -13,10 +13,13 @@ class ResearchgroupController extends AppController {
 
 	}
 
-	 public function add() {
-           
-          $r = $this->Department->al();
+	 public function add() { 
+$this->loadModel('Lang');
+    $j = $this->Lang->find('list', array(
+        'fields' => array('Lang.name')
+    ));
 
+    $this->set('lang', $j);
         if ($this->request->is('post')) {
             $this->Researchgroup->create();
             if ($this->Researchgroup->save($this->request->data)) {
@@ -43,7 +46,11 @@ public function edit($id = null) {
     }
 
     $this->loadModel('Lang');
-    $this->set('lang', $this->Lang->find('all'));
+    $j = $this->Lang->find('list', array(
+        'fields' => array('Lang.name')
+    ));
+
+    $this->set('lang', $j);
 
     if ($this->request->is('post') || $this->request->is('put')) {
         $this->Researchgroup->id = $id;
