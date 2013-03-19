@@ -1,4 +1,5 @@
 <?php
+App::uses('AppController', 'Controller'); 
 class ResearchgroupController extends AppController {
     public $helpers = array('Html', 'Form');
 
@@ -14,6 +15,9 @@ class ResearchgroupController extends AppController {
 	}
 
 	 public function add() {
+           
+          $r = $this->Department->al();
+
         if ($this->request->is('post')) {
             $this->Researchgroup->create();
             if ($this->Researchgroup->save($this->request->data)) {

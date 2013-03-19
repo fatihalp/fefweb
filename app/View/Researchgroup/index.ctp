@@ -1,6 +1,6 @@
 <?php echo $this->Html->link(
     'Add Post',
-    array('controller' => 'posts', 'action' => 'add')
+    array('controller' => 'Researchgroup', 'action' => 'add')
 ); ?>
 <h1>Blog posts</h1>
 <table>
@@ -41,3 +41,16 @@ array(
     <?php endforeach; ?>
     <?php unset($post); ?>
 </table>
+<div class="rowElem noborder">
+        <label>Researchgroup:</label>
+        <div class="formRight noSearch">
+          <select name="select2" class="chzn-select">
+            <option value="opt1">Choose the Language</option>
+            <option value="opt2" selected="selected">Kannada</option>
+            <option value="opt3">Telugu</option>
+            <option value="opt4">Tamil</option>
+          </select>
+        </div>
+        <div class="fix"></div>
+</div>
+<?php echo $this->Form->input('languageid', array('class' => 'chzn-select' ));

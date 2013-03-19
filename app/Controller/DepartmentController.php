@@ -14,7 +14,10 @@ class DepartmentController  extends AppController {
 	    }
 	}
 
+	public function al() {
 
+		return  $this->Department->find('all');
+	}
 	public function add() {
         if ($this->request->is('post')) {
             $this->Department->create();
