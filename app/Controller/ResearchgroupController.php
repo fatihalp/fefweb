@@ -1,5 +1,4 @@
-<?php
-App::uses('AppController', 'Controller'); 
+<?php 
 class ResearchgroupController extends AppController {
     public $helpers = array('Html', 'Form');
 
@@ -42,6 +41,9 @@ public function edit($id = null) {
     if (!$post) {
         throw new NotFoundException(__('Invalid post'));
     }
+
+    $this->loadModel('Lang');
+    $this->set('lang', $this->Lang->find('all'));
 
     if ($this->request->is('post') || $this->request->is('put')) {
         $this->Researchgroup->id = $id;

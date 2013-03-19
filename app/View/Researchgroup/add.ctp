@@ -4,9 +4,9 @@ echo $this->Form->create('Researchgroup');
 echo $this->Form->input('name');
 echo $this->Form->input('description', array('rows' => '3'));
 
-$this->Form->input('language_id', array(
+$this->Form->input('langid', array(
                                       'type' => 'select',
-                                      'options' => $d,
+                                      'options' => $lang,
                                       'selected' => 2 // suppose default select Kannada
                                   )
                   );
