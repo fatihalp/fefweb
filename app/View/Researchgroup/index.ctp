@@ -35,7 +35,9 @@ array(
 
 
         </td>
-        <td><?php echo $a['Researchgroup']['langid']; ?></td>
+        <td>   
+            <img src="<?php echo $this->webroot; ?>/img/<?php echo $a['Researchgroup']['langid']; ?>.png" /></td>
+
         <td><?php echo $this->Html->link('Edit', array('action' => 'edit', $a['Researchgroup']['id'])); ?></td>
     <td><?php echo $this->Form->postLink(
                 'Delete',

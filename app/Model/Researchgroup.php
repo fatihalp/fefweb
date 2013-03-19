@@ -6,6 +6,9 @@ class Researchgroup extends AppModel {
         ),
         'description' => array(
             'rule' => 'notEmpty'
+        ),
+        'langid' => array(
+            'rule' => 'notEmpty'
         )
     ); 
 

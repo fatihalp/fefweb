@@ -7,6 +7,7 @@
     echo $this->Form->input('langid', array(
                                       'type' => 'select',
                                       'options' => $lang,
+                                        'label' => 'Language', 
                                       'selected' => $post['Researchgroup']['langid'] // suppose default select Kannada
                                   )
                   );
