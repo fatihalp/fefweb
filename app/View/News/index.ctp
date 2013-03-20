@@ -5,13 +5,14 @@
 ); ?>
 
 
-<h1>Blog posts</h1>
+
 <table>
     <tr>
         <th>Id</th>
         <th>Title</th>
+        <th>Language&nbsp;&nbsp;&nbsp;&nbsp;</th>
         <th>Expire</th>
-        <th>Delete</th>
+        <th>Delete&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
         <th>Edit</th>
     </tr>
 
@@ -25,8 +26,10 @@
             <?php echo $this->Html->link($News['News']['title'],
 array('controller' => 'news', 'action' => 'edit', $News['News']['id'])); ?>
         </td>
-
-        <td><?php echo $News['News']['expiredate']; ?>  </td>
+<td>   
+            <img src="<?php echo $this->webroot; ?>/img/<?php echo $News['News']['langid']; ?>.png" /></td>
+    
+        <td><?php echo $News['News']['expiredate']; ?> &nbsp;&nbsp;&nbsp; </td>
 <td>
          <?php echo $this->Html->link('Edit', array('action' => 'edit', $News['News']['id'])); ?>
  </td>

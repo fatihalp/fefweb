@@ -2,7 +2,7 @@
     'Add Post',
     array('controller' => 'Researchgroup', 'action' => 'add')
 ); ?>
-<h1>Blog posts</h1>
+
 <table>
     <tr>
         <th>Id</th>
