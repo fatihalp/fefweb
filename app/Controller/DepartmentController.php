@@ -14,10 +14,7 @@ class DepartmentController  extends AppController {
 	    }
 	}
 
-	public function al() {
 
-		return  $this->Department->find('all');
-	}
 	public function add() {
         if ($this->request->is('post')) {
             $this->Department->create();
@@ -34,7 +31,10 @@ class DepartmentController  extends AppController {
 
     public function edit($id = null) { 
     	$post = $this->Department->findById($id); 
-    	
+
+    	 $this->loadModel('Lang');
+    	 $this->set('l', $this->Lang->find('list'));
+
 	    if ($this->request->is('post') || $this->request->is('put')) {
 	        $this->Department->id = $id;
 	        if ($this->Department->save($this->request->data)) {

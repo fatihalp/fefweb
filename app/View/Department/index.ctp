@@ -1,7 +1,5 @@
 <h1>Blog posts</h1>
 <p><?php echo $this->Html->link('Add Department', array('action' => 'add')); ?></p>
-
-
 <table>
     <tr>
         <th>Id</th>
@@ -16,15 +14,10 @@
          <?php 
          echo $this->Html->link($post['Department']['name'],
 			array(
-			'controller' => 'posts', 
-			'action' => 'view',
+			'controller' => 'department', 
+			'action' => 'edit',
 			 $post['Department']['id']));
 		 ?>
-
-
-	
-
-
         </td>
         <td> 
         	  <?php echo $this->Html->link('Edit', array('action' => 'edit', $post['Department']['id'])); ?>
@@ -35,9 +28,6 @@
                 array('action' => 'sil', $post['Department']['id']),
                 array('confirm' => 'Are you sure?'));
             ?>
-
-
-
 </td>
     </tr>
     <?php endforeach; ?>
