@@ -68,7 +68,7 @@
             <ul id="submenu" class="corners shadow">
                 <li>
                     <a href="contacts.html" class="icon-menu corners">
-                        <img src="panel/images/icons/48/address-book-new.png" alt="" title="" />
+                        <img src="<?php echo $this->webroot; ?>panel/images/icons/48/address-book-new.png" alt="" title="" />
                         <span>Contact Us</span>
                     </a>
                 </li>    
@@ -200,16 +200,16 @@
     <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
     <script>!window.jQuery && document.write('<script src="js/jquery-1.6.min.js"><\/script>')</script>
-    <script src="panel/js/jquery-ui-1.8.6.min.js"></script>
-    <script src="panel/js/pirobox-min.js"></script>
-    <script src="panel/js/jquery.select_skin.js"></script>
-    <script src="panel/js/tinyeditor.js"></script>
-    <script src="panel/js/jquery.tipsy.js"></script>
-    <script src="panel/js/jquery.tweet.js"></script>
-    <script src="panel/js/jquery.tablesorter.js"></script>
-    <script src="panel/js/treeview.js"></script>
-    <script src="panel/js/jquery.cookie.js"></script>
-    <script src="panel/js/main.js"></script>
+    <script src="<?php echo $this->webroot; ?>panel/js/jquery-ui-1.8.6.min.js"></script>
+    <script src="<?php echo $this->webroot; ?>panel/js/pirobox-min.js"></script>
+    <script src="<?php echo $this->webroot; ?>panel/js/jquery.select_skin.js"></script>
+    <script src="<?php echo $this->webroot; ?>panel/js/tinyeditor.js"></script>
+    <script src="<?php echo $this->webroot; ?>panel/js/jquery.tipsy.js"></script>
+    <script src="<?php echo $this->webroot; ?>panel/js/jquery.tweet.js"></script>
+    <script src="<?php echo $this->webroot; ?>panel/js/jquery.tablesorter.js"></script>
+    <script src="<?php echo $this->webroot; ?>panel/js/treeview.js"></script>
+    <script src="<?php echo $this->webroot; ?>panel/js/jquery.cookie.js"></script>
+    <script src="<?php echo $this->webroot; ?>panel/js/main.js"></script>
 
  
         
