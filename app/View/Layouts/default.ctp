@@ -66,54 +66,47 @@
             </div><!-- END "#menu-bar" -->
             
             <ul id="submenu" class="corners shadow">
-                <li>
-                    <a href="contacts.html" class="icon-menu corners">
-                        <img src="<?php echo $this->webroot; ?>panel/images/icons/48/address-book-new.png" alt="" title="" />
-                        <span>Contact Us</span>
-                    </a>
-                </li>    
-           
                  
-                   
                 <li>                      
-                    <a href="appearence.html" class="icon-menu corners">
+                    <a href="<?php echo $this->webroot; ?>Department" class="icon-menu corners">
                         <img src="<?php echo $this->webroot; ?>panel/images/icons/48/preferences-desktop-theme.png" alt="" title="" />
                         <span>Department</span>
                     </a>
                 </li>    
                   
-                <li>                      
-                    <a href="articles.html" class="icon-menu corners">
-                        <img src="<?php echo $this->webroot; ?>panel/images/icons/48/text-x-generic.png" alt="" title="" />
-                        <span>Vision-Mision</span>
-                    </a>
-                </li>    
-               
+                
+
                 <li>
-                    <a href="media.html" class="icon-menu corners">
+                    <a href="<?php echo $this->webroot; ?>Program" class="icon-menu corners">
                         <img src="<?php echo $this->webroot; ?>panel/images/icons/48/image-x-generic.png" alt="" title="" />
                         <span>Programs</span>
                     </a>
-                </li>    
+                </li>     
                   
-                <li>                      
-                    <a href="editor.html" class="icon-menu corners">
-                        <img src="<?php echo $this->webroot; ?>panel/images/icons/48/accessories-text-editor.png" alt="" title="" />
-                        <span>Dean Message</span>
+                     <li>                      
+                    <a href="<?php echo $this->webroot; ?>Courses" class="icon-menu corners">
+                        <img src="<?php echo $this->webroot; ?>panel/images/icons/48/preferences-desktop-theme.png" alt="" title="" />
+                        <span>Courses</span>
                     </a>
-                </li>
-              <!-- next row -->      
+                </li>  
+
+                  <li>                      
+                    <a href="statistics.html" class="icon-menu corners">
+                        <img src="<?php echo $this->webroot; ?>panel/images/icons/48/x-office-presentation.png" alt="" title="" />
+                        <span>Curriculum</span>
+                    </a>
+                </li>                
+                           
+
+
                 <li>                      
-                    <a href="social.html" class="icon-menu corners">
-                        <img src="<?php echo $this->webroot; ?>panel/images/icons/48/bookmark-new.png" alt="" title="" />
-                        <span>Links</span>
+                    <a href="Pages" class="icon-menu corners">
+                        <img src="<?php echo $this->webroot; ?>panel/images/icons/48/text-x-generic.png" alt="" title="" />
+                        <span>Pages</span>
                     </a>
                 </li>    
-                    
-                  
+               
                 
-                         
-                            
                 <li>                      
                     <a href="users.html" class="icon-menu corners">
                         <img src="<?php echo $this->webroot; ?>panel/images/icons/48/user-info.png" alt="" title="" />
@@ -121,33 +114,17 @@
                     </a>
                 </li>
                                      
-                                                           
-                <li>                      
-                    <a href="comments.html" class="icon-menu corners">
-                   <img src="<?php echo $this->webroot; ?>panel/images/icons/48/help-faq.png" alt="" title="" />
-                        <span>FAQ</span>
-                    </a>
-                    <li>                      
-                    <a href="information.html" class="icon-menu corners">
+                 
+
+                 <li>                      
+                    <a href="<?php echo $this->webroot; ?>News" class="icon-menu corners">
                         <img src="<?php echo $this->webroot; ?>panel/images/icons/48/system-help.png" alt="" title="" />
                         <span>Announcement</span>
                     </a>
                 </li> 
-                </li>
-                 
-                <li>                      
-                    <a href="social.html" class="icon-menu corners">
-                        <img src="<?php echo $this->webroot; ?>panel/images/icons/48/bookmark-new.png" alt="" title="" />
-                        <span>Faculty İnfo</span>
-                    </a>
-                </li>  
-                <li>                      
-                    <a href="statistics.html" class="icon-menu corners">
-                        <img src="<?php echo $this->webroot; ?>panel/images/icons/48/x-office-presentation.png" alt="" title="" />
-                        <span>Curriculum</span>
-                    </a>
-                </li>                
-                                                   
+               
+                  
+                                      
             </ul><!-- END "#submenu" -->
              
             <div id="breadcrumbs" class="corners shadow">
