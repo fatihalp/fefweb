@@ -12,8 +12,8 @@
         <th>Title</th>
         <th>Language&nbsp;&nbsp;&nbsp;&nbsp;</th>
         <th>Expire</th>
-        <th>Delete&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-        <th>Edit</th>
+        <th>Edit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+        <th>Delete</th>
     </tr>
 
     <!-- Here is where we loop through our $posts array, printing out News info -->
@@ -37,7 +37,7 @@ array('controller' => 'news', 'action' => 'edit', $News['News']['id'])); ?>
 <?php echo $this->Form->postLink(
 'Delete',
 array('action' => 'delete', $News['News']['id']),
-array('confirm' => 'Are you sure?'));
+array('confirm' => 'Do you really want to delete?'));
 ?>
 
      </td>
