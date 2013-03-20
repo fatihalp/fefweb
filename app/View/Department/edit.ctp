@@ -14,7 +14,13 @@ echo $this->Form->input('telephone');
 echo $this->Form->input('fax');
 
 
-echo $this->Form->input('langid');
+echo $this->Form->input('langid', array(
+                                      'type' => 'select',
+                                      'options' => $lang,
+                                        'label' => 'Language', 
+                                      'selected' => $post['Department']['langid'] // suppose default select Kannada
+                                  )
+                  );
 
     echo $this->Form->input('id', array('type' => 'hidden'));
 echo $this->Form->end('Save Post');

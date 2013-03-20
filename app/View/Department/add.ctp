@@ -15,7 +15,15 @@ echo $this->Form->input('fax');
 
 
 
-echo $this->Form->input('langid');
-
+ echo $this->Form->input('langid', array(
+                                      'type' => 'select',
+                                      'label' => 'Language',
+                                      'options' => $lang,
+                                      'selected' => $post['Department']['langid'] // suppose default select Kannada
+                                  )
+                  );
 echo $this->Form->end('Save Post');
+
+
+
 ?>
