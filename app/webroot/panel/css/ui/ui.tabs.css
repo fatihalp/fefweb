@@ -1,0 +1,12 @@
+/* Tabs
+----------------------------------*/
+.ui-tabs { }
+.ui-tabs .ui-tabs-nav {  }
+.ui-tabs .ui-tabs-nav li {  }
+.ui-tabs .ui-tabs-nav li a {  }
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected { }
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a {}
+.ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { } /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
+.ui-tabs .ui-tabs-panel { }
+.ui-tabs .ui-tabs-hide { display: none !important; }
+.ui-state-active{ font-weight:bold;}

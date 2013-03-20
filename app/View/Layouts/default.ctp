@@ -1,24 +1,3 @@
-<?php
-/**
- *
- * PHP 5
- *
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.View.Layouts
- * @since         CakePHP(tm) v 0.10.0.1076
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
- */
-
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,27 +15,204 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
+
+	    <!-- // Meta //  -->
+    <meta charset="utf-8">   
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+    <![endif]-->
+    
+    <!-- // Stylesheets // -->
+    <link rel="stylesheet" href="<?php echo $this->webroot; ?>panel/css/style1.css" /> 
+    <link rel="stylesheet" type="text/css"
+     href="<?php echo $this->webroot; ?>panel/lightbox/style5/style.css">
+
+     <link rel="apple-touch-icon" href="panel/panel/images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="panel/panel/images/favicon.ico">
+        
+    <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+    <script src="<?php echo $this->webroot; ?>panel/js/modernizr-1.7.min.js"></script>
+
+
 </head>
 <body>
-	<div id="container">
-		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
-		</div>
-		<div id="content">
+ <div id="container">
+        <header>
+        	<div id="meta-wrap">
+                <ul id="user-meta">
+                     
+                    <li><img src="<?php echo $this->webroot; ?>panel/images/icons/9/005_12.png" alt="" /><a href="#" title="">Logout</a></li>
+                </ul>
+            </div>        
+            <div id="menu-bar" class="corners shadow">
+                <div class="menu-bar-inner corners">
+                    <a href="index.php" title="" id="logo">
+                        <h1>FACULTY OF ART AND SCIENCES</h1>
+                    </a>
+                    <ul id="menu">
+                        <li class="sep"><a href="index.html" title="">Home</a>
+                            <!-- second level dropdown -->
+                            <ul class="second">
+                                <li><a href="dialogs.html" title="">Dialogs</a></li>
+                                <li><a href="dialogs.html" title="">Dialogs</a></li>
+                                <li><a href="dialogs.html" title="">Dialogs</a></li>
+                                <li><a href="login.html" title="">Login</a></li>
+                            </ul>                    
+                        </li> 
+                    </ul> 
+                </div>
+            </div><!-- END "#menu-bar" -->
+            
+            <ul id="submenu" class="corners shadow">
+                <li>
+                    <a href="contacts.html" class="icon-menu corners">
+                        <img src="panel/images/icons/48/address-book-new.png" alt="" title="" />
+                        <span>Contact Us</span>
+                    </a>
+                </li>    
+           
+                 
+                   
+                <li>                      
+                    <a href="appearence.html" class="icon-menu corners">
+                        <img src="<?php echo $this->webroot; ?>panel/images/icons/48/preferences-desktop-theme.png" alt="" title="" />
+                        <span>Department</span>
+                    </a>
+                </li>    
+                  
+                <li>                      
+                    <a href="articles.html" class="icon-menu corners">
+                        <img src="<?php echo $this->webroot; ?>panel/images/icons/48/text-x-generic.png" alt="" title="" />
+                        <span>Vision-Mision</span>
+                    </a>
+                </li>    
+               
+                <li>
+                    <a href="media.html" class="icon-menu corners">
+                        <img src="<?php echo $this->webroot; ?>panel/images/icons/48/image-x-generic.png" alt="" title="" />
+                        <span>Programs</span>
+                    </a>
+                </li>    
+                  
+                <li>                      
+                    <a href="editor.html" class="icon-menu corners">
+                        <img src="<?php echo $this->webroot; ?>panel/images/icons/48/accessories-text-editor.png" alt="" title="" />
+                        <span>Dean Message</span>
+                    </a>
+                </li>
+              <!-- next row -->      
+                <li>                      
+                    <a href="social.html" class="icon-menu corners">
+                        <img src="<?php echo $this->webroot; ?>panel/images/icons/48/bookmark-new.png" alt="" title="" />
+                        <span>Links</span>
+                    </a>
+                </li>    
+                    
+                  
+                
+                         
+                            
+                <li>                      
+                    <a href="users.html" class="icon-menu corners">
+                        <img src="<?php echo $this->webroot; ?>panel/images/icons/48/user-info.png" alt="" title="" />
+                        <span>People</span>
+                    </a>
+                </li>
+                                     
+                                                           
+                <li>                      
+                    <a href="comments.html" class="icon-menu corners">
+                   <img src="<?php echo $this->webroot; ?>panel/images/icons/48/help-faq.png" alt="" title="" />
+                        <span>FAQ</span>
+                    </a>
+                    <li>                      
+                    <a href="information.html" class="icon-menu corners">
+                        <img src="<?php echo $this->webroot; ?>panel/images/icons/48/system-help.png" alt="" title="" />
+                        <span>Announcement</span>
+                    </a>
+                </li> 
+                </li>
+                 
+                <li>                      
+                    <a href="social.html" class="icon-menu corners">
+                        <img src="<?php echo $this->webroot; ?>panel/images/icons/48/bookmark-new.png" alt="" title="" />
+                        <span>Faculty İnfo</span>
+                    </a>
+                </li>  
+                <li>                      
+                    <a href="statistics.html" class="icon-menu corners">
+                        <img src="<?php echo $this->webroot; ?>panel/images/icons/48/x-office-presentation.png" alt="" title="" />
+                        <span>Curriculum</span>
+                    </a>
+                </li>                
+                                                   
+            </ul><!-- END "#submenu" -->
+             
+            <div id="breadcrumbs" class="corners shadow">
+               
+                <p class="right"><img src="panel/images/icons/9/005_21.png" alt="" />Last modification on: -</p>
+                <div id="mastertoggle">
+                    <a href="javascript:void(null);" title="Close all boxes" class="togglecloseall corners tip"></a> 
+                    <a href="javascript:void(null);" title="Open all boxes" class="toggleopenall corners tip"></a>
+                </div>
+            </div><!-- END "#breadcrumbs" -->                                 
+        </header><!-- END header -->
+     
+    <!-- // content starts here // -->
+        
+        <div id="content">
+        <form action="" method="post">
+          
 
 			<?php echo $this->Session->flash(); ?>
 
 			<?php echo $this->fetch('content'); ?>
-		</div>
-		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false)
-				);
-			?>
-		</div>
-	</div>
-	<?php echo $this->element('sql_dump'); ?>
+ 
+ 
+              
+          
+           <div class="clear"></div>
+                                                    
+        </form><!-- END form-->                                              
+        </div><!-- END "#content" -->
+         
+        <!-- // footer starts here // -->
+        
+        <footer>
+            <p class="left">MATHCLUB</p>
+            <p class="right">Copyright &copy; 2013 
+                
+            </p>
+        </footer><!-- END footer --> 
+         
+    </div>
+
+
+
+
+	 
+	<?php 
+	//echo $this->element('sql_dump'); 
+	?>
+	   <!-- // Javascript/jQuery // -->
+    <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+    <script>!window.jQuery && document.write('<script src="js/jquery-1.6.min.js"><\/script>')</script>
+    <script src="panel/js/jquery-ui-1.8.6.min.js"></script>
+    <script src="panel/js/pirobox-min.js"></script>
+    <script src="panel/js/jquery.select_skin.js"></script>
+    <script src="panel/js/tinyeditor.js"></script>
+    <script src="panel/js/jquery.tipsy.js"></script>
+    <script src="panel/js/jquery.tweet.js"></script>
+    <script src="panel/js/jquery.tablesorter.js"></script>
+    <script src="panel/js/treeview.js"></script>
+    <script src="panel/js/jquery.cookie.js"></script>
+    <script src="panel/js/main.js"></script>
+
+ 
+        
+    
 </body>
 </html>

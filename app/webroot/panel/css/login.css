@@ -1,0 +1,221 @@
+html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote,
+pre, form, fieldset, table, th, td { margin: 0; padding: 0; }
+
+html{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#222;
+	line-height:20px;
+}
+body{
+	background:#eee;
+
+}
+a:focus{
+	outline:none;
+}
+a, 
+a:visited, 
+a:active{
+	text-decoration:none;
+	color:#222;
+}
+a:hover{
+	text-decoration:underline;
+}
+h1{ 
+	color:#222;
+	font-size:18px;
+}
+h2{ 
+	color:#666;
+	font-size:16px;
+}
+h3{ 	
+    color:#222;
+	font-size:14px;
+}
+h4{ 	
+    color:#222;
+	font-size:12px;
+}
+.corners{
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius:5px;
+}
+.shadow{
+	-moz-box-shadow:0px 0px 4px #ccc;
+	-webkit-box-shadow:0px 0px 4px #ccc;
+	box-shadow:0px 0px 4px #ccc;
+	/* IE CSS3 solution */
+	behavior: url(pie/PIE.htc);
+}
+div#container{
+	width:402px;
+	margin:0px auto!important;
+}
+div#login-box{
+	float:left;
+	width:380px;
+	height:auto;
+	background:#fff; 
+	border:1px solid #b4b4b4;
+	padding:10px;
+	position:relative;
+	margin:200px 0;
+}
+div.loader{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	background:#fff url(../images/loading.gif) center center no-repeat;
+	display:none\9;/* hide in IE */	
+}
+div.login-box-header{
+	width:378px;
+	float:left;
+	padding:0px;
+	margin:10px 0 10px 0;
+}
+div.login-box-row-wrap{
+	width:366px;
+	float:left;
+	background:#eee;
+	border:1px solid #ccc;
+	padding:6px;
+	margin:0 0 10px 0;
+	position:relative;
+}
+a.rmb,
+a.rmb:active,
+a.rmb:visited{
+	float:left;
+	margin:5px 10px 0 120px;
+	text-decoration:underline;
+}
+a.rmb:hover{
+	text-decoration:underline;
+}
+div.login-box-row-wrap p a:hover{
+	text-decoration:none;
+}
+div.login-box-row-wrap label{
+	width:120px;
+	float:left;
+	font-weight:bold;
+	margin:5px 0 0 0;
+}
+div.login-box-row-wrap input.input-1{
+	width:237px;
+	height:32px;
+	height:24px\9;/* IE8 and below */
+	*height:24px;/* IE7 and below */
+	padding:0 0 0 6px;
+	padding:8px 0 0 6px\9;/* IE8 and below */
+	*padding:8px 0 0 6px;/* IE7 and below */
+	float:left;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius:5px;
+	border:1px solid #ccc;
+	background:#fff;
+	position:relative;
+}
+div.login-box-row{
+	width:380px;
+	float:left;
+	margin:0 0 10px 0;
+}
+div.login-box-row input#field-remember{
+	float:left;
+	margin:11px 5px 0 0;
+	margin:7px 5px 0 0\9;/* IE8 and below */
+}
+div.login-box-row label{
+	float:left;
+	margin:7px 10px 0 0;
+}
+div.login-box-row #submit{
+	float:right;
+	margin:0 0px 0 5px;
+	height:34px;
+	width:66px;
+	color:#222;
+	padding:0px 0px 2px 0px;
+	font-size:13px;
+	border:none;
+	cursor:pointer;
+	background:url(../images/style1/66x34-btn.png) no-repeat;
+	background-position:0 0;	
+}
+div.login-box-row #submit:hover{
+	color:#fff;
+	background-position:0 -34px;
+}
+div.login-box-error-small{
+	width:378px;
+	height:30px;
+	float:left;
+	border:1px solid #f74c4c;
+	margin-bottom:10px;
+	position:relative;
+	background:#febfbf url(../images/icons/dialogs/delete.png) no-repeat 10px 50%;
+}
+div.login-box-error-small p{
+	font-size:12px;
+	width:auto;
+	float:left;
+	margin:4px 5px 5px 34px;
+}
+a.show-password-link {
+	width:34px;
+	height:20px;
+	display: block;
+	position: absolute;
+	z-index: 11;
+	font-size:10px;
+	text-align:center;
+	float:none;
+	background:#666;
+	color:#fff;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius:5px;
+	visibility:hidden;
+}
+a.show-password-link:hover {
+	background:#333;
+	color:#fff;
+	text-decoration:none;
+}
+.password-showing {
+	width:237px;
+	height:32px;
+	height:24px\9;/* IE8 and below */
+	*height:24px;/* IE7 and below */
+	padding:0 0 0 6px;
+	padding:8px 0 0 6px\9;/* IE8 and below */
+	*padding:8px 0 0 6px;/* IE7 and below */
+	float:left;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius:5px;
+	border:1px solid #ccc;
+	background:#fff;
+	position:relative;
+	z-index: 10;
+}
+
+
+
+
+
+
+
+
+
+
+

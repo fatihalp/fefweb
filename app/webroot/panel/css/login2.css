@@ -1,0 +1,306 @@
+html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote,
+pre, form, fieldset, table, th, td { margin: 0; padding: 0; }
+
+@import url("../fonts/Ubuntu/stylesheet.css");/* Custom fonts */
+
+html{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#222;
+	line-height:20px;
+}
+body{
+	background:#eee;
+
+}
+a:focus{
+	outline:none;
+}
+a, 
+a:visited, 
+a:active{
+	text-decoration:none;
+	color:#222;
+}
+a:hover{
+	text-decoration:underline;
+}
+h1{ 
+	color:#222;
+	font-size:18px;
+}
+h2{ 
+	color:#666;
+	font-size:16px;
+}
+h3{ 	
+    color:#222;
+	font-size:14px;
+}
+h4{ 	
+    color:#222;
+	font-size:12px;
+}
+.corners{
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius:5px;
+}
+.shadow{
+	-moz-box-shadow:0px 0px 4px #ccc;
+	-webkit-box-shadow:0px 0px 4px #ccc;
+	box-shadow:0px 0px 4px #ccc;
+}
+div#container{
+	width:462px;
+	margin:0px auto!important;
+}
+div#login-box{
+	float:left;
+	width:440px;
+	height:auto;
+	background:#fff; 
+	border:1px solid #b4b4b4;
+	padding:10px;
+	position:relative;
+	margin:200px 0 0 0;
+}
+div.login-box-header{
+	width:418px;
+	float:left;
+	padding:0px;
+	margin:0px 0 10px 0;
+	height:29px;
+	float:left;
+	padding:10px;
+	background:#eee url(../images/style1/bg-header.png) repeat-x;
+	border:1px solid #b4b4b4;
+}
+ul.tabs{
+	width:auto;
+	float:right;
+	list-style-type:none;
+	margin:1px 0 0 0;
+}
+ul.tabs li{
+	float:left;
+	border:none;
+	margin:0 0px -2px 2px;
+}
+ul.tabs li a,
+ul.tabs li a:active,
+ul.tabs li a:visited{
+	float:left;
+	padding:10px 10px 7px 10px;
+    border:1px solid #ccc;
+	background: #efefef;/* fallback color */
+    background-image: -moz-linear-gradient(top,#ffffff,#efefef);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#ffffff),to(#efefef));
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ffffff, endColorstr=#efefef);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#efefef)";
+	-moz-border-radius-topleft:5px;
+	-moz-border-radius-topright:5px;
+	-webkit-border-top-left-radius:5px; 
+	-webkit-border-top-right-radius:5px;
+	border-top-left-radius:5px;
+    border-top-right-radius:5px;
+	text-decoration:none;
+}
+ul.tabs li a:hover,
+ul.tabs li.ui-state-active a,
+ul.tabs li.ui-state-active a:active,
+ul.tabs li.ui-state-active a:visited{
+	float:left;
+	color:#222;
+	border:1px solid #ccc;
+	border-bottom:1px solid #fff;
+    filter: none\9;/* IE8 and below */
+    -ms-filter: none;/* IE8 and below */
+	background:#ffffff;
+}
+div.tabbox{
+	width:100%;
+	float:left;
+	border-top:none;
+}
+.ui-tabs .ui-tabs-hide {
+    display:none !important;
+}
+div.login-box-header h2{
+	float:left;
+	margin:5px 0 0 0px;
+	color:#555;
+	font-size:18px;
+	text-shadow:0 1px 1px #FFFFFF;
+	font-family:'UbuntuBold', Arial, sans-serif;
+}
+div.infobox{
+	width:418px;
+	float:left;
+	margin:0 0 20px 0;
+	padding:10px;
+	border:1px solid #ccc;
+}
+div.infobox h3{
+	width:418px;
+	float:left;
+	margin:0 0 10px 0;
+}
+div.infobox p{
+	width:100%;
+	float:left;
+}
+div.login-box-row-wrap{
+	width:418px;
+	float:left;
+	background:#eee;
+	border:1px solid #ccc;
+	padding:10px;
+	margin:0 0 10px 0;
+	position:relative;
+}
+div.login-box-row-wrap label{
+	width:140px;
+	float:left;
+	font-weight:bold;
+	margin:5px 0 0px 0;
+}
+div.login-box-row-wrap input.input-1{
+	width:270px;
+	height:32px;
+	height:24px\9;/* IE8 and below */
+	*height:24px;/* IE7 and below */
+	padding:0 0 0 6px;
+	padding:8px 0 0 6px\9;/* IE8 and below */
+	*padding:8px 0 0 6px;/* IE7 and below */
+	float:left;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius:5px;
+	border:1px solid #ccc;
+	background:#fff;
+	position:relative;
+}
+div.m20{
+	margin:0 10px 0 0;
+}
+div.login-box-row{
+	width:440px;
+	float:right;
+	margin:0 0 0px 0;
+}
+div.login-box-row input{
+	float:left;
+	margin:11px 5px 0 0px;
+	margin:7px 5px 0 0\9;/* IE8 and below */
+}
+div.login-box-row input#field-remember{
+	float:left;
+	margin:11px 5px 0 200px;
+	margin:7px 5px 0 200px\9;/* IE8 and below */
+}
+div.login-box-row label{
+	float:left;
+	margin:7px 10px 0 0;
+}
+div.login-box-row #submit{
+	float:right;
+	margin:0 0px 0 5px;
+	height:34px;
+	width:66px;
+	color:#222;
+	padding:0px 0px 2px 0px;
+	font-size:13px;
+	border:none;
+	cursor:pointer;
+	background:url(../images/style1/66x34-btn.png) no-repeat;
+	background-position:0 0;	
+}
+div.login-box-row #submit:hover{
+	color:#fff;
+	background-position:0 -34px;
+}
+div.login-box-error-small{
+	width:438px;
+	height:30px;
+	float:left;
+	border:1px solid #f74c4c;
+	margin-bottom:10px;
+	position:relative;
+	background:#febfbf url(../images/icons/dialogs/delete.png) no-repeat 10px 50%;
+}
+div.login-box-succes-small{
+	width:438px;
+	height:30px;
+	float:left;
+	border:1px solid #51be21;
+	margin-bottom:10px;
+	position:relative;
+	background:#c3fbaa url(../images/icons/dialogs/accept.png) no-repeat 10px 50%;
+}
+div.login-box-warning-small{
+	width:438px;
+	height:30px;
+	float:left;
+	border:1px solid #d5c913;
+	margin-bottom:10px;
+	position:relative;
+	background:#fffab2 url(../images/icons/dialogs/error.png) no-repeat 10px 50%;	
+}
+div.login-box-error-small p,
+div.login-box-succes-small p,
+div.login-box-warning-small p{
+	font-size:12px;
+	width:auto;
+	float:left;
+	margin:4px 5px 5px 34px;
+}
+a.show-password-link {
+	width:34px;
+	height:20px;
+	display: block;
+	position: absolute;
+	z-index: 11;
+	font-size:10px;
+	text-align:center;
+	float:none;
+	background:#666;
+	color:#fff;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius:5px;
+	visibility:hidden;
+}
+a.show-password-link:hover {
+	background:#333;
+	color:#fff;
+	text-decoration:none;
+}
+.password-showing {
+	width:237px;
+	height:32px;
+	height:24px\9;/* IE8 and below */
+	*height:24px;/* IE7 and below */
+	padding:0 0 0 6px;
+	padding:8px 0 0 6px\9;/* IE8 and below */
+	*padding:8px 0 0 6px;/* IE7 and below */
+	float:left;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius:5px;
+	border:1px solid #ccc;
+	background:#fff;
+	position:relative;
+	z-index: 10;
+}
+
+
+
+
+
+
+
+
+
+
+

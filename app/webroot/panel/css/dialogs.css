@@ -1,0 +1,347 @@
+/*
+------------------------------------------------------------------------
+DIALOG_MSG - Basic info msg.
+------------------------------------------------------------------------
+*/
+
+/* 	
+	small dialogs in a box with basic click on dialog to close
+*/	
+
+div.dialog-box-succes-small-box{
+	width:100%;
+	height:30px;
+	float:left;
+	border:1px solid #51be21;
+	margin-bottom:10px;
+	position:relative;
+	background:#c3fbaa url(../images/icons/dialogs/accept.png) no-repeat 14px 50%;
+}
+div.dialog-box-info-small-box{
+	width:100%;
+	height:30px;
+	float:left;
+	border:1px solid #3e9bfc;
+	margin-bottom:10px;
+	position:relative;
+	background:#aee6fd url(../images/icons/dialogs/help.png) no-repeat 14px 50%;
+}
+div.dialog-box-error-small-box{
+	width:100%;
+	height:30px;
+	float:left;
+	border:1px solid #f74c4c;
+	margin-bottom:10px;
+	position:relative;
+	background:#febfbf url(../images/icons/dialogs/delete.png) no-repeat 14px 50%;
+}
+div.dialog-box-warning-small-box{
+	width:100%;
+	height:30px;
+	float:left;
+	border:1px solid #d5c913;
+	margin-bottom:10px;
+	position:relative;
+	background:#fffab2 url(../images/icons/dialogs/error.png) no-repeat 14px 50%;	
+}
+div.dialog-box-msg-small-box{
+	width:100%;
+	height:30px;
+	float:left;
+	border:1px solid #ccc;
+	margin-bottom:10px;
+	position:relative;
+	background:#fff url(../images/icons/dialogs/lightbulb_off.png) no-repeat 14px 50%;		
+}
+div.dialog-box-succes-small-box p,
+div.dialog-box-info-small-box p,
+div.dialog-box-error-small-box p,
+div.dialog-box-warning-small-box p,
+div.dialog-box-msg-small-box p{
+	font-size:12px;
+	width:auto;
+	float:left;
+	margin:5px 5px 5px 40px;
+}
+div.dialog-box-succes-small-box .delx-box,
+div.dialog-box-info-small-box .delx-box,
+div.dialog-box-error-small-box .delx-box,
+div.dialog-box-warning-small-box .delx-box,
+div.dialog-box-msg-small-box .delx-box{
+	position:absolute;
+	top:9px;
+	right:10px;
+	height:12px;
+	width:12px;
+	background:url(../images/close-x.png) no-repeat;
+	cursor:pointer;
+}
+
+/* 
+	big dialogs with basic click on dialog to close 
+*/
+
+div.dialog-box-succes-big{
+	width:100%;
+	height:84px;
+	float:left;
+	border:1px solid #51be21;
+	margin-bottom:10px;
+	position:relative;
+	cursor:pointer;
+	background:#c3fbaa url(../images/icons/dialogs/Dialog-Apply-64.png) no-repeat 14px 50%;
+}
+div.dialog-box-info-big{
+	width:100%;
+	height:84px;
+	float:left;
+	border:1px solid #3e9bfc;
+	margin-bottom:10px;
+	position:relative;
+	cursor:pointer;
+	background:#aee6fd url(../images/icons/dialogs/Gnome-Dialog-Question-64.png) no-repeat 14px 50%;
+}
+div.dialog-box-error-big{
+	width:100%;
+	height:84px;
+	float:left;
+	border:1px solid #f74c4c;
+	margin-bottom:10px;
+	position:relative;
+	cursor:pointer;
+	background:#febfbf url(../images/icons/dialogs/Gnome-Emblem-Important-64.png) no-repeat 14px 50%;
+}
+div.dialog-box-warning-big{
+	width:100%;
+	height:84px;
+	float:left;
+	border:1px solid #d5c913;
+	margin-bottom:10px;
+	position:relative;
+	cursor:pointer;
+	background:#fffab2 url(../images/icons/dialogs/Gnome-Dialog-Warning-64.png) no-repeat 14px 50%;	
+}
+div.dialog-box-msg-big{
+	width:100%;
+	height:84px;
+	float:left;
+	border:1px solid #ccc;
+	margin-bottom:10px;
+	position:relative;
+	cursor:pointer;
+	background:#fff url(../images/icons/dialogs/Gnome-Dialog-Information-64.png) no-repeat 14px 50%;		
+}
+div.dialog-box-succes-big h2,
+div.dialog-box-info-big h2,
+div.dialog-box-error-big h2,
+div.dialog-box-warning-big h2,
+div.dialog-box-msg-big h2{
+	width:900px;
+	float:left;
+	margin:10px 0 0px 94px;
+	font-weight:normal;
+	font-size:16px;
+}
+div.dialog-box-succes-big p,
+div.dialog-box-info-big p,
+div.dialog-box-error-big p,
+div.dialog-box-warning-big p,
+div.dialog-box-msg-big p{
+	width:900px;
+	font-size:12px;
+	color:#666;
+	float:left;
+	margin:0 10px 14px 94px;
+}
+div.dialog-box-succes-big .delx,
+div.dialog-box-info-big .delx,
+div.dialog-box-error-big .delx,
+div.dialog-box-warning-big .delx,
+div.dialog-box-msg-big .delx{
+	position:absolute;
+	top:0px;
+	right:8px;
+	font-size:10px;
+	color:#666;
+	display:none;
+}
+
+/* 	
+	small dialogs with basic click on dialog to close
+*/	
+
+div.dialog-box-succes-small{
+	width:100%;
+	height:40px;
+	float:left;
+	border:1px solid #51be21;
+	margin-bottom:10px;
+	position:relative;
+	cursor:pointer;
+	background:#c3fbaa url(../images/icons/dialogs/Dialog-Apply-32.png) no-repeat 14px 50%;
+}
+div.dialog-box-info-small{
+	width:100%;
+	height:40px;
+	float:left;
+	border:1px solid #3e9bfc;
+	margin-bottom:10px;
+	position:relative;
+	cursor:pointer;
+	background:#aee6fd url(../images/icons/dialogs/Gnome-Dialog-Question-32.png) no-repeat 14px 50%;
+}
+div.dialog-box-error-small{
+	width:100%;
+	height:40px;
+	float:left;
+	border:1px solid #f74c4c;
+	margin-bottom:10px;
+	position:relative;
+	cursor:pointer;
+	background:#febfbf url(../images/icons/dialogs/Gnome-Emblem-Important-32.png) no-repeat 14px 50%;
+}
+div.dialog-box-warning-small{
+	width:100%;
+	height:40px;
+	float:left;
+	border:1px solid #d5c913;
+	margin-bottom:10px;
+	position:relative;
+	cursor:pointer;
+	background:#fffab2 url(../images/icons/dialogs/Gnome-Dialog-Warning-32.png) no-repeat 14px 50%;	
+}
+div.dialog-box-msg-small{
+	width:100%;
+	height:40px;
+	float:left;
+	border:1px solid #ccc;
+	margin-bottom:10px;
+	position:relative;
+	cursor:pointer;
+	background:#fff url(../images/icons/dialogs/Gnome-Dialog-Information-32.png) no-repeat 14px 50%;		
+}
+div.dialog-box-succes-small p,
+div.dialog-box-info-small p,
+div.dialog-box-error-small p,
+div.dialog-box-warning-small p,
+div.dialog-box-msg-small p{
+	font-size:12px;
+	width:auto;
+	float:left;
+	margin:10px 10px 10px 60px;
+}
+div.dialog-box-succes-small .delx,
+div.dialog-box-info-small .delx,
+div.dialog-box-error-small .delx,
+div.dialog-box-warning-small .delx,
+div.dialog-box-msg-small .delx{
+	position:absolute;
+	top:0px;
+	right:8px;
+	font-size:10px;
+	color:#666;
+	display:none;
+}
+
+/*	
+	modal buttons(demo) @ dialogs.html
+*/
+
+div.box-content a.dialog-demo,
+div.box-content a.dialog-demo:visited,
+div.box-content a.dialog-demo:active{
+	padding:3px 5px 1px 5px;
+	height:17px;
+	color:#444;
+	line-height:14px;
+	border:1px solid #ccc;
+	background: #efefef;
+    background-image: -moz-linear-gradient(top,#ffffff,#efefef);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#ffffff),to(#efefef));
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ffffff, endColorstr=#efefef);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#efefef)";	
+	margin:0px 5px 0px 0px;
+	text-decoration:none;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+	border-radius:2px;
+	font-weight:normal;
+}
+div.box-content a.dialog-demo:hover{
+	color:#fff;
+	border:1px solid #444;
+	background: #555555;
+    background-image: -moz-linear-gradient(top,#555555,#777777);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#555555),to(#777777));
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#555555, endColorstr=#777777);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#555555, endColorstr=#777777)";	
+	font-weight:normal;
+}
+button.close-dialog{
+	float:left;
+	padding:5px 10px 5px 10px;
+	margin:10px 5px 0 240px;
+	-moz-border-radius:5px;
+    -webkit-border-radius:5px;
+	border-radius:5px;
+}
+
+/*
+------------------------------------------------------------------------
+ADD CONTENT DIALOG - Add some kind of content dialogs.
+------------------------------------------------------------------------
+*/
+
+div.add-dialog-inner{
+	float:left;
+	margin-top:10px;
+}
+div.add-dialog-inner label{
+	width:100%;
+	float:left;
+	font-weight:bold;
+	margin:0px 0 0 0;	
+}
+div.add-dialog-inner .input-1{
+	width:368px;
+	height:32px;
+	padding:0 0 0 6px;
+	float:left;
+	margin:0 0px 10px 0;
+	background:#eee;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius:5px;
+}
+div.add-dialog-inner .select-1{
+	width:374px;
+	height:34px;
+	float:left;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius:5px;
+	cursor:pointer;
+	background:#eee;
+}
+div.add-dialog-inner .textarea-1{
+	width:368px;
+	height:110px;
+	padding:0 0 0 6px;
+	float:left;
+	margin:0 0px 10px 0;
+	background:#eee;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius:5px;
+}
+div.add-dialog-inner #save-tickets{
+	float:right;
+	padding:5px 10px 5px 10px;
+	margin:10px 0 0 0;
+	-moz-border-radius:5px;
+    -webkit-border-radius:5px;
+	border-radius:5px;
+}
+div.add-dialog-inner .mup10{
+	margin-top:10px;
+}
