@@ -2,17 +2,9 @@
 // app/Controller/UsersController.php
 class UsersController extends AppController {
 
-<<<<<<< HEAD
-    public $name = 'Users';
-   /* 
-=======
->>>>>>> parent of 8a7c38a... Usercontroller
-    public function beforeFilter() {
-        parent::beforeFilter();
-        $this->Auth->allow('add');
-    }
-<<<<<<< HEAD
-    
+ 
+    public $name = 'Users'; 
+
     public function isAuthorized($user) {
         if ($user['role'] == 'admin') {
             return true;
@@ -24,7 +16,7 @@ class UsersController extends AppController {
         }
         return true;
     }
-    */
+  
     public function login() {
         if ($this->request->is('post')) {
             if ($this->Auth->login()) {
@@ -38,13 +30,10 @@ class UsersController extends AppController {
     public function logout() {
         $this->redirect($this->Auth->logout());
     }
-    
-=======
-
->>>>>>> parent of 8a7c38a... Usercontroller
+     
     public function index() {
         $this->User->recursive = 0;
-        $this->set('users', $this->paginate());
+        $this->set('rs', $this->paginate());
     }
 
     public function view($id = null) {

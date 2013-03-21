@@ -69,7 +69,7 @@
                  
                 <li>                      
                     <a href="<?php echo $this->webroot; ?>Department" class="icon-menu corners">
-                        <img src="<?php echo $this->webroot; ?>panel/images/icons/48/preferences-desktop-theme.png" alt="" title="" />
+       <img src="<?php echo $this->webroot; ?>panel/images/icons/48/preferences-desktop-theme.png" alt="" title="" />
                         <span>Department</span>
                     </a>
                 </li>    
@@ -77,38 +77,36 @@
                 
 
                 <li>
-                    <a href="<?php echo $this->webroot; ?>Program" class="icon-menu corners">
-                        <img src="<?php echo $this->webroot; ?>panel/images/icons/48/image-x-generic.png" alt="" title="" />
+  <a href="<?php echo $this->webroot; ?>Program" class="icon-menu corners">
+   <img src="<?php echo $this->webroot; ?>panel/images/icons/48/image-x-generic.png" alt="" title="" />
                         <span>Programs</span>
                     </a>
                 </li>     
                   
                      <li>                      
-                    <a href="<?php echo $this->webroot; ?>Courses" class="icon-menu corners">
+    <a href="<?php echo $this->webroot; ?>Courses" class="icon-menu corners">
                         <img src="<?php echo $this->webroot; ?>panel/images/icons/48/preferences-desktop-theme.png" alt="" title="" />
-                        <span>Courses</span>
+                        <span>Courses / Curriculum</span>
                     </a>
                 </li>  
-
-                  <li>                      
-                    <a href="statistics.html" class="icon-menu corners">
-                        <img src="<?php echo $this->webroot; ?>panel/images/icons/48/x-office-presentation.png" alt="" title="" />
-                        <span>Curriculum</span>
-                    </a>
-                </li>                
-                           
-
+ 
 
                 <li>                      
-                    <a href="Pages" class="icon-menu corners">
+                    <a href="<?php echo $this->webroot; ?>News" class="icon-menu corners">
                         <img src="<?php echo $this->webroot; ?>panel/images/icons/48/text-x-generic.png" alt="" title="" />
                         <span>Pages</span>
                     </a>
                 </li>    
                
-                
                 <li>                      
-                    <a href="users.html" class="icon-menu corners">
+                    <a href="<?php echo $this->webroot; ?>Researchgroup" class="icon-menu corners">
+                        <img src="<?php echo $this->webroot; ?>panel/images/icons/48/text-x-generic.png" alt="" title="" />
+                        <span>Researchgroup</span>
+                    </a>
+                </li>  
+
+                <li>                      
+                    <a href="<?php echo $this->webroot; ?>Users" class="icon-menu corners">
                         <img src="<?php echo $this->webroot; ?>panel/images/icons/48/user-info.png" alt="" title="" />
                         <span>People</span>
                     </a>
