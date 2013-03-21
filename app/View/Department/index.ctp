@@ -5,7 +5,8 @@
         <th>Id</th>
         <th>Title</th>
         <th>Language</th>
-        <th>Created</th>
+        <th>Edit</th>
+        <th>Delete</th>
  </tr>
     <?php foreach ($r as $post): ?>
  
@@ -26,12 +27,13 @@
 
         <td> 
         	  <?php echo $this->Html->link('Edit', array('action' => 'edit', $post['Department']['id'])); ?>
-&nbsp; &nbsp; - &nbsp; &nbsp;
+</td>
+<td> 
         	 <?php 
         	 echo $this->Form->postLink(
                 'Delete',
                 array('action' => 'sil', $post['Department']['id']),
-                array('confirm' => 'Are you sure?'));
+                array('confirm' => 'Do you really want to delete ?'));
             ?>
 </td>
     </tr>
