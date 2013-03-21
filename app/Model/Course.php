@@ -23,9 +23,6 @@ class Course extends AppModel {
            'description' => array(
             'rule' => 'notEmpty'
         ),
-           'prerequisites' => array(
-            'rule' => 'notEmpty'
-        ),
            'ectscredit' => array(
             'rule' => 'notEmpty'
         )
