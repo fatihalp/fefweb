@@ -6,7 +6,8 @@ class CoursesController extends AppController {
 
     public function index() {
         $this->set('courses', $this->Course->find('all', array(
-        'fields' => array('Course.id', 'Course.code', 'Course.name', 'Course.departmentid')
+            'contain' => array('Department'),
+            'fields' => array('Course.id', 'Course.code', 'Course.name', 'Department.name')
         )));
     }
 
@@ -23,6 +24,10 @@ class CoursesController extends AppController {
     }
 
     public function add() {
+    	$this->loadModel('Department');
+    	$depts = $this->Department->find('list');
+    	$this->set('dept', $depts);
+    	
         if ($this->request->is('post')) {
             $this->Course->create();
             if ($this->Course->save($this->request->data)) {
@@ -35,6 +40,10 @@ class CoursesController extends AppController {
     }
 
     public function edit($id = null) {
+    	$this->loadModel('Department');
+    	$depts = $this->Department->find('list');
+    	$this->set('dept', $depts);
+    	
 	    if (!$id) {
 	        throw new NotFoundException(__('Invalid course'));
 	    }

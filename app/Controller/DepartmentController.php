@@ -17,11 +17,10 @@ class DepartmentController  extends AppController {
 
 	public function add() {
         $this->loadModel('Lang');
-    $j = $this->Lang->find('list', array(
-        'fields' => array('Lang.name')
-    ));
-
-    $this->set('lang', $j);
+        $j = $this->Lang->find('list', array(
+            'fields' => array('Lang.name')
+        ));
+        $this->set('lang', $j);
 
         if ($this->request->is('post')) {
             $this->Department->create();
