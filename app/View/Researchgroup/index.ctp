@@ -1,7 +1,12 @@
 <?php echo $this->Html->link(
-    'Add Post',
-    array('controller' => 'Researchgroup', 'action' => 'add')
-); ?>
+    'Add Research group',
+    array('controller' => 'Researchgroup', 'action' => 'add'));
+echo "  -  ";
+    echo $this->Html->link(
+    'User Management',
+    array('controller' => 'Researchgroupusermap', 'action' => 'index'));
+
+ ?>
 
 <table>
     <tr>
