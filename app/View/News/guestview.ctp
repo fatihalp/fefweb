@@ -1,4 +1,8 @@
-<?php
-echo h($j['News']['title']);
-echo h($j['News']['body']);
-echo h($j['News']['startdate']);
+<div id="widecontent">
+  <div id="widecontent2"><i><?php echo h($j['News']['title']);?> </i>
+    <hr>
+   <?php echo h($j['News']['body']);?>
+   <br>
+   <?php echo h($j['News']['startdate']);?>
+  </div>
+</div> 

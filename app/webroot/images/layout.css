@@ -1,0 +1,284 @@
+body {
+	margin:0px 0px 0px 0px;
+	padding:0px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #666666;
+	}
+#leftcontent {
+	position: absolute;
+	left:0px;
+	top:157px;
+	width:137px;
+	background:#fff;
+	}
+html>body #centercontent {
+	margin-left: 148px;
+	margin-right:196px;
+	}
+html>body #widecontent {
+	margin-left: 148px;
+	margin-right:20px;
+	}
+#centercontent i, #widecontent i{
+	font-size: 17px;
+	font-family: Century Gothic, Verdana, Arial, Helvetica, sans-serif;
+	padding: 0px;
+	font-style:normal;
+}
+#centercontent img, #widecontent img{
+float:right;
+margin:10px 0px 10px 10px;
+}
+#centercontent p, #widecontent p{
+color:#666666;
+line-height:150%;
+}
+#ann_bar{
+color:#000000;
+background-color:#F2F2EE;
+margin-top:20px;
+margin-bottom:20px;
+}
+#ann_bar div{
+margin:5px;
+}
+#anntitle{
+}
+
+
+#rightcontent .rightbox{
+	font-size:11px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	padding:10px;
+}
+#rightcontent .rightbox i{
+	font-size: 17px;
+	font-family: Century Gothic, Verdana, Arial, Helvetica, sans-serif;
+	padding: 0px;
+	font-style:normal;
+}
+#rightcontent .rightbox .rightboxinfo{
+	padding:0px;
+	margin:10px 10px 0px 0px;
+}
+html>body #banner {
+	height:156px;
+	}
+#header_script{
+position:absolute;
+left:152px;
+top:52px;
+padding:0px;
+}
+#maintenance{
+display:block;
+position:absolute;
+left:152px;
+top:5px;
+padding:5px;
+color:#ffffff;
+width:400px;
+border:dashed #FFFFFF 1px;
+}
+#header_logo{
+position:absolute;
+right:15px;
+top:32px;
+padding:0px;
+}
+#search_form{
+position:absolute;
+top:120px;
+right:18px;
+}
+#search_form a:link, #search_form a:visited{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:11px;
+color:#999999;
+text-decoration:none;
+}
+#search_form a:hover{
+text-decoration:underline;
+}
+#search_form input{
+border:1px #999999 solid;
+background-color:#FFFFFF;
+color:#999999;
+font-size:11px;
+}
+.tabular_info{
+background-color:#EFF0F5;
+width:100%;
+color:#000000;
+border:0px;
+margin:0px;
+padding:0px;
+margin-bottom:30px;
+text-indent:5px;
+line-height:21px;
+}
+.tabular_info a, tabular_info a:visited{
+color:#000000;
+}
+.tabular_info .first_row, .tabular_info .first_row a, .tabular_info .first_row a img{
+background-color:#999DBF;
+color:#FFFFFF;
+font-family:Century Gothic, Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;
+border-bottom:#FFFFFF solid 1px;
+text-decoration:none;
+border:0px;
+}
+.tabular_info .even_row{
+background-color:#D8DAE7;
+}
+#browser{
+font-family: Century Gothic, Verdana, Arial, Helvetica, sans-serif;
+background-color:#545F92;
+font-size:12px;
+color:#FFFFFF;
+margin-top:20px;
+padding:10px;
+}
+#browser_title{
+padding:0px;
+}
+.curriculum_table_title{
+padding:5px;
+background-color:#7C82AD;
+border-bottom:1px #FFFFFF solid;
+color:#FFFFFF;
+font-family: Century Gothic, Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;
+}
+.curriculum_table_title a, .curriculum_table_title a:visited{
+color:#FFFFFF;
+}
+.browse_options{
+	padding: 0px 20px 0px 0px;
+	white-space: nowrap;
+	line-height:30px;
+}
+.browse_options select{
+margin: 0px 0px 0px 10px;
+border:1px solid #545F92;
+background-color:#FFFFFF;
+width:150px;
+}
+#footer, #footer a, #footer a:visited{
+color:#999999;
+width:100%;
+text-align:right;
+}
+#dept_img{
+width:100%;
+height:136px;
+margin-top:34px;
+}
+.back_button{
+width:100%;
+text-align:right;
+margin-top:15px;
+}
+.back_button a, .back_button a:visited{
+color:#999999;
+text-decoration:none;
+}
+.back_button a:hover{
+color:#333333;
+text-decoration:underline;
+}
+.class_time{
+border:#666666 dashed 1px;
+background:#CCCCCC;
+}
+form table{
+}
+#order{
+	float:none;
+	margin:0px;
+	padding:0px;
+}
+.tabular_info .last_row{
+background-color:#999DBF;
+color:#FFFFFF;
+font-family:Century Gothic, Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;
+text-align:center;
+}
+.tabular_info .last_row a, .tabular_info .last_row a:visited{
+color:#FFFFFF;
+}
+
+#widecontent .result_group{
+background-color:#EFF0F5;
+width:100%;
+color:#000000;
+border:0px;
+margin:0px;
+padding:0px;
+margin-bottom:20px;
+text-indent:0px;
+line-height:21px;
+}
+
+#widecontent .result_group .result_title{
+color:#FFFFFF;
+background:#7C82AD;
+font-weight:bold;
+text-indent:5px;
+}
+
+#widecontent .result_group .result_body{
+padding-top:4px;
+padding-bottom:4px;
+}
+
+#widecontent .result_group .result_body a{
+color:#333333;
+text-indent:5px;
+text-decoration:none;
+margin-left:10px;
+}
+
+#widecontent .result_group .result_body a:hover{
+text-decoration:underline;
+}
+
+dl{display:block; font-size:11px; color:#000000; margin-left:20px;}
+dt{display:block; width:90px;}
+dd{margin-left:0px; font-size:11px; margin-bottom:5px; top:-1.2em; position:relative; margin-bottom:-0.5em; left:90px; width:300px;}
+
+#centercontent ul { list-style:none; color:#000000; font-size:11px; line-height:1.5em; padding:0px; margin:0px; margin-left:20px;}
+
+ul.materiallist ul{ margin-bottom:1em;}
+ul.materiallist ul li{ margin-bottom:0.3em;}
+
+a.tooltip:hover {background: ; font-weight:bold;}
+a.tooltip img.linktooltip {display: none;}
+.tabular_info a.tooltip:hover{position: relative;}
+.tabular_info a.tooltip:hover img.linktooltip {
+	display: block;
+	position:absolute;
+	top: 0em;
+	left: 125px;
+	background: #ffffff;
+	border: 3px solid #FFFF99;
+	z-index: 1;
+}
+
+div.content_message{padding:10px; border:#999999 dashed 2px;}
+div.content_message p{margin-top:0px; font-size:12px; margin-bottom:0.1em; width:70%}
+div.content_message ol{margin-top:0px; margin-bottom:0.1em}
+div.content_message span{color:#990000; font-weight:bold}
+
+table.deptlist{border:0px; padding:0px; margin-top:20px}
+table.deptlist th{font-size:11px; color:#787878; font-weight:normal; text-align:left}
+table.deptlist td{vertical-align:top; padding:5px; color:#787878}
+table.deptlist td.deptname a{font-family:"Tw Cen MT", "Trebuchet MS", Tahoma; font-size:16px; color:#666666; text-decoration:none; white-space:nowrap; margin-right:10px}
+table.deptlist td.deptname a:hover{color:#000000}
+table.deptlist td a{font-size:10px; color:#5F7BA3; text-decoration:none; white-space:nowrap}
+table.deptlist td a:hover{color:#3300FF}
+table.deptlist td.center{text-align:center}
+table.deptlist tr:hover{background-color:#FFFFFF}
