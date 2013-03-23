@@ -1,6 +1,7 @@
 <?php
 
 class News extends AppModel {
+	
 
 	public $validate = array(
         'title' => array(

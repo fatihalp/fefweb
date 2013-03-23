@@ -24,7 +24,7 @@
 
         <td>
             <?php echo $this->Html->link($News['News']['title'],
-array('controller' => 'news', 'action' => 'edit', $News['News']['id'])); ?>
+array('controller' => 'news', 'action' => 'guestview', $News['News']['id'])); ?>
         </td>
 <td>   
             <img src="<?php echo $this->webroot; ?>/img/<?php echo $News['News']['langid']; ?>.png" /></td>
