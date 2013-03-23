@@ -11,17 +11,17 @@
 <link href="<?php echo $this->webroot; ?>images/style.css" rel="stylesheet" type="text/css" />
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
-    <td width="210" height="113" align="right" valign="top" id="banner"><a href="http://www.emu.edu.tr"> <img src="images/logo.jpg" alt="EMU" border="0" width="165" height="110" /> </a></td>
+    <td width="210" height="113" align="right" valign="top" id="banner"><a href="http://www.emu.edu.tr"> <img src="<?php echo $this->webroot; ?>images/logo.jpg" alt="EMU" border="0" width="165" height="110" /> </a></td>
     <td width="500" height="113" align="center" valign="top" id="banner"><br>
       <br>
     <img src="<?php echo $this->webroot; ?>images/colors/header_script/header_script_0.jpg" alt="EMU - Faculty of Arts and Sciences" name="header_script" width="409" height="40" border="0" /></td>
     <td width="100%" id="banner">&nbsp;</td>
-    <td width="301" valign="top" id="banner"><img src="images/diploma.jpg" alt="EMU - Faculty of Arts and Sciences" name="header_script" width="301" height="110" border="0" /></td>
+    <td width="301" valign="top" id="banner"><img src="<?php echo $this->webroot; ?>images/diploma.jpg" alt="EMU - Faculty of Arts and Sciences" name="header_script" width="301" height="110" border="0" /></td>
   </tr>
   <tr>
     <td colspan="2"><div id="banner2">
         <form id="search_form" method="get" action="search.php">
-          <a href="http://brahms.emu.edu.tr/Beta/">Home</a> - <a href="login.php">Login</a> - <a href="http://brahms.emu.edu.tr/tr/">&nbsp;<img src="images/TurkishFlag.gif">&nbsp;T&uuml;rk&ccedil;e</a>&nbsp;&nbsp;
+          <a href="http://brahms.emu.edu.tr/Beta/">Home</a> - <a href="login.php">Login</a> - <a href="http://brahms.emu.edu.tr/tr/">&nbsp;<img src="<?php echo $this->webroot; ?>images/TurkishFlag.gif">&nbsp;T&uuml;rk&ccedil;e</a>&nbsp;&nbsp;
           <input name="q" type="text" value="Search this website" id="search_key_word" onfocus="if(document.getElementById('search_key_word').value=='Search this website')document.getElementById('search_key_word').value='';" onblur="if(document.getElementById('search_key_word').value=='')document.getElementById('search_key_word').value='Search this website';" />
           <input type="submit" value="GO!" />
         </form>
@@ -72,7 +72,7 @@
   <table width="100%" border="0" cellpadding="0" cellspacing="0">
     <tr>
       <td width="82%" align="center" valign="middle"><p>&copy; EMU - Faculty of Arts and Sciences, All Rights Reserved. <a href="credits.php" target="_blank">Credits</a></p></td>
-      <td width="18%"><div> <a href="http://www.youtube.com/user/emufas" target="_new"><img src="images/youtube.png" border="0"></a> <a href="http://twitter.com/emufas" target="_new"><img src="images/Twitter.png" border="0"></a> <a href="http://www.facebook.com/pages/EMU-Faculty-of-Arts-and-Sciences/168380369888596" target="_new"><img src="images/fb.png" border="0"></a></div></td>
+      <td width="18%"><div> <a href="http://www.youtube.com/user/emufas" target="_new"><img src="<?php echo $this->webroot; ?>images/youtube.png" border="0"></a> <a href="http://twitter.com/emufas" target="_new"><img src="<?php echo $this->webroot; ?>images/Twitter.png" border="0"></a> <a href="http://www.facebook.com/pages/EMU-Faculty-of-Arts-and-Sciences/168380369888596" target="_new"><img src="<?php echo $this->webroot; ?>images/fb.png" border="0"></a></div></td>
     </tr>
   </table>
 </div>
