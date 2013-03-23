@@ -6,20 +6,24 @@ class ResearchgroupController extends AppController {
         $this->set('researchgroup', $this->Researchgroup->find('all'));
     }
 
-    public function view($id) { 
-
+    public function guestview($id) {  
         $b = $this->Researchgroup->findById($id); 
-        $this->set('b', $b);
-
+        $this->set('b', $b); 
 	}
+    public function guestlist() {  
+        $b = $this->Researchgroup->find('all'); 
+        $this->set('rs', $b); 
+    }
 
-	 public function add() { 
-$this->loadModel('Lang');
-    $j = $this->Lang->find('list', array(
-        'fields' => array('Lang.name')
-    ));
 
-    $this->set('lang', $j);
+	public function add() { 
+        $this->loadModel('Lang');
+        $j = $this->Lang->find('list', array(
+            'fields' => array('Lang.name')
+        ));
+        $this->set('lang', $j);
+
+
         if ($this->request->is('post')) {
             $this->Researchgroup->create();
             if ($this->Researchgroup->save($this->request->data)) {
