@@ -1,8 +1,12 @@
 <?php
 class Department extends AppModel {
     public $actsAs = array('Containable');
-    public $hasMany = array('Course');
-
+    //public $hasMany = array('Course');
+     public $hasMany = array(
+        'Program' => array(
+            'className' => 'Program',
+        )
+    ); 
     public $validate = array(
         'name' => array(
             'rule' => 'notEmpty'

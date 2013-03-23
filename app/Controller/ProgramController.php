@@ -1,22 +1,34 @@
 <?php
-
 class ProgramController extends AppController {
     public $helpers = array('Html', 'Form', 'Session');
     public $components = array('Session');
 
-    public function delete($id) {
-    if ($this->request->is('get')) {
-        throw new MethodNotAllowedException();
+  
+    public function guestlist() {
+        $this->layout = 'guest';
+        $b = $this->Program->find('all');
+       // print_r($b);
+        $this->set('rs',$b );
+    }
+    public function guestview($id) {
+        $this->layout = 'guest';
+        $this->set('a', $this->Program->findById($id));
     }
 
-    if ($this->Program->delete($id)) {
-        $this->Session->setFlash('The post with id: ' . $id . ' has been deleted.');
-        $this->redirect(array('action' => 'index'));
-    }
+
+    public function delete($id) {
+        if ($this->request->is('get')) {
+            throw new MethodNotAllowedException();
+        }
+
+        if ($this->Program->delete($id)) {
+            $this->Session->setFlash('The post with id: ' . $id . ' has been deleted.');
+            $this->redirect(array('action' => 'index'));
+        }
 	}
 
     public function edit($id = null) {
-    
+       
     $this->loadModel('Lang');
     $j = $this->Lang->find('list', array(
         'fields' => array('Lang.name')

@@ -1,5 +1,7 @@
 <?php 
 class Program extends AppModel { 
+    public $belongsTo = 'Department';
+
     public $validate = array(
         'username' => array(
             'required' => array(
