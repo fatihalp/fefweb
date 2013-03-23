@@ -1,3 +1,5 @@
 <?php
-class researchgroupusermap extends AppModel {
+class Researchgroupusermap extends AppModel {
+	public $actsAs = array('Containable');
+    public $belongsTo = array('User','Researchgroup');
 }

@@ -1,5 +1,5 @@
 <?php echo $this->Html->link(
-    'Add Post',
+    'Add A User to Research Group',
     array('controller' => 'Researchgroupusermap', 'action' => 'add')
 ); ?>
 
@@ -25,7 +25,7 @@
           
             <?php 
 
-            echo $this->Html->link($a['Researchgroupusermap']['userid'],
+            echo $this->Html->link($a['User']['name'],
 array(
     'controller' => 'Researchgroupusermap',
     'action' => 'view', 
@@ -35,7 +35,7 @@ array(
 
 
         </td>
-<td> <?php echo $a['Researchgroupusermap']['Researchgroupid']; ?> </td>
+<td> <?php echo $a['Researchgroup']['name']; ?> </td>
 
         <td><?php echo $this->Html->link('Edit', array('action' => 'edit', $a['Researchgroupusermap']['id'])); ?></td>
     <td><?php echo $this->Form->postLink(

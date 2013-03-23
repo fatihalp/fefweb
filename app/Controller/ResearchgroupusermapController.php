@@ -3,7 +3,10 @@ class ResearchgroupusermapController extends AppController {
     public $helpers = array('Html', 'Form');
 
     public function index() {
-        $this->set('Researchgroupusermap', $this->Researchgroupusermap->find('all'));
+        $this->set('Researchgroupusermap', $this->Researchgroupusermap->find('all', array(
+            'contain' => array('User', 'Researchgroup'),
+            'fields' => array('Researchgroupusermap.id', 'User.name', 'Researchgroup.name')
+        )));
     }
 
     public function view($id) { 
@@ -14,9 +17,14 @@ class ResearchgroupusermapController extends AppController {
 	}
 
 	 public function add() { 
+        $this->loadModel('User');
+        $users = $this->User->find('list');
+        $this->set('user', $users);
 
+        $this->loadModel('Researchgroup');
+        $resGroups = $this->Researchgroup->find('list');
+        $this->set('resGroup', $resGroups);
 
-  
         if ($this->request->is('post')) {
             $this->Researchgroupusermap->create();
             if ($this->Researchgroupusermap->save($this->request->data)) {
@@ -33,6 +41,14 @@ class ResearchgroupusermapController extends AppController {
 
 
 public function edit($id = null) {
+    $this->loadModel('User');
+    $users = $this->User->find('list');
+    $this->set('user', $users);
+
+    $this->loadModel('Researchgroup');
+    $resGroups = $this->Researchgroup->find('list');
+    $this->set('resGroup', $resGroups);
+    
     if (!$id) {
         throw new NotFoundException(__('Invalid post'));
     }

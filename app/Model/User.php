@@ -2,6 +2,8 @@
 App::uses('AuthComponent', 'Controller/Component');
 // app/Model/User.php
 class User extends AppModel {
+    public $actsAs = array('Containable');
+    public $hasMany = array('Researchgroupusermap');
 
 /*
     public function beforeSave($options = array()) {

@@ -4,7 +4,7 @@
     <tr>
         <th>Code</th>
         <th>Name</th>
-        <th>DepartmentID</th>
+        <th>Department</th>
         <th>Actions</th>
 
 

@@ -27,6 +27,10 @@ class CoursesController extends AppController {
     	$this->loadModel('Department');
     	$depts = $this->Department->find('list');
     	$this->set('dept', $depts);
+
+        $this->loadModel('Program');
+        $progs = $this->Program->find('list');
+        $this->set('prog', $progs);
     	
         if ($this->request->is('post')) {
             $this->Course->create();
@@ -43,6 +47,10 @@ class CoursesController extends AppController {
     	$this->loadModel('Department');
     	$depts = $this->Department->find('list');
     	$this->set('dept', $depts);
+
+        $this->loadModel('Program');
+        $progs = $this->Program->find('list');
+        $this->set('prog', $progs);
     	
 	    if (!$id) {
 	        throw new NotFoundException(__('Invalid course'));

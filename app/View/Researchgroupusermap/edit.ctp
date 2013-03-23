@@ -1,11 +1,15 @@
-<h1>Edit Post</h1>
+<h1>Edit Research Group User</h1>
 <?php
+	echo $this->Html->link('Back', array('action' => 'index'));
+	$dummy_id = null;
     echo $this->Form->create('Researchgroupusermap');
-    echo $this->Form->input('name');
-    echo $this->Form->input('description', array('rows' => '3'));
-
-   
-
-    echo $this->Form->input('id', array('type' => 'hidden'));
-    echo $this->Form->end('Save Post');
-    ?>
+    echo $this->Form->input('user_id', array('type' => 'select',
+		'options' => $user,
+		'selected' => $dummy_id,
+		'label' => 'User'));
+	echo $this->Form->input('researchgroup_id', array('type' => 'select',
+		'options' => $resGroup,
+		'selected' => $dummy_id,
+		'label' => 'Research Group'));
+    echo $this->Form->end('Save');
+?>

@@ -1,6 +1,9 @@
 <?php
 class Researchgroup extends AppModel {
- public $validate = array(
+    public $actsAs = array('Containable');
+    public $hasMany = array('Researchgroupusermap');
+    
+    public $validate = array(
         'name' => array(
             'rule' => 'notEmpty'
         ),
