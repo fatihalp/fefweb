@@ -10,7 +10,7 @@
 
 		echo $j["News"]["id"];
 		echo $j["News"]["title"];
-		echo $j["News"]["startdate"];
+		echo $j["News"]["body"];
 		echo '<br/>';
 	  endforeach;  
     unset($post); 

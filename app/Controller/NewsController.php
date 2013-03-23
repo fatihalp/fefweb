@@ -4,6 +4,11 @@ class NewsController extends AppController {
 	public function index() {
 		$this->set('posts', $this->News->find('all'));
 	}
+   public function guestlist() {  
+         $this->layout = 'guest';
+        $j = $this->News->find('all'); 
+        $this->set('rs', $j); 
+    }
     public function guestview($id) {  
          $this->layout = 'guest';
         $j = $this->News->findById($id); 
