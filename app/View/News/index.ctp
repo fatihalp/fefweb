@@ -1,4 +1,3 @@
-<!-- File: /app/View/Posts/index.ctp -->
 <?php echo $this->Html->link(
     'Add A New Content',
     array('controller' => 'news', 'action' => 'add')
@@ -10,7 +9,6 @@
     <tr>
         <th>Id</th>
         <th>Title</th>
-        <th>Language&nbsp;&nbsp;&nbsp;&nbsp;</th>
         <th>Expire</th>
         <th>Edit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
         <th>Delete</th>
@@ -23,11 +21,9 @@
         <td><?php echo $News['News']['id']; ?></td>
 
         <td>
-            <?php echo $this->Html->link($News['News']['title'],
+            <?php echo $this->Html->link($News['News']['title_tr'].' / '.$News['News']['title_en'],
 array('controller' => 'news', 'action' => 'guestview', $News['News']['id'])); ?>
         </td>
-<td>   
-            <img src="<?php echo $this->webroot; ?>/img/<?php echo $News['News']['langid']; ?>.png" /></td>
     
         <td><?php echo $News['News']['expiredate']; ?> &nbsp;&nbsp;&nbsp; </td>
 <td>
