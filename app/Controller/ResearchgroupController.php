@@ -7,6 +7,8 @@ class ResearchgroupController extends AppController {
     }
 
     public function guestview($id) {  
+        $this->layout = 'guest';
+        $this->loadModel('Researchgroup');
         $b = $this->Researchgroup->findById($id); 
         $this->set('b', $b); 
 	}
