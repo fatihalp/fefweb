@@ -15,7 +15,7 @@
 	<dt>Credit:</dt> <dd><?php echo $course['Course']['credit']; ?></dd>
 	<dt>Prerequisites:</dt> <dd><?php echo $course['Course']['prerequisites']; ?></dd>
 	<dt>Ectscredit:</dt> <dd><?php echo $course['Course']['ectscredit']; ?></dd>
-	<dt>Department:</dt> <dd><?php echo $course['Department']['name']; ?></dd>
+	<dt>Department:</dt> <dd><?php echo $this->Department->dept_name($course['Course']['department_id']); ?></dd>
 	<dt>Description:</dt> <dd><?php echo $course['Course']['description']; ?></dd>
 	<dt>Learning Outcomes:</dt> <dd><?php echo $course['Course']['outcomes']; ?> </dd>
 </dl>

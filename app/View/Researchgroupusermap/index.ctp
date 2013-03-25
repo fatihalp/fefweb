@@ -1,5 +1,5 @@
 <?php echo $this->Html->link(
-    'Add A User to Research Group',
+    'Add An User To A Research Group',
     array('controller' => 'Researchgroupusermap', 'action' => 'add')
 ); ?>
 

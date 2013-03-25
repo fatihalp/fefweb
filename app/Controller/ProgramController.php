@@ -7,7 +7,6 @@ class ProgramController extends AppController {
     public function guestlist() {
         $this->layout = 'guest';
         $b = $this->Program->find('all');
-       // print_r($b);
         $this->set('rs',$b );
     }
     public function guestview($id) {

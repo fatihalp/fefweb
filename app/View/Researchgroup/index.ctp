@@ -1,5 +1,5 @@
 <?php echo $this->Html->link(
-    'Add Research group',
+    'Add Research Group',
     array('controller' => 'Researchgroup', 'action' => 'add'));
 echo "  -  ";
     echo $this->Html->link(
@@ -33,7 +33,7 @@ echo "  -  ";
             echo $this->Html->link($a['Researchgroup']['name'],
 array(
     'controller' => 'Researchgroup',
-    'action' => 'view', 
+    'action' => 'guestview', 
      $a['Researchgroup']['id'])
 ); 
  ?>

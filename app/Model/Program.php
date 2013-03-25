@@ -15,6 +15,15 @@ class Program extends AppModel {
                 'message' => 'A password is required'
             )
         ),
+           'langid' => array(
+            'rule' => 'notEmpty'
+        ),
+           'instlangid' => array(
+            'rule' => 'notEmpty'
+        ),
+           'departmentid' => array(
+            'rule' => 'notEmpty'
+        ),
         'role' => array(
             'valid' => array(
                 'rule' => array('inList', array('admin', 'author')),

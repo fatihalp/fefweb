@@ -1,13 +1,12 @@
 <?php
 
 class CoursesController extends AppController {
-    public $helpers = array('Html', 'Form', 'Session');
+    public $helpers = array('Html', 'Form', 'Session', 'Department');
     public $components = array('Session');
 
     public function index() {
         $this->set('courses', $this->Course->find('all', array(
-            'contain' => array('Department'),
-            'fields' => array('Course.id', 'Course.code', 'Course.name', 'Department.name')
+            'fields' => array('Course.id', 'Course.code', 'Course.name', 'Course.department_id')
         )));
     }
 

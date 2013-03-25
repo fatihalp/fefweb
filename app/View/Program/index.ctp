@@ -1,8 +1,8 @@
 <?php echo $this->Html->link(
-    'Add Post',
+    'Add a New Program',
     array('controller' => 'Program', 'action' => 'add')
 ); ?>
-<h1>Blog posts</h1>
+<h1>Programs</h1>
 <table>
     <tr>
         <th>Id</th>
@@ -28,7 +28,7 @@
             echo $this->Html->link($a['Program']['name'],
 array(
     'controller' => 'Program',
-    'action' => 'view', 
+    'action' => 'edit',
      $a['Program']['id'])
 ); 
  ?>

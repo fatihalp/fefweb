@@ -9,6 +9,12 @@ class News extends AppModel {
         ),
         'body' => array(
             'rule' => 'notEmpty'
+        ),
+        'langid' => array(
+            'rule' => 'notEmpty'
+        ),
+        'type' => array(
+            'rule' => 'notEmpty'
         )
     );
 }

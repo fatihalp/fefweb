@@ -1,8 +1,8 @@
 <?php
 
 class Course extends AppModel {
-	public $actsAs = array('Containable');
-  public $belongsTo = array('Department');
+	//public $actsAs = array('Containable');
+  //public $belongsTo = array('Department');
 
   public $validate = array(
       'name' => array(

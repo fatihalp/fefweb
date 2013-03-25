@@ -1,12 +1,11 @@
 <?php
 class Department extends AppModel {
-    public $actsAs = array('Containable');
-    //public $hasMany = array('Course');
+    /*public $actsAs = array('Containable');
      public $hasMany = array(
         'Program' => array(
             'className' => 'Program',
         )
-    ); 
+    ); */
     public $validate = array(
         'name' => array(
             'rule' => 'notEmpty'
@@ -25,9 +24,11 @@ class Department extends AppModel {
 
            'telephone' => array(
             'rule' => 'notEmpty'
+        ),
+
+           'langid' => array(
+            'rule' => 'notEmpty'
         )
-
-
     );
 
 

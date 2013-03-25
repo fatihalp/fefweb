@@ -1,5 +1,7 @@
-<h1>Edit Post</h1>
+<h1>Edit Research Group Info</h1>
 <?php
+    echo $this->Html->link('Back', array('action' => 'index'));
+    $dummy_id = null; //selectbox' ta seçili kısmı göstermek için gerekli
     echo $this->Form->create('Researchgroup');
     echo $this->Form->input('name');
     echo $this->Form->input('description', array('rows' => '3'));
@@ -8,11 +10,11 @@
                                       'type' => 'select',
                                       'options' => $lang,
                                         'label' => 'Language', 
-                                      'selected' => $post['Researchgroup']['langid'] // suppose default select Kannada
+                                      'selected' => $dummy_id
                                   )
                   );
 
 
     echo $this->Form->input('id', array('type' => 'hidden'));
-    echo $this->Form->end('Save Post');
+    echo $this->Form->end('Save');
     ?>

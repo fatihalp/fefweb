@@ -1,6 +1,6 @@
 <!-- File: /app/View/Posts/index.ctp -->
 <?php echo $this->Html->link(
-    'Add News',
+    'Add A New Content',
     array('controller' => 'news', 'action' => 'add')
 ); ?>
 
