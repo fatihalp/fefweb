@@ -9,6 +9,10 @@
     	);
 
 		echo $j["News"]["id"];
+		?>
+
+		<?php // echo $this->Lang->news('1','2'); ?>
+<?php
 		echo $j["News"]["title"];
 		echo $j["News"]["body"];
 		echo '<br/>';

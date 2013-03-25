@@ -1,6 +1,9 @@
 <?php
-class NewsController extends AppController {
-	public $helpers = array('Html', 'Form');
+class NewsController extends AppController { 
+    public $helpers = array('Html', 'Form','Session');
+
+
+
 	public function index() {
 		$this->set('posts', $this->News->find('all'));
 	}
@@ -9,18 +12,24 @@ class NewsController extends AppController {
         $j = $this->News->find('all'); 
         $this->set('rs', $j); 
     }
-    public function guestview($id) {  
+    public function guestview($id) {
+
          $this->layout = 'guest';
+        if(Configure::read('Config.language') == 'tr') {
+
+            $this->layout = 'guest_tr';
+        }
+
         $j = $this->News->findById($id); 
         $this->set('j', $j); 
     }
 
 	 public function add() {
-        
-$this->loadModel('Lang');
-    $j = $this->Lang->find('list', array(
-        'fields' => array('Lang.name')
-    ));
+                
+        $this->loadModel('Lang');
+            $j = $this->Lang->find('list', array(
+                'fields' => array('Lang.name')
+            ));
 
     $this->set('lang', $j);
 
@@ -38,35 +47,29 @@ $this->loadModel('Lang');
 
 
     public function edit($id = null) {
-   
-$this->loadModel('Lang');
-    $j = $this->Lang->find('list', array(
-        'fields' => array('Lang.name')
-    ));
 
-    $this->set('lang', $j);
-    if (!$id) {
-        throw new NotFoundException(__('Invalid post'));
-    }
-
-    $post = $this->News->findById($id);
-    if (!$post) {
-        throw new NotFoundException(__('Invalid post'));
-    }
-
-    if ($this->request->is('post') || $this->request->is('put')) {
-        $this->News->id = $id;
-        if ($this->News->save($this->request->data)) {
-            $this->Session->setFlash('Your post has been updated.');
-            $this->redirect(array('action' => 'index'));
-        } else {
-            $this->Session->setFlash('Unable to update your post.');
+        if (!$id) {
+            throw new NotFoundException(__('Invalid post'));
         }
-    }
 
-    if (!$this->request->data) {
-        $this->request->data = $post;
-    }
+        $post = $this->News->findById($id);
+        if (!$post) {
+            throw new NotFoundException(__('Invalid post'));
+        }
+
+        if ($this->request->is('post') || $this->request->is('put')) {
+            $this->News->id = $id;
+            if ($this->News->save($this->request->data)) {
+                $this->Session->setFlash('Your post has been updated.');
+                $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash('Unable to update your post.');
+            }
+        }
+
+        if (!$this->request->data) {
+            $this->request->data = $post;
+        }
     }
 
 

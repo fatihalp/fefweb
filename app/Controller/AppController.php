@@ -31,7 +31,31 @@ App::uses('Controller', 'Controller');
  * @package		app.Controller
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
-class AppController extends Controller {
-	 
-    
+class AppController extends Controller { 
+
+     public function beforeFilter() {
+        if($this->params['named']['lang'] == '') {
+        	$active =  'en';
+        } else {
+        	$active =  $this->params['named']['lang'];
+        }
+      
+          Configure::write('Config.language',$active);
+ 
+    	$n = $this->params['named'];
+    	if($active == 'en') {
+    		$n['lang'] = 'tr';
+    	} else {
+    		$n['lang'] = 'en';
+    	}
+
+    	$url = null;
+    	foreach ($this->params['pass'] as $key => $value) {
+    		$url .= $value.'/'; 
+    	} 
+    	  $languageChange =  $this->webroot.$this->params['controller'].'/'.$this->params['action'].'/'.$url.'lang:'.$n['lang'];
+
+    	    Configure::write('Config.languageChange', $languageChange);
+    }
+
 }

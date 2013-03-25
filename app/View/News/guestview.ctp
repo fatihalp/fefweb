@@ -1,8 +1,12 @@
 <div id="widecontent">
-  <div id="widecontent2"><i><?php echo h($j['News']['title']);?> </i>
+  <div id="widecontent2"><i>    <?php echo $this->Lang->news($j['News']['id'],'News','title'); ?> </i>
     <hr>
-   <?php echo h($j['News']['body']);?>
+
+<br/>
+
+<?php echo $this->Lang->news($j['News']['id'],'News','body'); ?>
+ 
    <br>
-   <?php echo h($j['News']['startdate']);?>
+   <?php echo h($j['News']['modified']);?>
   </div>
 </div> 

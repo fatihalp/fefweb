@@ -21,7 +21,8 @@
   <tr>
     <td colspan="2"><div id="banner2">
         <form id="search_form" method="get" action="search.php">
-          <a href="http://brahms.emu.edu.tr/Beta/">Home</a> - <a href="login.php">Login</a> - 
+          <a href="http://brahms.emu.edu.tr/Beta/">Home</a> - 
+          <a href="login.php">Login</a> - 
           
           <?php if(Configure::read('Config.language') == 'en') { ?>
 
@@ -50,8 +51,8 @@
 </table><div id="leftcontent">
   <div class="menu">
     <ul>
-      <li ><a href="index.php">Home</a> </li>
-      <li ><a href="<?php echo $this->webroot; ?>/news/guestview/8/lang:<?=Configure::read('Config.language')?>">Dean's Message</a> </li>
+      <li ><a href="index.php">Anasayfa</a> </li>
+      <li ><a href="<?php echo $this->webroot; ?>/news/guestview/8/lang:<?=Configure::read('Config.language')?>">Dekanın Mesajı</a> </li>
 
       <li ><a href="academic_staff.php">People</a>
         <ul>
@@ -79,8 +80,8 @@
       <li ><a href="links.php">Links</a> </li>
       <li><a href="visionmission.php">Vision -Mission</a></li>
       <li><a href="fas_strategic_plan.pdf" target="_blank">Strategic Plan</a></li>
-      <li ><a href="contactus.php">Contact Us</a>
-      <li ><a href="faq.php">FAQ</a> </li>
+      <li ><a href="<?php echo $this->webroot; ?>/news/guestview/9/lang:<?=Configure::read('Config.language')?>">İletişim</a>
+    
     </ul>
   </div></div>
 <?php echo $this->Session->flash(); ?>

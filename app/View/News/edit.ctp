@@ -2,6 +2,8 @@
 <?php
 echo $this->Html->link('Back', array('action' => 'index'));
 
+echo $this->Form->create('News');
+
  echo $this->Form->input('type', array('options' => array(
 'news'=>'News',
 'static'=>'Static'
