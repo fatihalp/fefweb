@@ -11,10 +11,9 @@
 		echo $j["News"]["id"];
 		?>
 
-		<?php // echo $this->Lang->news('1','2'); ?>
-<?php
-		echo $j["News"]["title"];
-		echo $j["News"]["body"];
+ <h2>    <?php echo $this->Lang->get('News',$j['News']['id'],'title'); ?> </h2>
+ <p>    <?php echo $this->Lang->get('News',$j['News']['id'],'body'); ?> </p>
+<?php 
 		echo '<br/>';
 	  endforeach;  
     unset($post); 
