@@ -8,15 +8,18 @@ class NewsController extends AppController {
 		$this->set('posts', $this->News->find('all'));
 	}
    public function guestlist() {  
-         $this->layout = 'guest';
+        $this->layout = 'guest';
+        if(Configure::read('Config.language') == 'tr') {
+            $this->layout = 'guest_tr';
+        }
+
         $j = $this->News->find('all'); 
         $this->set('rs', $j); 
     }
     public function guestview($id) {
 
-         $this->layout = 'guest';
+        $this->layout = 'guest';
         if(Configure::read('Config.language') == 'tr') {
-
             $this->layout = 'guest_tr';
         }
 

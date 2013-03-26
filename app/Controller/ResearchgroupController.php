@@ -8,11 +8,22 @@ class ResearchgroupController extends AppController {
 
     public function guestview($id) {  
         $this->layout = 'guest';
+        if(Configure::read('Config.language') == 'tr') {
+            $this->layout = 'guest_tr';
+        }
+
         $this->loadModel('Researchgroup');
         $b = $this->Researchgroup->findById($id); 
         $this->set('b', $b); 
 	}
     public function guestlist() {  
+
+               $this->layout = 'guest';
+        if(Configure::read('Config.language') == 'tr') {
+            $this->layout = 'guest_tr';
+        }
+
+        
         $b = $this->Researchgroup->find('all'); 
         $this->set('rs', $b); 
     }
