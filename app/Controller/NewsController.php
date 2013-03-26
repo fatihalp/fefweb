@@ -8,20 +8,15 @@ class NewsController extends AppController {
 		$this->set('posts', $this->News->find('all'));
 	}
    public function guestlist() {  
-        $this->layout = 'guest';
-        if(Configure::read('Config.language') == 'tr') {
-            $this->layout = 'guest_tr';
-        }
+       $this->layout = 'guest_'.Configure::read('Config.language');    // ziyaretçinin dile göre layout sayfası seçilecek oto
+
 
         $j = $this->News->find('all'); 
         $this->set('rs', $j); 
     }
     public function guestview($id) {
+        $this->layout = 'guest_'.Configure::read('Config.language');    // ziyaretçinin dile göre layout sayfası seçilecek oto
 
-        $this->layout = 'guest';
-        if(Configure::read('Config.language') == 'tr') {
-            $this->layout = 'guest_tr';
-        }
 
         $j = $this->News->findById($id); 
         $this->set('j', $j); 

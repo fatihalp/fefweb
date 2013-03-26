@@ -6,12 +6,15 @@ class DepartmentController  extends AppController {
     public function index() { 
         $this->set('r', $this->Department->find('all'));
     }
-    public function guestlist() {  
+    public function guestlist() { 
+    $this->layout = 'guest_'.Configure::read('Config.language');    // ziyaretçinin dile göre layout sayfası seçilecek oto 
+    
         $b = $this->Department->find('all'); 
         $this->set('rs', $b); 
     }
     public function guestview($id) {  
-        $this->layout = 'guest';
+       $this->layout = 'guest_'.Configure::read('Config.language');    // ziyaretçinin dile göre layout sayfası seçilecek oto
+
         $this->loadModel('Department');
         $b = $this->Department->findById($id); 
         $this->set('b', $b); 

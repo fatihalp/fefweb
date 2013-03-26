@@ -7,24 +7,20 @@ class ResearchgroupController extends AppController {
     }
 
     public function guestview($id) {  
-        $this->layout = 'guest';
-        if(Configure::read('Config.language') == 'tr') {
-            $this->layout = 'guest_tr';
-        }
-
+        $this->layout = 'guest_'.Configure::read('Config.language');    // ziyaretçinin dile göre layout sayfası seçilecek oto
+ 
         $this->loadModel('Researchgroup');
         $b = $this->Researchgroup->findById($id); 
         $this->set('b', $b); 
 	}
     public function guestlist() {  
 
-               $this->layout = 'guest';
-        if(Configure::read('Config.language') == 'tr') {
-            $this->layout = 'guest_tr';
-        }
+        $this->layout = 'guest_'.Configure::read('Config.language');    // ziyaretçinin dile göre layout sayfası seçilecek oto
 
-        
-        $b = $this->Researchgroup->find('all'); 
+        $b = $this->Researchgroup->find('all',
+         array('conditions' =>  array ( 'Researchgroup.langid' => Configure::read('Config.language')  )
+            )
+         ); 
         $this->set('rs', $b); 
     }
 
