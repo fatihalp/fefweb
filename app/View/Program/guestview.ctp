@@ -1,14 +1,17 @@
-<?php 
-echo $a['Program']['id'];
-echo $a['Program']['name'];
-echo $a['Program']['refno'];
-echo $a['Program']['thesis'];
+<div id="widecontent">
+	<div id="widecontent2">
 
-echo $a['Program']['duration'];
-echo $a['Program']['summary'];
-echo $a['Program']['description'];
-echo $a['Program']['instlangid']; 
+<?php 
+echo '<h1>'.$a['Program']['name_'.Configure::read('Config.language')].'</h1>';
+echo '<br/>';
+echo $a['Program']['refno'];echo '<br/>';
+echo $a['Program']['thesis_'.Configure::read('Config.language')];echo '<br/>';
+
+echo $a['Program']['duration'];echo '<br/>';
+echo $a['Program']['summary_'.Configure::read('Config.language')];echo '<br/>';
+echo $a['Program']['description_'.Configure::read('Config.language')];echo '<br/>';
+echo $a['Program']['instlang_'.Configure::read('Config.language')]; echo '<br/>';
 
 ?>
-View ciruulum
+</div></div>
 

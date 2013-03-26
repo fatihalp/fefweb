@@ -1,16 +1,16 @@
 <?php
 class ProgramController extends AppController {
-    public $helpers = array('Html', 'Form', 'Session');
+    public $helpers = array('Html', 'Form', 'Session', 'Lang', 'Program');
     public $components = array('Session');
 
   
     public function guestlist() {
-        $this->layout = 'guest';
-        $b = $this->Program->find('all');
+        $this->layout = 'guest_'.Configure::read('Config.language');
+        $b = $this->Program->find('all', array('fields' => array('DISTINCT Program.department_id',)));
         $this->set('rs',$b );
     }
     public function guestview($id) {
-        $this->layout = 'guest';
+        $this->layout = 'guest_'.Configure::read('Config.language');
         $this->set('a', $this->Program->findById($id));
     }
 

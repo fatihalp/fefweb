@@ -1,24 +1,22 @@
-  <?php foreach ($rs as $a): ?>
- <?php echo $a['Program']['id']; ?>
-
- 
-          
-            <?php 
-            echo '<br/>';
-echo  $a['Department']['name'];
-
+<?php foreach ($rs as $a){
+    echo '<h2>';
+    echo  $this->Lang->get('Department', $a['Program']['department_id'], 'name');
+    echo '</h2>';
 echo '<br/>';
-            echo $this->Html->link($a['Program']['name'],
+
+$this->Program->createList($a['Program']['department_id']);
+
+/*
+echo '<br/>';
+            echo $this->Html->link($this->Lang->get('Program', $a['Program']['id'], 'name'),
 array(
     'controller' => 'Program',
     'action' => 'guestview', 
      $a['Program']['id'])
 ); 
             echo '<br/>';
- ?>
+ ?>*/
 
 
   
-    <?php endforeach; ?>
-    <?php unset($post); ?>
- 
+     } ?>
