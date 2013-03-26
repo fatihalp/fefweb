@@ -1,16 +1,44 @@
+<div id="widecontent">
+  <div id="widecontent2">
+
+<table width="423" border="1">
+ 
+
 <?php
     foreach ($rs as $b):	
 
-    	echo $this->Html->link('Detayları gör', 
-    		array(
-			'controller' => 'Department', 
-			'action' => 'guestview',
-			 $b['Department']['id'])
-    	);
+    	
+?>
 
-      echo $this->Lang->get('Department',$b['Department']['id'],'name');   
-echo $b["Department"]["email"];
-echo $b["Department"]["telephone"];
-		echo '<br/>';
+ <tr>
+    <td>
+
+
+        <?php 
+         echo $this->Html->link($this->Lang->get('Department',$b['Department']['id'],'name') ,
+            array(
+            'controller' => 'department', 
+            'action' => 'guestview',
+            $b['Department']['id'],
+             'lang' => Configure::read('Config.language'),
+
+            )
+            );
+         ?>
+  </td>
+    <td><?php echo $b["Department"]["email"]; ?></td>
+    <td><?php echo $b["Department"]["telephone"]; ?></td>
+  </tr>
+<?php
+       
+
+
+
 	  endforeach;  
     unset($post); 
+?>
+
+</table>
+ 
+ </div>
+</div> 

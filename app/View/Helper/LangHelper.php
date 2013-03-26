@@ -7,7 +7,7 @@
 	    	App::import("Model", $table);
 			$model = new $table();
 			$a = $model->findById($id);
-			echo $a[$table][$column.'_'.Configure::read('Config.language')];
+			return $a[$table][$column.'_'.Configure::read('Config.language')];
 	    }
 	}
 ?>
