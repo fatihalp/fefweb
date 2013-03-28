@@ -1,36 +1,33 @@
 <?php
 class Department extends AppModel {
-    /*public $actsAs = array('Containable');
-     public $hasMany = array(
-        'Program' => array(
-            'className' => 'Program',
-        )
-    ); */
     public $validate = array(
-        'name' => array(
+        'name_en' => array(
             'rule' => 'notEmpty'
         ),
-        'summary' => array(
+        'name_tr' => array(
             'rule' => 'notEmpty'
         ),
-
+        'summary_en' => array(
+            'rule' => 'notEmpty'
+        ),
+        'summary_tr' => array(
+            'rule' => 'notEmpty'
+        ),
          'email' => array(
             'rule' => 'notEmpty'
         ),
-
           'officeno' => array(
             'rule' => 'notEmpty'
         ),
-
            'telephone' => array(
             'rule' => 'notEmpty'
         ),
-
-           'langid' => array(
+           'infrastructure_en' => array(
+            'rule' => 'notEmpty'
+        ),
+           'infrastructure_tr' => array(
             'rule' => 'notEmpty'
         )
     );
-
-
 }
 ?>

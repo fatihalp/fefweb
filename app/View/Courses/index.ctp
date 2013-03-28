@@ -10,14 +10,12 @@
 
     </tr>
 
-    <!-- Here is where we loop through our $posts array, printing out post info -->
-
     <?php
     foreach ($courses as $course): ?>
     <tr>
         <td><?php echo $course['Course']['code']; ?></td>
         <td>
-            <?php echo $this->Html->link($course['Course']['name'], array('action' => 'view', $course['Course']['id'])); ?> 
+            <?php echo $this->Html->link($course['Course']['name_en'].' / '.$course['Course']['name_tr'], array('action' => 'view', $course['Course']['id'])); ?> 
         </td>
         <td><?php echo $this->Department->dept_name($course['Course']['department_id']); ?></td>
         <td>

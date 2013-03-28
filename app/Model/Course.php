@@ -1,26 +1,29 @@
 <?php
 
 class Course extends AppModel {
-	//public $actsAs = array('Containable');
-  //public $belongsTo = array('Department');
-
   public $validate = array(
-      'name' => array(
+      'name_en' => array(
+          'rule' => 'notEmpty'
+      ),
+      'name_tr' => array(
           'rule' => 'notEmpty'
       ),
       'code' => array(
           'rule' => 'notEmpty'
       ),
-       'name' => array(
-          'rule' => 'notEmpty'
-      ),
         'credit' => array(
           'rule' => 'notEmpty'
       ),
-         'outcomes' => array(
+         'outcomes_en' => array(
           'rule' => 'notEmpty'
       ),
-         'description' => array(
+         'outcomes_tr' => array(
+          'rule' => 'notEmpty'
+      ),
+         'description_en' => array(
+          'rule' => 'notEmpty'
+      ),
+         'description_tr' => array(
           'rule' => 'notEmpty'
       ),
          'ectscredit' => array(

@@ -6,7 +6,7 @@ class CoursesController extends AppController {
 
     public function index() {
         $this->set('courses', $this->Course->find('all', array(
-            'fields' => array('Course.id', 'Course.code', 'Course.name', 'Course.department_id')
+            'fields' => array('Course.id', 'Course.code', 'Course.name_en', 'Course.name_tr', 'Course.department_id')
         )));
     }
 
@@ -24,11 +24,15 @@ class CoursesController extends AppController {
 
     public function add() {
     	$this->loadModel('Department');
-    	$depts = $this->Department->find('list');
+    	$depts = $this->Department->find('list', array(
+            'fields' => array('Department.id', 'Department.name_en')
+        ));
     	$this->set('dept', $depts);
 
         $this->loadModel('Program');
-        $progs = $this->Program->find('list');
+        $progs = $this->Program->find('list', array(
+            'fields' => array('Program.id', 'Program.name_en')
+        ));
         $this->set('prog', $progs);
     	
         if ($this->request->is('post')) {

@@ -1,10 +1,9 @@
 
-<p><?php echo $this->Html->link('Add Department', array('action' => 'add')); ?></p>
+<p><?php echo $this->Html->link('Add A Department', array('action' => 'add')); ?></p>
 <table>
     <tr>
         <th>Id</th>
         <th>Title</th>
-        <th>Language</th>
         <th>Edit</th>
         <th>Delete</th>
  </tr>
@@ -14,16 +13,13 @@
         <td><?php echo $post['Department']['id']; ?></td>
         <td>
          <?php 
-         echo $this->Html->link($post['Department']['name'],
+         echo $this->Html->link($post['Department']['name_en'].' / '.$post['Department']['name_tr'],
 			array(
 			'controller' => 'department', 
 			'action' => 'edit',
 			 $post['Department']['id']));
 		 ?>
         </td>
-
-<td>   
-            <img src="<?php echo $this->webroot; ?>/img/<?php echo $post['Department']['langid']; ?>.png" /></td>
 
         <td> 
         	  <?php echo $this->Html->link('Edit', array('action' => 'edit', $post['Department']['id'])); ?>

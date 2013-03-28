@@ -6,7 +6,7 @@
 	    	App::import("Model", "Department");
 			$model = new Department();
 			$a = $model->findById($dept_id);
-			echo $a['Department']['name'];
+			echo $a['Department']['name_en'].' / '.$a['Department']['name_tr'];
 	    }
 	}
 ?>
