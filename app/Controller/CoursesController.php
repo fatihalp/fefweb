@@ -22,6 +22,25 @@ class CoursesController extends AppController {
         $this->set('course', $course);
     }
 
+    public function currview($id) {
+        $this->loadModel('Program');
+        $b = $this->Program->findById($id);
+        $this->set('b', $b);
+
+        $this->layout = 'guest_'.Configure::read('Config.language');
+        if (!$id) {
+            throw new NotFoundException(__('Invalid course'));
+        }
+
+        $a = $this->Course->find('all', array('conditions' => array('Course.program_id' => $id)));
+        if (!$a) {
+            throw new NotFoundException(__('Invalid course'));
+        }
+        $this->set('a', $a);
+        $count = $this->Course->find('count', array('conditions' => array('Course.program_id' => $id), 'fields' => array('DISTINCT Course.ac_term')));
+        $this->set('c', $count);
+    }
+
     public function add() {
     	$this->loadModel('Department');
     	$depts = $this->Department->find('list', array(

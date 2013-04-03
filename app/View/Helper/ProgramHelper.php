@@ -9,9 +9,10 @@
 			$model = new $table();
 			$a = $model->find('all', array('conditions' => array($table.'.department_id' => $id)));
 			foreach ($a as $key => $ar) {
+				echo "<dl><dt></dt><dd>";
 				echo '<a href="'.$this->webroot.$table.'/guestview/'.$id.'/lang:'.$la.'" >'.$ar[$table]['name_'.$la].'</a>';
 
-				echo '<br/>';
+				echo '</dd></dl>';
 			}
 	    }
 	}

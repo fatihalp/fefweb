@@ -74,7 +74,7 @@
           <li><a href="department.php?id=482" title="Turkish Language And Literature">Turkish Language And Literature</a></li>
         </ul>
       </li>
-      <li ><a href="programs.php">Programs</a> </li>
+      <li ><a href="<?php echo $this->webroot; ?>program/guestlist/lang:<?=Configure::read('Config.language')?>">Programs</a> </li>
       </li>
       </li>
       </li>
