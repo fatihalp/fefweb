@@ -1,10 +1,18 @@
 <div id="widecontent">
   <div id="widecontent2">
-    <table width="423" border="1">
-    <?php
-      foreach ($rs as $b):	
+    <table  class = "tabular_info" cellpadding = "0" cellspacing = "0">
+    <tbody>
+    
+      <tr class = "first_row">
+          
+          <td>Department Name</td>
+          <td style = "width: 60px;">E-Mail</td>
+          <td style = "width: 100px;">Telephone</td>
+        </tr>
+        <?php $i = 1;
+      foreach ($rs as $b):  
     ?>
-      <tr>
+      <tr class ="<?php if($i%2 == 0)echo 'even_row'?>">
         <td>
         <?php 
           echo $this->Html->link($this->Lang->get('Department',$b['Department']['id'],'name') ,
@@ -20,10 +28,15 @@
         <td><?php echo $b["Department"]["email"]; ?></td>
         <td><?php echo $b["Department"]["telephone"]; ?></td>
       </tr>
-      <?php
+      <?php $i = $i + 1;
 	      endforeach;  
         unset($post); 
       ?>
+    </tbody>
     </table> 
   </div>
 </div> 
+
+
+<table
+    
