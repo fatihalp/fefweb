@@ -1,7 +1,7 @@
 <?php
 
 class CoursesController extends AppController {
-    public $helpers = array('Html', 'Form', 'Session', 'Department');
+    public $helpers = array('Html', 'Form', 'Session', 'Department', 'Course');
     public $components = array('Session');
 
     public function index() {
@@ -20,6 +20,11 @@ class CoursesController extends AppController {
             throw new NotFoundException(__('Invalid course'));
         }
         $this->set('course', $course);
+    }
+
+    public function guestview($id) {
+        $this->layout = 'guest_'.Configure::read('Config.language');
+        $this->set('a', $this->Course->findById($id));
     }
 
     public function currview($id) {

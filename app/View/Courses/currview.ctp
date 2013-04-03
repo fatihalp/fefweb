@@ -22,7 +22,14 @@
 			?>
 				<tr class ="<?php if($i%2 == 0)echo 'even_row'?>">
 					<td><?php echo $bb['Course']['code'];?></td>
-					<td><a href="#"><?php echo $bb['Course']['name_'.Configure::read('Config.language')];?></a></td>
+					<td>
+						<?php echo $this->Html->link($bb['Course']['name_'.Configure::read('Config.language')],
+							array(
+						    'controller' => 'Courses',
+						    'action' => 'guestview', 
+						     $bb['Course']['id'])
+						); ?>
+					</td>
 					<td><?php echo $bb['Course']['credit'];?></td>
 					<td><?php echo $bb['Course']['ectscredit'];?></td>
 				</tr>
