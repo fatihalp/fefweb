@@ -52,6 +52,8 @@ class PagesController extends AppController {
  * @return void
  */
 	public function display() {
+		 $this->layout = 'guest_'.Configure::read('Config.language');  
+		 // anasayfada guest görünümü çıksın
 		$path = func_get_args();
 
 		$count = count($path);
