@@ -138,8 +138,7 @@
     <!-- // content starts here // -->
         
         <div id="content">
-        <form action="" method="post">
-          
+     
 
 			<?php echo $this->Session->flash(); ?>
 
@@ -149,8 +148,7 @@
               
           
            <div class="clear"></div>
-                                                    
-        </form><!-- END form-->                                              
+                                                                               
         </div><!-- END "#content" -->
          
         <!-- // footer starts here // -->

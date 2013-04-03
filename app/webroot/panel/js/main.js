@@ -1,40 +1,6 @@
 jQuery(document).ready(function(){
-																	
-        ezi_autocomplete();// jQuery UI autocompleter - http://jqueryui.com/demos/autocomplete/
-        ezi_tablesorter();//tablesorter - http://tablesorter.com
-		ezi_tweets();// tweets - @http://tweet.seaofclouds.com/
-	    ezi_toggle_mode();// hide and show pages advance of simple mode			   
-        // notive there's no editor function, at the bottom is the code!
-		ezi_tooltips();//http://onehackoranother.com/projects/jquery/tipsy/
-        ezi_spinner();//basic jQuery
-		ezi_forms_checkbox_radio();// checkbox, radio (input) styling - http://www.verot.net/jquery_select_skin.htm
-		ezi_toggle_box();// toggle box
 		ezi_jqueryui();//jQuery UI tabs - http://jqueryui.com/demos/tabs/
-		ezi_dd_menu();//dropdown menu
-		ezi_dialogs();//dialog messages, notic that the jqueryui dialogs are located in the jqueryui function
-		ezi_show_ctrls();//showing and hiding some ctrls
-		ezi_del_rows();// deleting a row jquery way
-		ezi_lightbox();// lightbox info @ http://www.pirolab.it/pirobox/
-        //ezi_scroll_top();// animated scroll to top
-		ezi_forms_select();// select (input) styling info @ http://www.verot.net/jquery_select_skin.htm
-		ezi_checkAll();// jquery check all checkboxes with one click
-        ezi_browser_dec();// jQuery browser check
-		
-		// new in v1.4		
-		ezi_equalHeight(jQuery(".tab-2, .tabs-ctrls-veri"));
-		ezi_treeview();//http://bassistance.de/jquery-plugins/jquery-plugin-treeview/
-        ezi_forms_upload();// upload (input) styling info @ http://www.appelsiini.net/projects/filestyle
-		ezi_calendar();// calendar info @ http://arshaw.com/fullcalendar/
-
-		//new in 1.7, sorting
-        ezi_sorting();//http://isotope.metafizzy.co/
-		//http://www.position-absolute.com/articles/jquery-form-validator-because-form-validation-is-a-mess/
-        jQuery("#formID1").validationEngine('attach', {promptPosition : "centerRight"});
-		//basic row cloning
-		$('.clone').click(function(){
-        	$(this).parents("form").find('.row:last').clone().css({display: 'none'}).insertBefore(".clone-ctrls").slideDown(400);
-        });
-		
+			ezi_dd_menu();//dropdown menu 
 });
 
 		function ezi_sorting(){

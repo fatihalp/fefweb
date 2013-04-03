@@ -42,13 +42,24 @@ class UserController extends AppController {
     }
 
     public function add() {
+     
+        $this->loadModel('Department');
+        $depts = $this->Department->find('list', array(
+            'fields' => array('Department.id', 'Department.name_en')
+        ));
+        $this->set('dept', $depts);
+
+
         if ($this->request->is('post')) {
             $this->User->create();
-            if ($this->User->save($this->request->data)) {
-
-                $fileOK = $this->uploadFiles('img/files', $this->data['File']);
-
-                
+         
+            if ($this->User->save($this->data)) {
+                $filename = WWW_ROOT.'upload/';
+                $filename .=    $this->User->getInsertID();  
+                $filename .=   '.jpg';
+         
+     echo move_uploaded_file($this->request->data['User']['resim']['tmp_name'],$filename);
+           
                 $this->Session->setFlash(__('The user has been saved'));
                 $this->redirect(array('action' => 'index'));
             } else {
@@ -58,6 +69,16 @@ class UserController extends AppController {
     }
 
     public function edit($id = null) {
+         $r = $this->User->findById($id);
+         $this->set('r', $r);
+
+        $this->loadModel('Department');
+        $depts = $this->Department->find('list', array(
+            'fields' => array('Department.id', 'Department.name_en')
+        ));
+        $this->set('dept', $depts);
+
+         $this->set('id', $id);
         $this->User->id = $id;
         if (!$this->User->exists()) {
             throw new NotFoundException(__('Invalid user'));

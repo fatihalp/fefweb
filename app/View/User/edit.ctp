@@ -20,8 +20,8 @@
             'label' => 'Title In English'
         ));
 
-        echo $this->Form->input('title_en', array(
-            'selected' => $r['User']['title_en'],
+        echo $this->Form->input('title_tr', array(
+            'selected' => $r['User']['title_tr'],
             'options' => array(
                 '-1' => 'Ünvan Yok', 
                 'Yrd. Doç.' => 'Yrd. Doç.', 
@@ -34,8 +34,9 @@
 
     
         echo $this->Form->input('parttime', array(
-            'selected' => $r['User']['type'],
+            'selected' => $r['User']['parttime'],
             'options' => array(  
+                '' => 'Select', 
                 '1' => 'Part Time',   
                 '2' => 'Full Time', 
             ),
@@ -54,14 +55,15 @@
        echo $this->Form->input('url');   
 
             echo $this->Form->input('department_id', array('type' => 'select',
+        'selected' => $r['User']['department_id'],
         'options' => $dept,
-        'selected' => $selected,
         'label' => 'Department'));
+  echo '<img src="';
 
-        
+  echo $this->webroot.'upload/'.$id.'.jpg"';
+  echo ' width="150" height="150" /> ';
 
-
-        echo $this->Form->input('User.resim', array('type' => 'file'));
+       // echo $this->Form->input('User.resim', array('type' => 'file'));
 
 
     ?>
