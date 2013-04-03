@@ -1,10 +1,10 @@
 <?php
 // app/Controller/UsersController.php
-class UsersController extends AppController {
+class UserController extends AppController {
 
- 
-    public $name = 'Users'; 
-
+    public function index() { 
+            $this->set('r', $this->User->find('all'));
+    }
     public function isAuthorized($user) {
         if ($user['role'] == 'admin') {
             return true;
@@ -31,10 +31,7 @@ class UsersController extends AppController {
         $this->redirect($this->Auth->logout());
     }
      
-    public function index() {
-        $this->User->recursive = 0;
-        $this->set('rs', $this->paginate());
-    }
+
 
     public function view($id = null) {
         $this->User->id = $id;
@@ -48,6 +45,10 @@ class UsersController extends AppController {
         if ($this->request->is('post')) {
             $this->User->create();
             if ($this->User->save($this->request->data)) {
+
+                $fileOK = $this->uploadFiles('img/files', $this->data['File']);
+
+                
                 $this->Session->setFlash(__('The user has been saved'));
                 $this->redirect(array('action' => 'index'));
             } else {
