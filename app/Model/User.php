@@ -1,10 +1,7 @@
 <?php
-App::uses('AuthComponent', 'Controller/Component');
+// App::uses('AuthComponent', 'Controller/Component');
 // app/Model/User.php
 class User extends AppModel {
-    public $actsAs = array('Containable');
-    public $hasMany = array('Researchgroupusermap');
-
 /*
     public function beforeSave($options = array()) {
     if (isset($this->data[$this->alias]['password'])) {
@@ -13,7 +10,7 @@ class User extends AppModel {
     return true;
     }
 
-*/
+
     
     public $validate = array(
         'username' => array(
@@ -36,4 +33,5 @@ class User extends AppModel {
             )
         )
     );
+    */
 }

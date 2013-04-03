@@ -169,7 +169,7 @@
 
 	 
 	<?php 
-	//echo $this->element('sql_dump'); 
+	echo $this->element('sql_dump'); 
 	?>
 	   <!-- // Javascript/jQuery // -->
     <!-- Grab Google CDN's jQuery. fall back to local if necessary -->

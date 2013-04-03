@@ -21,7 +21,7 @@
   <tr>
     <td colspan="2"><div id="banner2">
         <form id="search_form" method="get" action="search.php">
-          <a href="http://brahms.emu.edu.tr/Beta/">Home</a> - <a href="login.php">Login</a> - 
+          <a href="<?php echo $this->webroot; ?>">Home</a>
           
           <?php if(Configure::read('Config.language') == 'en') { ?>
 
@@ -50,39 +50,26 @@
 </table><div id="leftcontent">
   <div class="menu">
     <ul>
-      <li ><a href="index.php">Home</a> </li>
+      <li ><a href="<?php echo $this->webroot; ?>">Home</a> </li>
       <li ><a href="<?php echo $this->webroot; ?>/News/guestlist/lang:<?=Configure::read('Config.language')?>">Announcement</a> </li>
 
       <li ><a href="<?php echo $this->webroot; ?>/news/guestview/8/lang:<?=Configure::read('Config.language')?>">Dean's Message</a> </li>
 
-      <li ><a href="academic_staff.php">People</a>
-        <ul>
-          <li><a href="academic_staff.php?browse=typeSel&amp;value=1" title="Faculty Members">Faculty Members</a></li>
-          <li><a href="academic_staff.php?browse=typeSel&amp;value=2" title="Part-time Instructors">Part-Time Instructors</a></li>
-          <li><a href="academic_staff.php?browse=typeSel&amp;value=3" title="Research Assistants">Research Assistants</a></li>
-        </ul>
+      <li ><a href="<?php echo $this->webroot; ?>/User/guestlist/lang:<?=Configure::read('Config.language')?>">People</a>
+        
       </li>
-      <li><a href="department.php">Departments</a>
-        <ul>
-          <li><a href="department.php?id=478" title="Arts, Humanities &amp; Social Sciences">Arts, Humanities &amp; Social Sciences</a></li>
-          <li><a href="department.php?id=582" title="Biological Sciences">Biological Sciences</a></li>
-          <li><a href="department.php?id=485" title="Chemistry">Chemistry</a></li>
-          <li><a href="department.php?id=476" title="Mathematics">Mathematics</a></li>
-          <li><a href="department.php?id=480" title="Physics">Physics</a></li>
-          <li><a href="department.php?id=484" title="Psychology">Psychology</a></li>
-          <li><a href="department.php?id=581" title="Translation &amp; Interpretation">Translation &amp; Interpretation</a></li>
-          <li><a href="department.php?id=482" title="Turkish Language And Literature">Turkish Language And Literature</a></li>
-        </ul>
+      <li><a href="<?php echo $this->webroot; ?>/Department/guestlist/lang:<?=Configure::read('Config.language')?>">Departments</a>
+       
       </li>
       <li ><a href="<?php echo $this->webroot; ?>program/guestlist/lang:<?=Configure::read('Config.language')?>">Programs</a> </li>
       </li>
       </li>
       </li>
-      <li ><a href="links.php">Links</a> </li>
-      <li><a href="visionmission.php">Vision -Mission</a></li>
-      <li><a href="fas_strategic_plan.pdf" target="_blank">Strategic Plan</a></li>
-      <li ><a href="contactus.php">Contact Us</a>
-      <li ><a href="faq.php">FAQ</a> </li>
+      
+      <li><a href="<?php echo $this->webroot; ?>/news/guestview/11/lang:<?=Configure::read('Config.language')?>">Vision -Mission</a></li>
+      <li><a href="<?php echo $this->webroot; ?>/news/guestview/12/lang:<?=Configure::read('Config.language')?>" >Strategic Plan</a></li>
+      <li ><a href="<?php echo $this->webroot; ?>/news/guestview/9/lang:<?=Configure::read('Config.language')?>">Contact Us</a>
+     
     </ul>
   </div></div>
 <?php echo $this->Session->flash(); ?>

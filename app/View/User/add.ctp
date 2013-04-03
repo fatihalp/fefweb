@@ -1,11 +1,13 @@
 <!-- app/View/Users/add.ctp -->
 <div class="users form">
-<?php echo $this->Form->create('User'); ?>
+    <?php echo $this->Form->create('User', array('type' => 'file')); ?>
+ 
     <fieldset>
         <legend><?php echo __('Add User'); ?></legend>
     <?php 
+    
     echo $this->Form->input('title_en', array(
-            'selected' => $post['User']['title_en'] 
+            'selected' => $post['User']['title_en'],
             'options' => array('Male' => 'Male', 'Female' => 'Female'),
             'label' => 'Title In English'
         ));
@@ -13,6 +15,8 @@
             'options' => array('Male' => 'Male', 'Female' => 'Female'),
             'label' => 'Title In Turkish'
         )); 
+    echo $this->Form->input('User.resim', array('between'=>'<br />','type'=>'file'));
+ 
 
         echo $this->Form->input('name');
         echo $this->Form->input('surname');
@@ -39,8 +43,7 @@
         ));
         echo $this->Form->input('departmentid', array(
             'options' => array('Male' => 'Male', 'Female' => 'Female')
-        ));
-         
+        )); 
     ?>
     </fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
