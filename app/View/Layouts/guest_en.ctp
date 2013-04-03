@@ -51,6 +51,8 @@
   <div class="menu">
     <ul>
       <li ><a href="index.php">Home</a> </li>
+      <li ><a href="<?php echo $this->webroot; ?>/News/guestlist/lang:<?=Configure::read('Config.language')?>">Announcement</a> </li>
+
       <li ><a href="<?php echo $this->webroot; ?>/news/guestview/8/lang:<?=Configure::read('Config.language')?>">Dean's Message</a> </li>
 
       <li ><a href="academic_staff.php">People</a>

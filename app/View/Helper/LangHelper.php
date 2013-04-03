@@ -9,5 +9,13 @@
 			$a = $model->findById($id);
 			return $a[$table][$column.'_'.Configure::read('Config.language')];
 	    }
+	    public function ret($table,$id,$column) {
+			
+	    	App::import("Model", $table);
+			$model = new $table();
+			$a = $model->findById($id);
+			return $a[$table][$column.'_'.Configure::read('Config.language')];
+	    }
+
 	}
 ?>

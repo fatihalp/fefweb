@@ -1,19 +1,25 @@
-<?php
+<div id="widecontent">
+  <div id="widecontent2">
+  	<?php
     foreach ($rs as $j):	
 
-    	echo $this->Html->link('Detayları gör', 
+    	
+		?>
+
+ <h2>    <?php echo $this->Html->link($this->Lang->ret('News',$j['News']['id'],'title'), 
     		array(
 			'controller' => 'News', 
 			'action' => 'guestview',
+			'lang'  => Configure::read('Config.language'),
 			 $j['News']['id'])
-    	);
+    	); 
+    	?>
 
-		echo $j["News"]["id"];
-		?>
-
- <h2>    <?php echo $this->Lang->get('News',$j['News']['id'],'title'); ?> </h2>
+</h2>
  <p>    <?php echo $this->Lang->get('News',$j['News']['id'],'body'); ?> </p>
-<?php 
-		echo '<br/>';
+<?php  
 	  endforeach;  
     unset($post); 
+ ?>
+</div>
+</div>

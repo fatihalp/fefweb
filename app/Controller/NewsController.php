@@ -10,8 +10,10 @@ class NewsController extends AppController {
    public function guestlist() {  
        $this->layout = 'guest_'.Configure::read('Config.language');    // ziyaretçinin dile göre layout sayfası seçilecek oto
 
-
-        $j = $this->News->find('all'); 
+  $j = $this->News->find('all',
+         array('conditions' =>  array ( 'News.type' => 'news'  )
+            )
+         );  
         $this->set('rs', $j); 
     }
     public function guestview($id) {
