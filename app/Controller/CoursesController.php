@@ -37,7 +37,9 @@ class CoursesController extends AppController {
             throw new NotFoundException(__('Invalid course'));
         }
         $this->set('a', $a);
-        $count = $this->Course->find('count', array('conditions' => array('Course.program_id' => $id), 'fields' => array('DISTINCT Course.ac_term')));
+        $count = $this->Course->find('count', array('conditions' => array('Course.program_id' => $id), 
+            'fields' => array('DISTINCT Course.ac_term'),
+            'group' => array('Course.ac_term')));
         $this->set('c', $count);
     }
 
