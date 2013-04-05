@@ -33,7 +33,18 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller { 
 
+      public $components = array(
+        'Session',
+        'Auth' => array(
+            'loginRedirect' => array('controller' => 'news', 'action' => 'index'),
+            'logoutRedirect' => array('controller' => 'pages', 'action' => 'display', 'home')
+        )
+    );
+ 
      public function beforeFilter() {
+
+        // $this->Auth->allow('index');
+
         if($this->params['named']['lang'] == '') {
         	$active =  'en';
         } else {

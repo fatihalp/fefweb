@@ -1,11 +1,13 @@
 <?php
 // app/Controller/UsersController.php
 //App::uses('AuthComponent', 'Controller/Component');
-class UserController extends AppController {
+class UsersController extends AppController {
+
+  
 
     public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('guestlist','guestview');
+        $this->Auth->allow('guestlist','guestview','add');
     }
 
     public function login() {
@@ -37,7 +39,6 @@ class UserController extends AppController {
             $this->set('r', $this->User->find('all'));
     } 
 
-
     public function view($id = null) {
         $this->User->id = $id;
         if (!$this->User->exists()) {
@@ -47,9 +48,15 @@ class UserController extends AppController {
     }
 
     public function add() { 
+        $this->loadModel('Department');
+        $depts = $this->Department->find('list', array(
+            'fields' => array('Department.id', 'Department.name_en')
+        ));
+        $this->set('dept', $depts);
+
         if ($this->request->is('post')) {
             $this->User->create();  
-            if ($this->User->save($this->data)) {
+            if ($this->User->save($this->request->data)) {
                 $filename = WWW_ROOT.'upload/';
                 $filename .=    $this->User->getInsertID();  
                 $filename .=   '.jpg';
@@ -62,13 +69,8 @@ class UserController extends AppController {
                 $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
             }
         }
-
-         $this->loadModel('Department');
-        $depts = $this->Department->find('list', array(
-            'fields' => array('Department.id', 'Department.name_en')
-        ));
-        $this->set('dept', $depts);
-
+    
+          
     }
 
     public function edit($id = null) {
@@ -88,6 +90,14 @@ class UserController extends AppController {
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->User->save($this->request->data)) {
+
+                $filename = WWW_ROOT.'upload/';
+                $filename .=   $id; 
+                $filename .=   '.jpg';
+         
+     echo move_uploaded_file($this->request->data['User']['resim']['tmp_name'],$filename);
+          
+
                 $this->Session->setFlash(__('The user has been saved'));
                 $this->redirect(array('action' => 'index'));
             } else {

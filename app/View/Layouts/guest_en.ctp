@@ -55,7 +55,7 @@
 
       <li ><a href="<?php echo $this->webroot; ?>/news/guestview/8/lang:<?=Configure::read('Config.language')?>">Dean's Message</a> </li>
 
-      <li ><a href="<?php echo $this->webroot; ?>/User/guestlist/lang:<?=Configure::read('Config.language')?>">People</a>
+      <li ><a href="<?php echo $this->webroot; ?>/Users/guestlist/lang:<?=Configure::read('Config.language')?>">People</a>
         
       </li>
       <li><a href="<?php echo $this->webroot; ?>/Department/guestlist/lang:<?=Configure::read('Config.language')?>">Departments</a>

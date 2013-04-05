@@ -54,7 +54,7 @@
       <li ><a href="<?php echo $this->webroot; ?>/News/guestlist/lang:<?=Configure::read('Config.language')?>">Haberler</a> </li>
       <li ><a href="<?php echo $this->webroot; ?>/news/guestview/8/lang:<?=Configure::read('Config.language')?>">Dekanın Mesajı</a> </li>
 
-      <li ><a href="<?php echo $this->webroot; ?>/User/guestlist/lang:<?=Configure::read('Config.language')?>">Personeller</a>
+      <li ><a href="<?php echo $this->webroot; ?>/Users/guestlist/lang:<?=Configure::read('Config.language')?>">Kadro</a>
        
       </li>
       <li><a href="<?php echo $this->webroot; ?>/Department/guestlist/lang:<?=Configure::read('Config.language')?>">Bölümler</a>

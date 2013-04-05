@@ -31,6 +31,11 @@ App::uses('AppController', 'Controller');
  */
 class PagesController extends AppController {
 
+	public function beforeFilter() {
+    parent::beforeFilter();
+    $this->Auth->allow('display'); // Letting users register themselves
+	}
+
 /**
  * Controller name
  *
@@ -50,8 +55,10 @@ class PagesController extends AppController {
  *
  * @param mixed What page to display
  * @return void
- */
+ */ 
 	public function display() {
+		
+
 		 $this->layout = 'guest_'.Configure::read('Config.language');  
 		 // anasayfada guest görünümü çıksın
 		$path = func_get_args();

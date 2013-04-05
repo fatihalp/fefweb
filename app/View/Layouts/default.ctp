@@ -40,28 +40,13 @@
 <body>
  <div id="container">
         <header>
-        	<div id="meta-wrap">
-                <ul id="user-meta">
-                     
-                    <li><img src="<?php echo $this->webroot; ?>panel/images/icons/9/005_12.png" alt="" /><a href="#" title="">Logout</a></li>
-                </ul>
-            </div>        
+        	       
             <div id="menu-bar" class="corners shadow">
                 <div class="menu-bar-inner corners">
-                    <a href="index.php" title="" id="logo">
+                    <a href="" title="" id="logo">
                         <h1>FACULTY OF ART AND SCIENCES</h1>
                     </a>
-                    <ul id="menu">
-                        <li class="sep"><a href="index.html" title="">Home</a>
-                            <!-- second level dropdown -->
-                            <ul class="second">
-                                <li><a href="dialogs.html" title="">Dialogs</a></li>
-                                <li><a href="dialogs.html" title="">Dialogs</a></li>
-                                <li><a href="dialogs.html" title="">Dialogs</a></li>
-                                <li><a href="login.html" title="">Login</a></li>
-                            </ul>                    
-                        </li> 
-                    </ul> 
+                    
                 </div>
             </div><!-- END "#menu-bar" -->
             
@@ -86,7 +71,7 @@
                      <li>                      
     <a href="<?php echo $this->webroot; ?>Courses" class="icon-menu corners">
                         <img src="<?php echo $this->webroot; ?>panel/images/icons/48/preferences-desktop-theme.png" alt="" title="" />
-                        <span>Courses / Curriculum</span>
+                        <span>Curriculum</span>
                     </a>
                 </li>  
  
@@ -125,14 +110,7 @@
                                       
             </ul><!-- END "#submenu" -->
              
-            <div id="breadcrumbs" class="corners shadow">
-               
-                <p class="right"><img src="panel/images/icons/9/005_21.png" alt="" />Last modification on: -</p>
-                <div id="mastertoggle">
-                    <a href="javascript:void(null);" title="Close all boxes" class="togglecloseall corners tip"></a> 
-                    <a href="javascript:void(null);" title="Open all boxes" class="toggleopenall corners tip"></a>
-                </div>
-            </div><!-- END "#breadcrumbs" -->                                 
+                                         
         </header><!-- END header -->
      
     <!-- // content starts here // -->
@@ -154,9 +132,14 @@
         <!-- // footer starts here // -->
         
         <footer>
-            <p class="left">MATHCLUB</p>
-            <p class="right">Copyright &copy; 2013 
-                
+            <p class="left">Copyright &copy; 2013  - MATHCLUB</p>
+            <p class="right">
+                <div id="meta-wrap">
+                <ul id="user-meta">
+                     
+                    <li><img src="<?php echo $this->webroot; ?>panel/images/icons/9/005_12.png" alt="" /><a href="<?php echo $this->webroot; ?>Users/logout" title="">Logout</a></li>
+                </ul>
+            </div> 
             </p>
         </footer><!-- END footer --> 
          

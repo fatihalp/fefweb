@@ -1,6 +1,6 @@
 <?php echo $this->Html->link(
     'Add',
-    array('controller' => 'user', 'action' => 'add')
+    array('controller' => 'users', 'action' => 'add')
 ); ?>
 
 <table>

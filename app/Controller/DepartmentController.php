@@ -14,7 +14,7 @@ class DepartmentController  extends AppController {
     }
     public function guestview($id) {  
        $this->layout = 'guest_'.Configure::read('Config.language');    // ziyaretçinin dile göre layout sayfası seçilecek oto
-
+        $this->set('id', $id); 
         $this->loadModel('Department');
         $b = $this->Department->findById($id); 
         $this->set('b', $b); 

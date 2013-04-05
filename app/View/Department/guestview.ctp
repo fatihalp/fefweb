@@ -7,7 +7,12 @@
     <div id="dept_img" style="background-image:url(<?php echo $this->webroot; ?>img/<?=$b['Department']['id']?>.jpg);"></div>
       <ol id="toc">
     <li class="current"><a href="#home">Home</a></li>
-    <li class=""><a href="#ftstaff">Full-time staff</a></li>
+    <li class="">
+
+      <a 
+  href="<?php echo $this->webroot; ?>Users/guestlist/status_en:Full Time/langid:<?=Configure::read('Config.language')?>/department_id:<?=$id?>">Full-time staff</a>
+</li>
+
     <li class=""><a href="#ptstaff">Part-time staff</a></li>
     <li class=""><a href="#assistants">Research assistants</a></li>
     <li class=""><a href="#programs">Programs</a></li>
@@ -19,7 +24,9 @@
   </div>
   <div class="tabbedcontent" id="_ftstaff" style="display: none;">
     <table class="tabular_info" cellpadding="0" cellspacing="0">
-              <tbody><tr>
+              <tbody>
+
+         <!--       <tr>
           <td>
             <a class="tooltip" href="academic_staff.php?id=445">
               Dr. Nazım Mahmudov<img class="linktooltip" src="files/741.jpg" alt="Picture of Nazım Mahmudov">
@@ -29,7 +36,7 @@
           <td>+90 (392) 630 1002</td>
           <td><a href="mailto:nazim.mahmudov@emu.edu.tr">nazim.mahmudov@emu.edu.tr</a></td>
         </tr>
-             
+             -->
               <tr>
           <td>
             <a class="tooltip" href="academic_staff.php?id=424">
@@ -122,12 +129,14 @@
   
  
 <div id="rightcontent">
-  <div class="rightbox">
+
+<!--  <div class="rightbox">
     <i>General Info</i>
     <hr>
     <div class="rightboxinfo"><a href="academic_staff.php?id=445">Chair:<br>Dr. Nazım Mahmudov<br>Professor</a></div>
     <div class="rightboxinfo"><a href="academic_staff.php?id=481">Vice Chair:<br>Dr. Sonuç Zorlu<br>Assoc. Prof.</a></div>
   </div>
+-->
   <div class="rightbox">
     <i>Contact Info</i>
     <hr>

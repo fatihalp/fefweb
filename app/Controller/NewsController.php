@@ -2,8 +2,10 @@
 class NewsController extends AppController { 
     public $helpers = array('Html', 'Form','Session');
 
-
-
+     public function beforeFilter() {
+        parent::beforeFilter();
+        $this->Auth->allow('guestlist','guestview');
+    }
 	public function index() {
 		$this->set('posts', $this->News->find('all'));
 	}
