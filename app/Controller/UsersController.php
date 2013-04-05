@@ -7,7 +7,7 @@ class UsersController extends AppController {
 
     public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('guestlist','guestview','add');
+        $this->Auth->allow('guestlist','guestview');
     }
 
     public function login() {
@@ -24,6 +24,8 @@ class UsersController extends AppController {
     }
 
     public function guestlist() { 
+        $this->params['named']['lang'];
+        
            $this->layout = 'guest_'.Configure::read('Config.language');    // ziyaretçinin dile göre layout sayfası seçilecek oto
             $this->set('row', $this->User->find('all'));
     } 

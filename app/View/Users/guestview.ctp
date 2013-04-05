@@ -9,7 +9,9 @@
   <p><strong><?php  $this->Department->dept_name1($a['User']['department_id']) ; ?> </strong></p>
   <p><strong><?php
 
-   echo $a['User']['parttime']; 
+   echo $a['User']['status_'.Configure::read('Config.language')]; 
+   echo ' ';
+    echo $a['User']['category_'.Configure::read('Config.language')]; 
 
   ?>
 </strong></p>

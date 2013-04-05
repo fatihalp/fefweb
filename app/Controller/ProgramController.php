@@ -2,7 +2,11 @@
 class ProgramController extends AppController {
     public $helpers = array('Html', 'Form', 'Session', 'Lang', 'Program');
     public $components = array('Session');
-
+    
+    public function beforeFilter() {
+        parent::beforeFilter();
+        $this->Auth->allow('guestlist','guestview');
+    }
   
     public function guestlist() {
         $this->layout = 'guest_'.Configure::read('Config.language');

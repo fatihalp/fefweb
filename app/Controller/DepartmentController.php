@@ -2,6 +2,10 @@
 class DepartmentController  extends AppController {
     public $helpers = array('Html', 'Form');
  
+    public function beforeFilter() {
+        parent::beforeFilter();
+        $this->Auth->allow('guestlist','guestview');
+    }
 
     public function index() { 
         $this->set('r', $this->Department->find('all'));

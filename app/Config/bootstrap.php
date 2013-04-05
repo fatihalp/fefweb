@@ -107,3 +107,18 @@ CakeLog::config('error', array(
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
 ));
+
+Cache::config('short', array(
+    'engine' => 'File',
+    'duration' => '+1 hours',
+    'path' => CACHE,
+    'prefix' => 'cake_short_'
+));
+
+// long
+Cache::config('long', array(
+    'engine' => 'File',
+    'duration' => '+999 days', 
+    'probability' => 100,
+    'path' => CACHE . 'long' . DS,
+));

@@ -20,12 +20,12 @@
   </tr>
   <tr>
     <td colspan="2"><div id="banner2">
-        <form id="search_form" method="get" action="search.php">
+        <div  id="search_form">
           <a href="<?php echo $this->webroot; ?>">Home</a>
           
           <?php if(Configure::read('Config.language') == 'en') { ?>
 
-          <a href="<?=Configure::read('Config.languageChange')?>">&nbsp;
+          <a href="<?php echo Configure::read('Config.languageChange'); ?>">&nbsp;
             <img src="<?php echo $this->webroot; ?>images/TurkishFlag.gif">
             Türkçe
           </a>&nbsp;&nbsp;
@@ -34,17 +34,15 @@
 
           <?php if(Configure::read('Config.language') == 'tr') { ?>
             <img src="<?php echo $this->webroot; ?>images/EnglishFlag.gif">
-          <a href="<?=Configure::read('Config.languageChange')?>">&nbsp;
+          <a href="<?php echo Configure::read('Config.languageChange'); ?>">&nbsp;
              
             English
           </a>&nbsp;&nbsp;
 
           <?php }  ?>
+       
 
-
-          <input name="q" type="text" value="Search this website" id="search_key_word" onfocus="if(document.getElementById('search_key_word').value=='Search this website')document.getElementById('search_key_word').value='';" onblur="if(document.getElementById('search_key_word').value=='')document.getElementById('search_key_word').value='Search this website';" />
-          <input type="submit" value="GO!" />
-        </form>
+        </div>
       </div></td>
   </tr>
 </table><div id="leftcontent">
@@ -71,20 +69,57 @@
       <li ><a href="<?php echo $this->webroot; ?>/news/guestview/9/lang:<?=Configure::read('Config.language')?>">Contact Us</a>
      
     </ul>
+
+
   </div></div>
 <?php echo $this->Session->flash(); ?>
 
 			<?php echo $this->fetch('content'); ?>
 
+<br style="clear:both;" />
 <hr style="padding-top:30px; margin-bottom:5px; margin:0px;" />
-<div id="footer" align="center"> 
-  <!---->
-  <table width="100%" border="0" cellpadding="0" cellspacing="0">
-    <tr>
-      <td width="82%" align="center" valign="middle"><p>&copy; EMU - Faculty of Arts and Sciences, All Rights Reserved. <a href="credits.php" target="_blank">Credits</a></p></td>
-      <td width="18%"><div> <a href="http://www.youtube.com/user/emufas" target="_new"><img src="<?php echo $this->webroot; ?>images/youtube.png" border="0"></a> <a href="http://twitter.com/emufas" target="_new"><img src="<?php echo $this->webroot; ?>images/Twitter.png" border="0"></a> <a href="http://www.facebook.com/pages/EMU-Faculty-of-Arts-and-Sciences/168380369888596" target="_new"><img src="<?php echo $this->webroot; ?>images/fb.png" border="0"></a></div></td>
-    </tr>
-  </table>
+<div id="footer" align="center" style="margin:15px; padding:15px; padding-left:150px;   text-align:center !important; width:600px; "> 
+  
+<div>
+   <a href="http://www.youtube.com/user/emufas" target="_new">
+    <img src="<?php echo $this->webroot; ?>images/youtube.png" border="0">
+  </a> 
+
+  <a href="http://twitter.com/emufas" target="_new">
+  <img src="<?php echo $this->webroot; ?>images/Twitter.png" border="0"></a>
+
+   <a href="http://www.facebook.com/pages/EMU-Faculty-of-Arts-and-Sciences/168380369888596" target="_new">
+    <img src="<?php echo $this->webroot; ?>images/fb.png" border="0"></a>
+</div>
+
+       
+<script>
+  (function() {
+    var cx = '000726049824051921483:-y4rnvd6rma';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+   
+
+
+
+
+<div>
+ &copy; EMU - Faculty of Arts and Sciences, All Rights Reserved. <a href="credits.php" target="_blank">Credits</a>
+</div>
+
+
+</div>
+
+
+
 </div>
 </body>
 </html>
