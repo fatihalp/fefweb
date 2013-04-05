@@ -24,10 +24,18 @@ class UsersController extends AppController {
     }
 
     public function guestlist() { 
-        $this->params['named']['lang'];
-        
-           $this->layout = 'guest_'.Configure::read('Config.language');    // ziyaretçinin dile göre layout sayfası seçilecek oto
-            $this->set('row', $this->User->find('all'));
+        $status_en = $this->params['named']['status_en'];
+        if(!empty($status_en)) {
+            $a['conditions']['status_en'] = $status_en;
+        }
+
+        $a = $this->User->find('all',
+                    $a
+            );
+
+           $this->layout = 'guest_'.Configure::read('Config.language');   
+            // ziyaretçinin dile göre layout sayfası seçilecek oto
+            $this->set('row',$a );
     } 
 
     public function guestview($id) {

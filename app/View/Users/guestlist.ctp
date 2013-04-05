@@ -1,5 +1,6 @@
 <div id="widecontent"> <i>ACADEMIC STAFF</i>
   <div id="tabular_info">
+    <!--
     <div id="browser">
       <div id="browser_title"> <strong>BROWSE OPTIONS</strong></div>
       <span class="browse_options">DEPARTMENT:
@@ -16,6 +17,7 @@
       </span><br>
       <br>
     </div>
+-->
     <table class="tabular_info" cellpadding="0" cellspacing="0">
       <tbody>
         <tr class="first_row">

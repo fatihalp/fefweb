@@ -13,7 +13,9 @@
   href="<?php echo $this->webroot; ?>Users/guestlist/status_en:Full Time/langid:<?=Configure::read('Config.language')?>/department_id:<?=$id?>">Full-time staff</a>
 </li>
 
-    <li class=""><a href="#ptstaff">Part-time staff</a></li>
+    <li class=""><a 
+href="<?php echo $this->webroot; ?>Users/guestlist/status_en:Part Time/langid:<?=Configure::read('Config.language')?>/department_id:<?=$id?>">Part-time staff</a></li>
+
     <li class=""><a href="#assistants">Research assistants</a></li>
     <li class=""><a href="#programs">Programs</a></li>
     <!--<li><a href="#courses">Courses</a></li> -->
