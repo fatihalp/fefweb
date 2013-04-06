@@ -45,28 +45,67 @@
         </div>
       </div></td>
   </tr>
-</table><div id="leftcontent">
+</table>
+
+<div id="leftcontent">
   <div class="menu">
     <ul>
-      <li ><a href="<?php echo $this->webroot; ?>">Home</a> </li>
-      <li ><a href="<?php echo $this->webroot; ?>/News/guestlist/lang:<?=Configure::read('Config.language')?>">Announcement</a> </li>
+      <li >
 
-      <li ><a href="<?php echo $this->webroot; ?>/news/guestview/8/lang:<?=Configure::read('Config.language')?>">Dean's Message</a> </li>
+        <?php 
+        echo $this->Html->link(
+     'Home',
+      array(
+            'controller' => 'News',
+           'action' => 'guestlist', 
+           'langid' => Configure::read('Config.language'), 
+           'full_base' => true
+         )
+      );
+      ?>
+  </li>
 
-      <li ><a href="<?php echo $this->webroot; ?>/Users/guestlist/lang:<?=Configure::read('Config.language')?>">People</a>
+      <li >
+        <?php 
+      echo   $this->Html->link('Announcement',
+      array(
+            'controller' => 'News',
+           'action' => 'guestlist', 
+           'langid' => Configure::read('Config.language'), 
+           'full_base' => true
+         )
+      );
+      ?>
+       </li>
+
+      <li >
+        <?php 
+        echo $this->Html->link(
+     "Dean's Message",
+      array(
+            'controller' => 'News',
+           'action' => 'guestlist',6,
+           'langid' => Configure::read('Config.language'), 
+           'full_base' => true,
+
+         )
+      );
+      ?>
+  </li>
+
+  <li >
+    <a href="<?php echo $this->webroot; ?>/Users/guestlist/lang:<?php echo Configure::read('Config.language'); ?>">People</a>
         
       </li>
-      <li><a href="<?php echo $this->webroot; ?>/Department/guestlist/lang:<?=Configure::read('Config.language')?>">Departments</a>
-       
+      <li><a href="<?php echo $this->webroot; ?>/Department/guestlist/lang:<?php echo Configure::read('Config.language'); ?>">Departments</a>
+  
       </li>
-      <li ><a href="<?php echo $this->webroot; ?>program/guestlist/lang:<?=Configure::read('Config.language')?>">Programs</a> </li>
-      </li>
-      </li>
-      </li>
+      <li ><a href="<?php echo $this->webroot; ?>program/guestlist/lang:<?php echo Configure::read('Config.language'); ?>">Programs</a> </li>
+
       
-      <li><a href="<?php echo $this->webroot; ?>/news/guestview/11/lang:<?=Configure::read('Config.language')?>">Vision -Mission</a></li>
-      <li><a href="<?php echo $this->webroot; ?>/news/guestview/12/lang:<?=Configure::read('Config.language')?>" >Strategic Plan</a></li>
-      <li ><a href="<?php echo $this->webroot; ?>/news/guestview/9/lang:<?=Configure::read('Config.language')?>">Contact Us</a>
+      <li><a href="<?php echo $this->webroot; ?>/news/guestview/11/lang:<?php echo Configure::read('Config.language'); ?>">Vision -Mission</a></li>
+      <li><a href="<?php echo $this->webroot; ?>/news/guestview/12/lang:<?php echo Configure::read('Config.language'); ?>" >Strategic Plan</a></li>
+      <li ><a href="<?php echo $this->webroot; ?>/news/guestview/9/lang:<?php echo Configure::read('Config.language'); ?>">Contact Us</a></li>
      
     </ul>
 
@@ -112,7 +151,11 @@
 
 
 <div>
- &copy; EMU - Faculty of Arts and Sciences, All Rights Reserved. <a href="credits.php" target="_blank">Credits</a>
+ &copy; EMU - Faculty of Arts and Sciences, All Rights Reserved. <br/>
+
+ Made with Love in Cyprus
+  <a href="<?php echo $this->webroot; ?>/News/guestview/99/lang:<?php echo Configure::read('Config.language'); ?>" target="_blank">Credits</a>
+
 </div>
 
 

@@ -25,7 +25,7 @@
           
           <?php if(Configure::read('Config.language') == 'en') { ?>
 
-          <a href="<?php echo Configure::read('Config.languageChange'); ?>">&nbsp;
+          <a href="<?php echo Configure::read('Config.language'); ?>">&nbsp;
             <img src="<?php echo $this->webroot; ?>images/TurkishFlag.gif">
             Türkçe
           </a>&nbsp;&nbsp;
@@ -34,7 +34,7 @@
 
           <?php if(Configure::read('Config.language') == 'tr') { ?>
             <img src="<?php echo $this->webroot; ?>images/EnglishFlag.gif">
-          <a href="<?php echo Configure::read('Config.languageChange'); ?>">&nbsp;
+          <a href="<?php echo Configure::read('Config.language'); ?>">&nbsp;
              
             English
           </a>&nbsp;&nbsp;
@@ -49,23 +49,20 @@
   <div class="menu">
     <ul>
       <li ><a href="<?php echo $this->webroot; ?>">Anasayfa</a> </li>
-      <li ><a href="<?php echo $this->webroot; ?>/News/guestlist/lang:<?=Configure::read('Config.language')?>">Haberler</a> </li>
-      <li ><a href="<?php echo $this->webroot; ?>/news/guestview/8/lang:<?=Configure::read('Config.language')?>">Dekanın Mesajı</a> </li>
+      <li ><a href="<?php echo $this->webroot; ?>News/guestlist/lang:<?php echo Configure::read('Config.language'); ?>">Haberler</a> </li>
+      <li ><a href="<?php echo $this->webroot; ?>news/guestview/8/lang:<?php echo Configure::read('Config.language'); ?>">Dekanın Mesajı</a> </li>
 
-      <li ><a href="<?php echo $this->webroot; ?>/Users/guestlist/lang:<?=Configure::read('Config.language')?>">Kadro</a>
+      <li ><a href="<?php echo $this->webroot; ?>Users/guestlist/lang:<?php echo Configure::read('Config.language'); ?>">Kadro</a>
        
       </li>
-      <li><a href="<?php echo $this->webroot; ?>/Department/guestlist/lang:<?=Configure::read('Config.language')?>">Bölümler</a>
-        
-      </li>
-      <li ><a href="<?php echo $this->webroot; ?>program/guestlist/lang:<?=Configure::read('Config.language')?>">Programlar</a> </li>
-      </li>
-      </li>
-      </li>
+
+<li><a href="<?php echo $this->webroot; ?>Department/guestlist/lang:<?php echo Configure::read('Config.language'); ?>">Bölümler</a></li>
+      <li ><a href="<?php echo $this->webroot; ?>Program/guestlist/lang:<?php echo Configure::read('Config.language'); ?>">Programlar</a> </li>
+ 
     
-      <li><a href="<?php echo $this->webroot; ?>/news/guestview/11/lang:<?=Configure::read('Config.language')?>">Vizyon-Misyon</a></li>
-      <li><a href="<?php echo $this->webroot; ?>/news/guestview/12/lang:<?=Configure::read('Config.language')?>" >Stratejik Plan</a></li>
-      <li ><a href="<?php echo $this->webroot; ?>/news/guestview/9/lang:<?=Configure::read('Config.language')?>">İletişim</a>
+      <li><a href="<?php echo $this->webroot; ?>News/guestview/11/lang:<?php echo Configure::read('Config.language'); ?>">Vizyon-Misyon</a></li>
+      <li><a href="<?php echo $this->webroot; ?>News/guestview/12/lang:<?php echo Configure::read('Config.language'); ?>" >Stratejik Plan</a></li>
+      <li ><a href="<?php echo $this->webroot; ?>News/guestview/9/lang:<?php echo Configure::read('Config.language'); ?>">İletişim</a>
     
     </ul>
   </div></div>
@@ -112,7 +109,7 @@
  &copy; DAÜ - Fen Edebiyat Fakültesi, Tüm Hakları saklıdır. 
  <br/>
  Kıbrıs'ta sevgi ile yapılmıştır. 
- <a href="<?php echo $this->webroot; ?>/News/99" target="_blank">Emeği geçenler</a>
+ <a href="<?php echo $this->webroot; ?>/News/guestview/99/lang:<?php echo Configure::read('Config.language'); ?>" target="_blank">Emeği geçenler</a>
  
 </div>
 
