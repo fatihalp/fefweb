@@ -154,7 +154,8 @@
  &copy; EMU - Faculty of Arts and Sciences, All Rights Reserved. <br/>
 
  Made with Love in Cyprus
-  <a href="<?php echo $this->webroot; ?>/News/guestview/99/lang:<?php echo Configure::read('Config.language'); ?>" target="_blank">Credits</a>
+  <a href="<?php echo $this->webroot; ?>News/guestview/12/lang:<?php echo Configure::read('Config.language'); ?>" target="_blank">Credits</a>
+  -- <a href="<?php echo $this->webroot; ?>Users/login">Login </a>
 
 </div>
 

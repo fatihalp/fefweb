@@ -11,6 +11,8 @@ class UsersController extends AppController {
     }
 
     public function login() {
+         $this->layout = 'login';
+
     if ($this->request->is('post')) {
         if ($this->Auth->login()) {
             $this->redirect($this->Auth->redirect());
@@ -26,7 +28,17 @@ class UsersController extends AppController {
     public function guestlist() { 
         $status_en = $this->params['named']['status_en'];
         if(!empty($status_en)) {
-            $a['conditions']['status_en'] = $status_en;
+            $a['conditions']['status_en'] .= $status_en;
+        }
+
+        $category_en = $this->params['named']['category_en'];
+        if(!empty($category_en)) {
+            $a['conditions']['category_en'] .= $category_en;
+        }
+
+        $department_id = $this->params['named']['department_id'];
+        if(!empty($department_id)) {
+            $a['conditions']['department_id'] .= $department_id;
         }
 
         $a = $this->User->find('all',

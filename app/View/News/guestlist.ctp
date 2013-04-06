@@ -9,6 +9,15 @@
 </style>
 
 <div id="centercontent"  style=" background-color:#FFF !important; margin-left: 158px; margin-right: 188px;">
+ 
+Bilinen eksikler
+
+----
+<br/>
+login sayfası
+<br/>
+
+
   	<?php
     foreach ($rs as $j):	
 

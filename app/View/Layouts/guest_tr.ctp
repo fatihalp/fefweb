@@ -109,8 +109,8 @@
  &copy; DAÜ - Fen Edebiyat Fakültesi, Tüm Hakları saklıdır. 
  <br/>
  Kıbrıs'ta sevgi ile yapılmıştır. 
- <a href="<?php echo $this->webroot; ?>/News/guestview/99/lang:<?php echo Configure::read('Config.language'); ?>" target="_blank">Emeği geçenler</a>
- 
+ <a href="<?php echo $this->webroot; ?>News/guestview/12/lang:<?php echo Configure::read('Config.language'); ?>" target="_blank">Emeği geçenler</a>
+   -- <a href="<?php echo $this->webroot; ?>Users/login">Giriş </a>
 </div>
 
 
