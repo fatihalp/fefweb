@@ -84,7 +84,7 @@
      "Dean's Message",
       array(
             'controller' => 'News',
-           'action' => 'guestlist',6,
+           'action' => 'guestview',8,
            'langid' => Configure::read('Config.language'), 
            'full_base' => true,
 

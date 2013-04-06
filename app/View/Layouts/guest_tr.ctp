@@ -50,7 +50,7 @@
     <ul>
       <li ><a href="<?php echo $this->webroot; ?>">Anasayfa</a> </li>
       <li ><a href="<?php echo $this->webroot; ?>News/guestlist/lang:<?php echo Configure::read('Config.language'); ?>">Haberler</a> </li>
-      <li ><a href="<?php echo $this->webroot; ?>news/guestview/8/lang:<?php echo Configure::read('Config.language'); ?>">Dekanın Mesajı</a> </li>
+      <li ><a href="<?php echo $this->webroot; ?>news/guestview/6/lang:<?php echo Configure::read('Config.language'); ?>">Dekanın Mesajı</a> </li>
 
       <li ><a href="<?php echo $this->webroot; ?>Users/guestlist/lang:<?php echo Configure::read('Config.language'); ?>">Kadro</a>
        

@@ -4,6 +4,13 @@ class CoursesController extends AppController {
     public $helpers = array('Html', 'Form', 'Session', 'Department', 'Course');
     public $components = array('Session');
 
+    public function beforeFilter() {
+        parent::beforeFilter();
+        $this->Auth->allow('guestlist','guestview','currview');
+    }
+
+
+
     public function index() {
         $this->set('courses', $this->Course->find('all', array(
             'fields' => array('Course.id', 'Course.code', 'Course.name_en', 'Course.name_tr', 'Course.department_id')

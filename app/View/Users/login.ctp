@@ -1,6 +1,4 @@
-
 <?php echo $this->Form->create('User'); ?>
-
  <div id="login-box" class="corners shadow tabs-ui">
                 <!-- tab ctrls -->
                 <div class="login-box-header corners">
@@ -11,16 +9,13 @@
                         </ul>
                 </div>
 
-
                 <!-- tab 1 -->
                 <div id="tabs-1" class="tabbox">
-
 
 <div class="login-box-info-small corners">
                         <p><?php   echo $this->Session->flash('auth');  ?>
                             <?php echo $this->Session->flash();  ?> </p>
                     </div>
-
 
 
                     <div class="login-box-row-wrap corners">

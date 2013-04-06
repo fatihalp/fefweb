@@ -9,21 +9,9 @@
 </style>
 
 <div id="centercontent"  style=" background-color:#FFF !important; margin-left: 158px; margin-right: 188px;">
- 
-Bilinen eksikler
-
-----
-<br/>
-login sayfası
-<br/>
-
-
   	<?php
     foreach ($rs as $j):	
-
-    	
 		?>
-
 <div style=" " id="box">
  <h2>    <?php echo $this->Html->link($this->Lang->ret('News',$j['News']['id'],'title'), 
     		array(

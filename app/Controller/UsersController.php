@@ -7,7 +7,7 @@ class UsersController extends AppController {
 
     public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('guestlist','guestview');
+        $this->Auth->allow('guestlist','guestview','add');
     }
 
     public function login() {
@@ -15,7 +15,10 @@ class UsersController extends AppController {
 
     if ($this->request->is('post')) {
         if ($this->Auth->login()) {
-            $this->redirect($this->Auth->redirect());
+            $this->redirect(
+                array("controller" => "news", 
+                      "action" => "index")
+            );
         } else {
             $this->Session->setFlash(__('Invalid username or password, try again'));
         }
