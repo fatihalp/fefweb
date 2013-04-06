@@ -13,6 +13,7 @@ class ProgramController extends AppController {
         $b = $this->Program->find('all', array('fields' => array('DISTINCT Program.department_id',)));
         $this->set('rs',$b );
     }
+    
     public function guestview($id) {
         $this->layout = 'guest_'.Configure::read('Config.language');
         $this->set('a', $this->Program->findById($id));
@@ -31,39 +32,34 @@ class ProgramController extends AppController {
 	}
 
     public function edit($id = null) {
-       
-    $this->loadModel('Lang');
-    $j = $this->Lang->find('list', array(
-        'fields' => array('Lang.name')
-    ));
-    $this->set('lang', $j);
+        $this->loadModel('Department');
+        $b = $this->Department->find('list', array(
+            'fields' => array('Department.id', 'Department.name_en')
+            ));
+        $this->set('b', $b);
 
-    $this->loadModel('Department');
-    $b = $this->Department->find('list');
-    $this->set('b', $b);
-
-    if (!$id) {
-        throw new NotFoundException(__('Invalid post'));
-    }
-
-    $post = $this->Program->findById($id);
-    if (!$post) {
-        throw new NotFoundException(__('Invalid post'));
-    }
-
-    if ($this->request->is('post') || $this->request->is('put')) {
-        $this->Program->id = $id;
-        if ($this->Program->save($this->request->data)) {
-            $this->Session->setFlash('Your Program has been updated.');
-            $this->redirect(array('action' => 'index'));
-        } else {
-            $this->Session->setFlash('Unable to update your post.');
+        if (!$id) {
+            throw new NotFoundException(__('Invalid post'));
         }
-    }
 
-    if (!$this->request->data) {
-        $this->request->data = $post;
-    }
+        $post = $this->Program->findById($id);
+        if (!$post) {
+            throw new NotFoundException(__('Invalid post'));
+        }
+
+        if ($this->request->is('post') || $this->request->is('put')) {
+            $this->Program->id = $id;
+            if ($this->Program->save($this->request->data)) {
+                $this->Session->setFlash('Your Program has been updated.');
+                $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash('Unable to update your post.');
+            }
+        }
+
+        if (!$this->request->data) {
+            $this->request->data = $post;
+        }
 	}
 
     public function index() {
@@ -71,17 +67,11 @@ class ProgramController extends AppController {
     }
  
     public function add() {
-    
-    $this->loadModel('Lang');
-    $j = $this->Lang->find('list', array(
-        'fields' => array('Lang.name')
-    ));
-    $this->set('lang', $j);
-
-    $this->loadModel('Department');
-    $b = $this->Department->find('list');
-    $this->set('b', $b);
-
+        $this->loadModel('Department');
+        $b = $this->Department->find('list', array(
+            'fields' => array('Department.id', 'Department.name_en')
+            ));
+        $this->set('b', $b);
 
         if ($this->request->is('post')) {
             $this->Program->create();

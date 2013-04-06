@@ -1,5 +1,6 @@
-<h1>Add Department</h1>
+<h1>Add A Department</h1>
 <?php
+	echo $this->Html->link('Back', array('action' => 'index'));
 	echo $this->Form->create('Department');
 	echo $this->Form->input('name_en');
 	echo $this->Form->input('name_tr');

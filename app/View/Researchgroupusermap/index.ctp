@@ -1,49 +1,41 @@
-<?php echo $this->Html->link(
+<p>&plus;&nbsp;<?php echo $this->Html->link(
     'Add An User To A Research Group',
     array('controller' => 'Researchgroupusermap', 'action' => 'add')
 ); ?>
-
+</p>
 <table>
     <tr>
-        <th>Id</th>
         <th>User</th>
-      
         <th>Research Group</th>
-        <th> Edit Delete</th>
-
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
-
-    <!-- Here is where we loop through our $posts array, printing out post info -->
-
-    <?php 
-
-    foreach ($Researchgroupusermap as $a): ?>
+<?php foreach ($Researchgroupusermap as $a): ?>
     <tr>
-        <td><?php echo $a['Researchgroupusermap']['id']; ?></td>
-
         <td>
-          
-            <?php 
-
-            echo $this->Html->link($a['User']['name'],
-array(
-    'controller' => 'Researchgroupusermap',
-    'action' => 'view', 
-     $a['Researchgroupusermap']['id'])
-); 
- ?>
-
-
+    <?php $full_name = $a['User']['title_en'].' '.$a['User']['name'].' '.$a['User']['surname'];
+        echo $this->Html->link($full_name, array(
+                                'controller' => 'Users',
+                                'action' => 'guestview',
+                                 $a['Researchgroupusermap']['id']),
+                                array('target' => '_blank')
+                            ); 
+    ?>
         </td>
-<td> <?php echo $a['Researchgroup']['name']; ?> </td>
-
+        <td> <?php echo $this->Html->link($a['Researchgroup']['name_en'], array(
+                                            'controller' => 'Researchgroup',
+                                            'action' => 'guestview',
+                                            $a['Researchgroup']['id']),
+                                            array('target' => '_blank'));
+            ?>
+        </td>
         <td><?php echo $this->Html->link('Edit', array('action' => 'edit', $a['Researchgroupusermap']['id'])); ?></td>
-    <td><?php echo $this->Form->postLink(
+        <td><?php echo $this->Form->postLink(
                 'Delete',
                 array('action' => 'delete', $a['Researchgroupusermap']['id']),
                 array('confirm' => 'Are you sure?'));
-            ?></td>
+            ?>
+        </td>
     </tr>
-    <?php endforeach; ?>
-    <?php unset($post); ?>
+    <?php endforeach; unset($post);?>
 </table>

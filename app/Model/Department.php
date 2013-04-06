@@ -14,12 +14,15 @@ class Department extends AppModel {
             'rule' => 'notEmpty'
         ),
          'email' => array(
-            'rule' => 'notEmpty'
+            'rule' => 'email'
         ),
           'officeno' => array(
             'rule' => 'notEmpty'
         ),
            'telephone' => array(
+            'rule' => 'notEmpty'
+        ),
+          'fax' => array(
             'rule' => 'notEmpty'
         ),
            'infrastructure_en' => array(

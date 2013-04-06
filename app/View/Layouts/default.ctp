@@ -44,7 +44,7 @@
             <div id="menu-bar" class="corners shadow">
                 <div class="menu-bar-inner corners">
                     <a href="" title="" id="logo">
-                        <h1>FACULTY OF ART AND SCIENCES</h1>
+                        <h1>FACULTY OF ARTS AND SCIENCES</h1>
                     </a>
                     
                 </div>
@@ -86,7 +86,7 @@
                 <li>                      
                     <a href="<?php echo $this->webroot; ?>Researchgroup" class="icon-menu corners">
                         <img src="<?php echo $this->webroot; ?>panel/images/icons/48/text-x-generic.png" alt="" title="" />
-                        <span>Researchgroup</span>
+                        <span>ResearchGroup</span>
                     </a>
                 </li>  
 

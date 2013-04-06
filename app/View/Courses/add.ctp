@@ -1,7 +1,6 @@
 <h1>Add A New Course</h1>
 <?php 
 	echo $this->Html->link('Back', array('action' => 'index'));
-
 	echo $this->Form->create('Course');
 	echo $this->Form->input('department_id', array('type' => 'select',
 		'options' => $dept,
@@ -16,7 +15,7 @@
 	echo $this->Form->input('name_en');
 	echo $this->Form->input('name_tr');
 	echo $this->Form->input('credit', array('type' => 'text'));
-	echo $this->Form->input('lab_hour', array('label' => 'Laboratory Hour', 'type' => 'text'));
+	echo $this->Form->input('lab_hour', array('label' => 'Laboratory Hour', 'type' => 'text', 'default' => '0'));
 	echo $this->Form->input('lecture_hour', array('label' => 'Lecture Hour', 'type' => 'text'));
 	echo $this->Form->input('ac_term', array('label' => 'Academic Term', 'type' => 'text'));
 	echo $this->Form->input('pre_req1', array('label' => 'Prerequisites Codes'));

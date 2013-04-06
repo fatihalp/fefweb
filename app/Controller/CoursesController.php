@@ -74,11 +74,15 @@ class CoursesController extends AppController {
 
     public function edit($id = null) {
     	$this->loadModel('Department');
-    	$depts = $this->Department->find('list');
+    	$depts = $this->Department->find('list', array(
+            'fields' => array('Department.id', 'Department.name_en')
+        ));
     	$this->set('dept', $depts);
 
         $this->loadModel('Program');
-        $progs = $this->Program->find('list');
+        $progs = $this->Program->find('list', array(
+            'fields' => array('Program.id', 'Program.name_en')
+        ));
         $this->set('prog', $progs);
     	
 	    if (!$id) {

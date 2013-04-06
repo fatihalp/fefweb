@@ -10,35 +10,30 @@ class DepartmentController  extends AppController {
     public function index() { 
         $this->set('r', $this->Department->find('all'));
     }
+    
     public function guestlist() { 
-    $this->layout = 'guest_'.Configure::read('Config.language');    // ziyaretçinin dile göre layout sayfası seçilecek oto 
+        $this->layout = 'guest_'.Configure::read('Config.language');    // ziyaretçinin dile göre layout sayfası seçilecek oto 
     
         $b = $this->Department->find('all'); 
         $this->set('rs', $b); 
     }
+
     public function guestview($id) {  
-       $this->layout = 'guest_'.Configure::read('Config.language');    // ziyaretçinin dile göre layout sayfası seçilecek oto
+        $this->layout = 'guest_'.Configure::read('Config.language');    // ziyaretçinin dile göre layout sayfası seçilecek oto
         $this->set('id', $id); 
         $this->loadModel('Department');
         $b = $this->Department->findById($id); 
         $this->set('b', $b); 
     }
-    public function sil($id) { 
 
+    public function sil($id) { 
 	    if ($this->Department->delete($id)) {
 	        $this->Session->setFlash('The post with id: ' . $id . ' has been deleted.');
 	        $this->redirect(array('action' => 'index'));
 	    }
 	}
 
-
 	public function add() {
-        $this->loadModel('Lang');
-        $j = $this->Lang->find('list', array(
-            'fields' => array('Lang.name')
-        ));
-        $this->set('lang', $j);
-
         if ($this->request->is('post')) {
             $this->Department->create();
             if ($this->Department->save($this->request->data)) {
@@ -50,17 +45,8 @@ class DepartmentController  extends AppController {
         }
     }
 
-
-
     public function edit($id = null) { 
     	$post = $this->Department->findById($id); 
-
-    	$this->loadModel('Lang');
-    $j = $this->Lang->find('list', array(
-        'fields' => array('Lang.name')
-    ));
-
-    $this->set('lang', $j);
 
 	    if ($this->request->is('post') || $this->request->is('put')) {
 	        $this->Department->id = $id;
@@ -76,8 +62,4 @@ class DepartmentController  extends AppController {
 	        $this->request->data = $post;
 	    }
 	}
-
-
-
-
 }

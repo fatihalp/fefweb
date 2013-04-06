@@ -1,9 +1,9 @@
 <h1>Courses</h1>
-<p><?php echo $this->Html->link('Add A Course', array('action' => 'add')); ?></p>
+<p>&plus;&nbsp;<?php echo $this->Html->link('Add A Course', array('controller' => 'Courses', 'action' => 'add')); ?></p>
 <table>
     <tr>
-        <th>Code</th>
-        <th>Name</th>
+        <th>Course Code</th>
+        <th>Course Title (EN / TR)</th>
         <th>Department</th>
         <th>Actions</th>
 

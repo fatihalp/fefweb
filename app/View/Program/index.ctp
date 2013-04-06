@@ -1,50 +1,30 @@
-<?php echo $this->Html->link(
-    'Add a New Program',
-    array('controller' => 'Program', 'action' => 'add')
-); ?>
+<p>&plus;&nbsp;<?php echo $this->Html->link('Add A New Program', array('controller' => 'Program', 'action' => 'add'));?></p>
 <h1>Programs</h1>
 <table>
     <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Language</th>
+        <th>Program Name (EN / TR)</th>
         <th>Edit</th>
         <th>Delete</th>
-
     </tr>
-
-    <!-- Here is where we loop through our $posts array, printing out post info -->
-
-    <?php 
-
-    foreach ($rs as $a): ?>
+<?php foreach ($rs as $a): ?>
     <tr>
-        <td><?php echo $a['Program']['id']; ?></td>
-
         <td>
-          
-            <?php 
-
-            echo $this->Html->link($a['Program']['name'],
-array(
-    'controller' => 'Program',
-    'action' => 'edit',
-     $a['Program']['id'])
-); 
- ?>
-
-
+        <?php 
+            echo $this->Html->link($a['Program']['name_en'].' / '.$a['Program']['name_tr'],
+            array(
+                'controller' => 'Program',
+                'action' => 'edit',
+                 $a['Program']['id'])
+            );
+        ?>
         </td>
-        <td>   
-            <img src="<?php echo $this->webroot; ?>/img/<?php echo $a['Program']['langid']; ?>.png" /></td>
-
         <td><?php echo $this->Html->link('Edit', array('action' => 'edit', $a['Program']['id'])); ?></td>
-    <td><?php echo $this->Form->postLink(
+        <td><?php echo $this->Form->postLink(
                 'Delete',
                 array('action' => 'delete', $a['Program']['id']),
                 array('confirm' => 'Are you sure?'));
-            ?></td>
+            ?>
+        </td>
     </tr>
-    <?php endforeach; ?>
-    <?php unset($post); ?>
+<?php endforeach; unset($post);?>
 </table>

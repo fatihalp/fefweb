@@ -1,75 +1,74 @@
-<!-- app/View/Users/add.ctp --> 
-    <?php  
+<h1>Edit Person Info</h1>
+<?php 
+    echo $this->Html->link('Back', array('action' => 'index'));
+    $dummy_id = null;
     echo $this->Form->create('User', array('enctype' => 'multipart/form-data'));
  
   ?>
-   
     <fieldset>
         <legend> </legend>
     <?php 
     echo $this->Form->input('title_en', array(
-            'selected' => $r['User']['title_en'],
             'options' => array(
-                '' => 'No Title', 
                 'Assistant Professor' => 'Assistant Professor', 
                 'Associate Professor' => 'Associate Professor',
                  'Professor' => 'Professor', 
                 
             ),
-            'label' => 'Title In English'
+            'selected' => $dummy_id,
+            'label' => 'Title (EN)'
         ));
 
     echo $this->Form->input('title_tr', array(
-            'selected' => $r['User']['title_tr'],
             'options' => array(
-                '' => 'Ünvan Yok', 
                 'Yrd. Doç.' => 'Yrd. Doç.', 
                 'Doç.' => 'Doç.',
                  'Prof. ' => 'Prof. ', 
                 
             ),
-            'label' => 'Title In Turkish'
+            'selected' => $dummy_id,
+            'label' => 'Title (TR)'
     ));
 
     
     echo $this->Form->input('status_en', array(
-            'selected' => $r['User']['status_en'],
             'options' => array(  
                 'Part Time' => 'Part Time',   
                 'Full Time' => 'Full Time', 
             ),
-            'label' => 'Status in English'
+            'selected' => $dummy_id,
+            'label' => 'Status (EN)'
     )); 
         echo $this->Form->input('status_tr', array(
-            'selected' => $r['User']['status_tr'],
             'options' => array(  
                 'Yarı Zamanlı' => 'Yarı Zamanlı',   
                 'Tam Zamanlı' => 'Tam Zamanlı', 
             ),
-            'label' => 'Status in Turkish'
+            'selected' => $dummy_id,
+            'label' => 'Status (TR)'
     )); 
 
    
     echo $this->Form->input('category_en', array(
-            'selected' => $r['User']['category_en'],
             'options' => array(  
                 'Faculty Member' => 'Faculty Member',   
                 'Senior Instructor' => 'Senior Instructor', 
                 'Lecturer' => 'Lecturer',
                 'Research Assistant' => 'Research Assistant',  
             ),
-            'label' => 'category in English'
+            'selected' => $dummy_id,
+            'label' => 'Category (EN)'
     )); 
 
     echo $this->Form->input('category_tr', array(
-            'selected' => $r['User']['category_tr'],
             'options' => array(  
                 'Öğretim Üyesi' => 'Öğretim Üyesi',   
                 'Öğretim Görevlisi' => 'Öğretim Görevlisi', 
                 'Okutman' => 'Okutman',
                 'Araştırma Görevlisi' => 'Araştırma Görevlisi',  
             ),
-            'label' => 'category in Turkish'
+            'selected' => $dummy_id,
+            'label' => 'Category (TR)'
     )); 
 
  
@@ -87,7 +86,7 @@
          echo $this->Form->input('department_id', 
             array('type' => 'select',
                     'options' => $dept,
-                    'selected' => $r['User']['department_id'],
+                    'selected' => $dummy_id,
                     'label' => 'Department')
             ); 
 
@@ -96,9 +95,9 @@
   echo $this->webroot.'upload/'.$id.'.jpg"';
   echo ' width="150" height="150" /> ';
 
-      echo $this->Form->input('User.resim', array('type' => 'file'));
+      echo $this->Form->input('User.resim', array('type' => 'file', 'label' => 'Photo'));
 
 
     ?>
     </fieldset>
-<?php echo $this->Form->end('Submit'); ?> 
+<?php echo $this->Form->end('Save'); ?> 
