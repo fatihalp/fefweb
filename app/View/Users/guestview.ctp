@@ -1,4 +1,6 @@
-<div id="centercontent"> <i> <?php echo $a['User']['title_'.Configure::read('Config.language')]; ?> 
+<div id="centercontent" style="font-size: 14px;"> 
+
+  <i> <?php echo $a['User']['title_'.Configure::read('Config.language')]; ?> 
 
 <?php echo $a['User']['name']; ?>
 
@@ -6,6 +8,9 @@
 
     </i>
   <hr>
+  <img src="<?php echo $this->webroot; ?>upload/<?php echo $a['User']['id']; ?>.jpg">
+
+
   <p><strong><?php  $this->Department->dept_name1($a['User']['department_id']) ; ?> </strong></p>
   <p><strong><?php
 
@@ -15,24 +20,44 @@
 
   ?>
 </strong></p>
-  <p><strong>Contact Information:</strong></p>
+  <p><strong>
+     <?php if(Configure::read('Config.language') == 'en') { echo 'Contact Information:'; } ?>  
+      <?php if(Configure::read('Config.language') == 'tr') { echo 'İletişim Bilgileri'; } ?>
+    </strong></p>
+
+
   <dl>
-    <dt>Website:</dt>
+    <dt>
+
+      Website:</dt>
     <dd><?php echo $a['User']['url']; ?></dd>
-    <dt>Telephone:</dt>
+ 
+
+    <dt>
+        <?php if(Configure::read('Config.language') == 'en') { echo 'Telephone'; } ?>  
+      <?php if(Configure::read('Config.language') == 'tr') { echo 'Telefon'; } ?> 
+    </dt>
     <dd><?php echo $a['User']['tel']; ?></dd>
    
-    <dt>Office:</dt>
+    <dt>    <?php if(Configure::read('Config.language') == 'en') { echo 'Office'; } ?>  
+      <?php if(Configure::read('Config.language') == 'tr') { echo 'Ofis No'; } ?> :</dt>
     <dd><?php echo $a['User']['officeno']; ?></dd>
+
     <dt>Email:</dt>
     <dd><a href="mailto:h<?php echo $a['User']['email']; ?>"><?php echo $a['User']['email']; ?></a></dd>
   </dl>
   
 
-<p><strong>Research Interests: </strong></p>
+<p><strong> <?php if(Configure::read('Config.language') == 'en') { echo 'Research Interests: '; } ?>  
+      <?php if(Configure::read('Config.language') == 'tr') { echo 'Araştırma Konuları'; } ?>
+</strong></p>
 <ul>
      <?php echo $a['User']['interests']; ?> 
       </ul>
 
 
 </div>
+<style type="text/css">
+dt { height: 25px; font-size: 14px;  }
+dd { height: 25px; font-size: 14px; font-weight: bold;}
+</style>

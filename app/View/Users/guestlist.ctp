@@ -32,16 +32,18 @@
     ?>
         <tr class="even_row">
           <td>
-<a class="tooltip" href="<?php echo $this->webroot; echo 'Users/guestview/'.$a['User']['id'].'/langid:'.Configure::read('Config.language'); ?>
+<a class="tooltip" href="<?php echo $this->webroot; echo 'Users/guestview/'.$a['User']['id'].'/lang:'.Configure::read('Config.language'); ?>
 "> 
 
-<?php echo $a['User']['title_'.Configure::read('Config.language')]; ?> 
+<?php if(Configure::read('Config.language') == 'tr') { echo $a['User']['title_'.Configure::read('Config.language')]; } ?> 
 
 <?php echo $a['User']['name']; ?>
 
 <?php echo $a['User']['surname']; ?>
  
-   <img class="linktooltip" src="<?php echo $this->webroot; ?>upload/<?php echo $a['User']['id']; ?>.jpg" alt="No picture available"> </a>
+ <?php if(Configure::read('Config.language') == 'en' and $a['User']['title_'.Configure::read('Config.language')] != '') { echo " (".$a['User']['title_'.Configure::read('Config.language')].")"; } ?> 
+
+   <img class="linktooltip" src="<?php echo $this->webroot; ?>upload/<?php echo $a['User']['id']; ?>.jpg" alt=""> </a>
 
       </td>
           <td>
