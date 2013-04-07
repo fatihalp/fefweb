@@ -15,6 +15,7 @@
                  'Professor' => 'Professor', 
                 
             ),
+            'empty' => 'Choose An English Title',
             'selected' => $dummy_id,
             'label' => 'Title (EN)'
         ));
@@ -26,6 +27,7 @@
                  'Prof. ' => 'Prof. ', 
                 
             ),
+            'empty' => 'Choose A Turkish Title',
             'selected' => $dummy_id,
             'label' => 'Title (TR)'
     ));
