@@ -3,11 +3,11 @@
 //App::uses('AuthComponent', 'Controller/Component');
 class UsersController extends AppController {
 
-  
+ // public $helpers = array('Html', 'Form','Session', 'Smoothscroll');
 
     public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('guestlist','guestview','add');
+        $this->Auth->allow('guestlist','guestview','add', 'home');
     }
 
     public function login() {
@@ -23,9 +23,29 @@ class UsersController extends AppController {
             $this->Session->setFlash(__('Invalid username or password, try again'));
         }
         }
-    } 
+    }
+
     public function logout() {
         $this->redirect($this->Auth->logout());
+    }
+
+    public function home() {
+        $this->loadModel('News');
+        $this->layout = 'guest_'.Configure::read('Config.language');    // ziyaretçinin dile göre layout sayfası seçilecek oto
+
+        $result = Cache::read('news_guestlist', 'long');
+        if (!$result) {
+            $result = $this->News->find('all',
+         array('conditions' =>  array ( 'News.type' => 'news'  )
+            )
+         );   
+            Cache::write('news_guestlist', $result, 'long');
+        }  
+         
+        $this->set('rs', $result);
+
+        $home = true;
+        $this->set('home', $home);
     }
 
     public function guestlist() { 

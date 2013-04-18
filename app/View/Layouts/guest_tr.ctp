@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -16,39 +15,50 @@
       <br>
     <img src="<?php echo $this->webroot; ?>images/header_tr.jpg" alt="EMU - Faculty of Arts and Sciences" name="header_script" width="409" height="40" border="0" /></td>
     <td width="100%" id="banner">&nbsp;</td>
-    <td width="301" valign="top" id="banner"><img src="<?php echo $this->webroot; ?>images/diploma.jpg" alt="EMU - Faculty of Arts and Sciences" name="header_script" width="301" height="110" border="0" /></td>
+    <td width="301" valign="top" id="banner"><img src="<?php echo $this->webroot; ?>images/diploma.jpg" alt="EMU - Faculty of Arts and Sciences" name="header_script" width="301" height="110" border="0" />
+    <!--Google Özel Arama-->
+    <script>
+      (function() {
+        var cx = '000726049824051921483:533wwo1wr-4';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+            '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
+    </script>
+    <gcse:searchbox-only></gcse:searchbox-only>
+    </td>
   </tr>
   <tr>
     <td colspan="2"><div id="banner2">
-        <div  id="search_form">
-          <a href="<?php echo $this->webroot; ?>">Anasayfa</a>
-          
-          <?php if(Configure::read('Config.language') == 'en') { ?>
-
-          <a href="<?php echo Configure::read('Config.language'); ?>">&nbsp;
-            <img src="<?php echo $this->webroot; ?>images/TurkishFlag.gif">
-            Türkçe
-          </a>&nbsp;&nbsp;
-
-          <?php }  ?>
-
-          <?php if(Configure::read('Config.language') == 'tr') { ?>
-            <img src="<?php echo $this->webroot; ?>images/EnglishFlag.gif">
-          <a href="<?php echo Configure::read('Config.language'); ?>">&nbsp;
-             
-            English
-          </a>&nbsp;&nbsp;
-
-          <?php }  ?>
- 
-         </div>
+        <div  id="search_form" style = "left: 10px;">
+          <!--<a href="<?php //echo $this->webroot; ?>">Anasayfa</a>-->
+          <img src="<?php echo $this->webroot; ?>images/EnglishFlag.gif">
+          &nbsp;<a href="<?php echo Configure::read('Config.languageChange'); ?>">English</a>
+        </div>
 
       </div></td>
   </tr>
 </table><div id="leftcontent">
   <div class="menu">
     <ul>
-      <li ><a href="<?php echo $this->webroot; ?>">Anasayfa</a> </li>
+      <li >
+
+        <?php 
+        echo $this->Html->link(
+     'Anasayfa',
+      array(
+            'controller' => 'Users',
+           'action' => 'home', 
+           'lang' => Configure::read('Config.language'), 
+           'full_base' => true
+         )
+      );
+      ?>
+    </li>
       <li ><a href="<?php echo $this->webroot; ?>News/guestlist/lang:<?php echo Configure::read('Config.language'); ?>">Haberler</a> </li>
       <li ><a href="<?php echo $this->webroot; ?>news/guestview/6/lang:<?php echo Configure::read('Config.language'); ?>">Dekanın Mesajı</a> </li>
 
@@ -86,24 +96,7 @@
     <img src="<?php echo $this->webroot; ?>images/fb.png" border="0"></a>
 </div>
 
-       
-<script>
-  (function() {
-    var cx = '000726049824051921483:533wwo1wr-4';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//www.google.com/cse/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
-<gcse:searchbox-only></gcse:searchbox-only>
-   
-
-
-
+<!--Google Search buradaydı-->
 
 <div>
  &copy; DAÜ - Fen Edebiyat Fakültesi, Tüm Hakları saklıdır. 
