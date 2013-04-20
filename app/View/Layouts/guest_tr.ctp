@@ -83,20 +83,7 @@
 <br style="clear:both;" />
 <hr style="padding-top:30px; margin-bottom:5px; margin:0px;" />
 <div id="footer" align="center" style="margin:15px; padding:15px; padding-left:150px;   text-align:center !important; width:600px; "> 
-  
-<div>
-   <a href="http://www.youtube.com/user/emufas" target="_new">
-    <img src="<?php echo $this->webroot; ?>images/youtube.png" border="0">
-  </a> 
 
-  <a href="http://twitter.com/emufas" target="_new">
-  <img src="<?php echo $this->webroot; ?>images/Twitter.png" border="0"></a>
-
-   <a href="http://www.facebook.com/pages/EMU-Faculty-of-Arts-and-Sciences/168380369888596" target="_new">
-    <img src="<?php echo $this->webroot; ?>images/fb.png" border="0"></a>
-</div>
-
-<!--Google Search buradaydı-->
 
 <div>
  &copy; DAÜ - Fen Edebiyat Fakültesi, Tüm Hakları saklıdır. 
@@ -104,6 +91,21 @@
  Kıbrıs'ta sevgi ile yapılmıştır. 
  <a href="<?php echo $this->webroot; ?>News/guestview/12/lang:<?php echo Configure::read('Config.language'); ?>" target="_blank">Emeği geçenler</a>
    -- <a href="<?php echo $this->webroot; ?>Users/login">Giriş </a>
+
+ <?php if(!$home): ?>
+    <span style = "position: fixed; padding-left: 250px;">
+       <a href="http://www.youtube.com/user/emufas" target="_new">
+        <img src="<?php echo $this->webroot; ?>images/youtube.png" border="0">
+      </a> 
+
+      <a href="http://twitter.com/emufas" target="_new">
+      <img src="<?php echo $this->webroot; ?>images/Twitter.png" border="0"></a>
+
+       <a href="http://www.facebook.com/pages/EMU-Faculty-of-Arts-and-Sciences/168380369888596" target="_new">
+        <img src="<?php echo $this->webroot; ?>images/fb.png" border="0"></a>
+    </span>
+  <?php endif;?>
+
 </div>
 
 

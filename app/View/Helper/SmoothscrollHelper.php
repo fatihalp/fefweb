@@ -37,7 +37,7 @@
                             'autoScrollStep' => 1,
                             'autoScrollInterval' => 80,
                             'startAtElementId' => 'startAtMe',
-                            'visibleHotSpots' => 'always'
+                            'visibleHotSpots' => ''
                         );
                     else $this->options = $options;
                     $this->divID = $id;

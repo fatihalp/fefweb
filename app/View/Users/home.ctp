@@ -1,13 +1,3 @@
-<style>
-#box a {
-	 font-size:18px; text-decoration:none; color:#036;
-
-}
-#box i {
-	font-size:12px; font-style:italic; float:right;
-}
-</style>
-
 <div id="centercontent">
 	<table width="100%" border="0" cellpadding="0" cellspacing="0">
   		<tr>
@@ -56,16 +46,16 @@
 			<div class="rightboxinfo"><a href="academic_staff.php?id=421">Dean:<br /><strong>Dr. Rza Bashirov<br />Professor</strong></a></div>
 			<div class="rightboxinfo"><a href="academic_staff.php?id=476">Vice Dean:<br /><strong>Dr. Mehmet Bozer<br />Assist. Prof.</strong></a></div>
 			<div class="rightboxinfo"><i>News:</i><br /><hr /><br />
-				<!--SCROLL NEWS-->
-				<ul style = "position: relative;">
+				<!--SCROLL NEWS -->
+				
 					<div id="scrollMe">
-					    <div class="scrollingHotSpotLeft"></div>
-					    <div class="scrollingHotSpotRight"></div>
+					    <div class="scrollingHotSpotLeft" style = "display: none;"></div>
+					    <div class="scrollingHotSpotRight" style = "display: none;"></div>
 					    <div class="scrollWrapper">
 					      	<div class="scrollableArea>"
-					      		<li id="startAtMe">DENEME</li>
+					      		<li id="startAtMe"></li>
 					<?php foreach ($rs as $j): ?> 
-					  			<li>
+					  			<p>
 					  				<b>
 									    <?php echo $this->Html->link($this->Lang->ret('News',$j['News']['id'],'title'), 
 									        array(
@@ -77,13 +67,12 @@
 									      ?>
 									</b>
 									<?php  echo $this->Time->format('m.d.y', $j['News']['modified']); ?>
-					  			</li>
-					  			<br />
+					  			</p>
 					<?php  	endforeach; unset($post); ?>
 					 		</div>
 					 	</div>
 					</div>
-				</ul>
+				
 				<?php $this->Smoothscroll->SmoothDivScroller("scrollMe"); ?>
         	</div>
 		</div>
