@@ -1,3 +1,19 @@
+<?php 
+  if(Configure::read('Config.language') == 'en'){
+    $title1 = "Welcome to EMU Arts and Sciences Faculty's Webpage";
+    $title2 = "EMU Arts and Sciences Faculty Video Tour";
+    $info = "General Info"; $dean = "Dean"; $vDean = "Vice Dean";
+    $news = 'News';
+    $contact = "Contact Info"; $tel = "Telephone"; $fax = "Fax"; $secretary = "Secretary"; $email = "E-Mail";
+  } 
+  if(Configure::read('Config.language') == 'tr'){
+    $title1 = "DAÜ Fen ve Edebiyat Fakültesi' nin Sayfasına Hoşgeldiniz";
+    $title2 = "DAÜ Fen ve Edebiyat Fakültesi Tanıtım Videosu";
+    $info = "Genel Bilgi"; $dean = "Dekan"; $vDean = "Dekan Yardımcısı";
+    $news = 'Haberler';
+    $contact = "İletişim"; $tel = "Telefon No"; $fax = "Faks No"; $secretary = "Sekreter"; $email = "E-Posta";
+  }
+?>
 <div id="centercontent">
 	<table width="100%" border="0" cellpadding="0" cellspacing="0">
   		<tr>
@@ -16,7 +32,7 @@
 		    <td>&nbsp;</td>
   		</tr>
 	</table>	
-	<i>Welcome to EMU Arts and Sciences Faculty's Webpage</i>
+	<i><?php echo $title1;?></i>
 	<hr /><br>
   	<p align="justify">With our faculty members, research oppurtunities, and our  international quality and understanding of continous education, we have been one of the top faculties of Eastern Mediterranean University and one of the best Arts and Sciences faculties in the region. Our main asset is our teaching members, who think universally, are open to innovation, and always develop themselves; and the students they teach. The students who enter the faculty of Arts and Humanities find programs in step with the  times. These programs enable them to gain both theoretical background and skills practiced in the fully-equipped labs. On completing their undergraduate studies, our students find themselves ready and competent to find jobs in the most sought-after professions according to their knowledge and skills, and can study further to become faculty members in their related fields at universities after completing their graduate studies in the fields they have chosen, or they can be employed as teachers upon completing their teacher training certificate program.  All  would-be students  are invited  to the Facultry of Arts and Sciences, where you can get quality education in a broad range of subjects from Literature to Maths, from Computer Sciences to Molecular Biology and Genetics, from Psychology to Translation-Interpretation.</p>
   	<p align="justify">
@@ -28,7 +44,7 @@
     </div><br><br>
     <hr /><br> 
  
-  	<i>Arts and Sciences Faculty Video Tour </i><br><br><br>
+  	<i><?php echo $title2;?></i><br><br><br>
 
   	<table width="100%" border="0" cellpadding="0" cellspacing="0">
   		<tr>
@@ -41,11 +57,11 @@
 
 	<div id="rightcontent">
 		<div class="rightbox">
-			<i>General Info</i>
+			<i><?php echo $info;?></i>
 			<hr />
-			<div class="rightboxinfo"><a href="academic_staff.php?id=421">Dean:<br /><strong>Dr. Rza Bashirov<br />Professor</strong></a></div>
-			<div class="rightboxinfo"><a href="academic_staff.php?id=476">Vice Dean:<br /><strong>Dr. Mehmet Bozer<br />Assist. Prof.</strong></a></div>
-			<div class="rightboxinfo"><i>News:</i><br /><hr /><br />
+			<div class="rightboxinfo"><a href="academic_staff.php?id=421"><?php echo $dean;?>:<br /><strong>Dr. Rza Bashirov<br />Professor</strong></a></div>
+			<div class="rightboxinfo"><a href="academic_staff.php?id=476"><?php echo $vDean;?>:<br /><strong>Dr. Mehmet Bozer<br />Assist. Prof.</strong></a></div>
+			<div class="rightboxinfo"><i><?php echo $news;?>:</i><br /><hr /><br />
 				<!--SCROLL NEWS -->
 				
 					<div id="scrollMe">
@@ -77,12 +93,12 @@
         	</div>
 		</div>
 		<div class="rightbox">
-			<i>Contact Info</i>
+			<i><?php echo $contact;?></i>
 			<hr />
-			<div class="rightboxinfo">Telephone:<br />+90 (392) 630 1251</div>
-			<div class="rightboxinfo">Fax:<br />+90 392 3651604</div>
-			<div class="rightboxinfo">Secretary:<br />Sevtap Tahsiner</div>
-			<div class="rightboxinfo">Email:<br /><a href="mailto:sevtap.tahsiner@emu.edu.tr">sevtap.tahsiner@emu.edu.tr</a></div><br><br><br>
+			<div class="rightboxinfo"><?php echo $tel;?>:<br />+90 (392) 630 1251</div>
+			<div class="rightboxinfo"><?php echo $fax;?>:<br />+90 392 3651604</div>
+			<div class="rightboxinfo"><?php echo $secretary;?>:<br />Sevtap Tahsiner</div>
+			<div class="rightboxinfo"><?php echo $email;?>:<br /><a href="mailto:sevtap.tahsiner@emu.edu.tr">sevtap.tahsiner@emu.edu.tr</a></div><br><br><br>
         	
 		</div>   
 	</div>

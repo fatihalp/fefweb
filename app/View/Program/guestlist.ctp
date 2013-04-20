@@ -1,6 +1,14 @@
+<?php 
+  if(Configure::read('Config.language') == 'en'){
+    $title = 'COMPLETE LIST OF PROGRAMS';
+  } 
+  if(Configure::read('Config.language') == 'tr'){
+    $title = 'TÜM PROGRAMLARIN LİSTESİ';
+  }
+?>
 <div id="widecontent">
 	<div id="widecontent2">
-		<i>COMPLETE LIST OF PROGRAMS</i>
+		<i><?php echo $title?></i>
 		<hr />
 	<?php
 		foreach ($rs as $a){

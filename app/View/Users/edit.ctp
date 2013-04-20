@@ -22,9 +22,9 @@
 
     echo $this->Form->input('title_tr', array(
             'options' => array(
-                'Yrd. Doç.' => 'Yrd. Doç.', 
+                'Yrd. Doç.' => 'Yrd. Doç.',
                 'Doç.' => 'Doç.',
-                 'Prof. ' => 'Prof. ', 
+                 'Prof. ' => 'Prof. ',
                 
             ),
             'empty' => 'Choose A Turkish Title',
@@ -32,65 +32,59 @@
             'label' => 'Title (TR)'
     ));
 
-    
     echo $this->Form->input('status_en', array(
-            'options' => array(  
-                'Part Time' => 'Part Time',   
-                'Full Time' => 'Full Time', 
+            'options' => array(
+                'Part Time' => 'Part Time',
+                'Full Time' => 'Full Time',
             ),
             'selected' => $dummy_id,
             'label' => 'Status (EN)'
-    )); 
+    ));
         echo $this->Form->input('status_tr', array(
-            'options' => array(  
-                'Yarı Zamanlı' => 'Yarı Zamanlı',   
-                'Tam Zamanlı' => 'Tam Zamanlı', 
+            'options' => array(
+                'Yarı Zamanlı' => 'Yarı Zamanlı',
+                'Tam Zamanlı' => 'Tam Zamanlı',
             ),
             'selected' => $dummy_id,
             'label' => 'Status (TR)'
     )); 
 
-   
     echo $this->Form->input('category_en', array(
-            'options' => array(  
-                'Faculty Member' => 'Faculty Member',   
-                'Senior Instructor' => 'Senior Instructor', 
+            'options' => array(
+                'Faculty Member' => 'Faculty Member',
+                'Senior Instructor' => 'Senior Instructor',
                 'Lecturer' => 'Lecturer',
-                'Research Assistant' => 'Research Assistant',  
+                'Research Assistant' => 'Research Assistant',
             ),
             'selected' => $dummy_id,
             'label' => 'Category (EN)'
     )); 
 
     echo $this->Form->input('category_tr', array(
-            'options' => array(  
-                'Öğretim Üyesi' => 'Öğretim Üyesi',   
-                'Öğretim Görevlisi' => 'Öğretim Görevlisi', 
+            'options' => array(
+                'Öğretim Üyesi' => 'Öğretim Üyesi',
+                'Öğretim Görevlisi' => 'Öğretim Görevlisi',
                 'Okutman' => 'Okutman',
-                'Araştırma Görevlisi' => 'Araştırma Görevlisi',  
+                'Araştırma Görevlisi' => 'Araştırma Görevlisi',
             ),
             'selected' => $dummy_id,
             'label' => 'Category (TR)'
-    )); 
+    ));
 
- 
-        echo $this->Form->input('name');
-        echo $this->Form->input('surname');
-
-     echo $this->Form->input('username');
-        echo $this->Form->input('password');
-
-        echo $this->Form->input('email');  
-       echo $this->Form->input('tel');  
-       echo $this->Form->input('officeno');  
-       echo $this->Form->input('url');   
-
-         echo $this->Form->input('department_id', 
-            array('type' => 'select',
-                    'options' => $dept,
-                    'selected' => $dummy_id,
-                    'label' => 'Department')
-            ); 
+    echo $this->Form->input('name');
+    echo $this->Form->input('surname');
+    echo $this->Form->input('username');
+    echo $this->Form->input('password');
+    echo $this->Form->input('email');
+    echo $this->Form->input('tel');
+    echo $this->Form->input('officeno');
+    echo $this->Form->input('url');
+    echo $this->Form->input('department_id',
+        array('type' => 'select',
+                'options' => $dept,
+                'selected' => $dummy_id,
+                'label' => 'Department')
+        );
 
   echo '<img src="';
 
@@ -99,7 +93,7 @@
 
       echo $this->Form->input('User.resim', array('type' => 'file', 'label' => 'Photo'));
 
-
+      echo $this->Form->input('interests', array('rows' => '5', 'label' => 'Research Interests'));
     ?>
     </fieldset>
 <?php echo $this->Form->end('Save'); ?> 

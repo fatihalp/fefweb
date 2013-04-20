@@ -88,7 +88,7 @@
             );
         echo $this->Form->input('User.resim', array('type' => 'file', 'label' => 'Photo'));
 
-
+        echo $this->Form->input('interests', array('rows' => '5', 'label' => 'Research Interests'));
     ?>
     </fieldset>
 <?php echo $this->Form->end('Save'); ?> 

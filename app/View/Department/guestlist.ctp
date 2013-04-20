@@ -1,3 +1,11 @@
+<?php 
+  if(Configure::read('Config.language') == 'en'){
+    $dept_name = 'Department Name'; $tel = 'Telephone'; $email = 'E-Mail';
+  } 
+  if(Configure::read('Config.language') == 'tr'){
+    $dept_name = 'Bölüm Adı'; $tel = 'Ofis Telefonu'; $email = 'E-Posta';
+  }
+?>
 <div id="widecontent">
   <div id="widecontent2">
     <table  class = "tabular_info" cellpadding = "0" cellspacing = "0">
@@ -5,9 +13,9 @@
     
       <tr class = "first_row">
           
-          <td>Department Name</td>
-          <td style = "width: 60px;">E-Mail</td>
-          <td style = "width: 100px;">Telephone</td>
+          <td><?php echo $dept_name;?></td>
+          <td style = "width: 60px;"><?php echo $email;?></td>
+          <td style = "width: 100px;"><?php echo $tel;?></td>
         </tr>
         <?php $i = 1;
       foreach ($rs as $b):  

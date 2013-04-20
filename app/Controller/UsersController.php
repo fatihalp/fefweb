@@ -48,29 +48,37 @@ class UsersController extends AppController {
         $this->set('home', $home);
     }
 
-    public function guestlist() { 
-        $status_en = $this->params['named']['status_en'];
-        if(!empty($status_en)) {
-            $a['conditions']['status_en'] .= $status_en;
+    public function guestlist() {
+        $this->loadModel('Department');
+        $depts = $this->Department->find('list', array(
+            'fields' => array('Department.id', 'Department.name_'.Configure::read('Config.language'))
+        ));
+        $this->set('dept', $depts);
+
+        $cats = $this->User->find('list', array(
+            'fields' => array('User.category_'.Configure::read('Config.language'), 'User.category_'.Configure::read('Config.language'))
+        ));
+        $this->set('cats', $cats);
+
+
+        if ($this->request->is('post')) {
+            $cat = $this->request->data['Filter']['category_'.Configure::read('Config.language')];
+            if(!empty($cat)) {
+                $a['conditions']['category_'.Configure::read('Config.language')] .= $cat;
+                $this->set('cat', $cat);
+            }
+            $department_id = $this->request->data['Filter']['department_id'];
+            if(!empty($department_id)) {
+                $a['conditions']['department_id'] .= $department_id;
+                $this->set('dept_id', $department_id);
+            }
         }
 
-        $category_en = $this->params['named']['category_en'];
-        if(!empty($category_en)) {
-            $a['conditions']['category_en'] .= $category_en;
-        }
+        $a = $this->User->find('all', $a);
 
-        $department_id = $this->params['named']['department_id'];
-        if(!empty($department_id)) {
-            $a['conditions']['department_id'] .= $department_id;
-        }
-
-        $a = $this->User->find('all',
-                    $a
-            );
-
-           $this->layout = 'guest_'.Configure::read('Config.language');   
+        $this->layout = 'guest_'.Configure::read('Config.language');   
             // ziyaretçinin dile göre layout sayfası seçilecek oto
-            $this->set('row',$a );
+        $this->set('row',$a );
     } 
 
     public function guestview($id) {
