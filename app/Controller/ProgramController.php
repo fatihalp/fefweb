@@ -63,7 +63,8 @@ class ProgramController extends AppController {
 	}
 
     public function index() {
-        $this->set('rs', $this->Program->find('all'));
+        $this->set('rs', $this->Program->find('all', array(
+                        'fields' => array('Program.id','Program.name_en','Program.name_tr'))));
     }
  
     public function add() {

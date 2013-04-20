@@ -9,7 +9,7 @@
 <?php foreach ($posts as $News): ?>
     <tr>
         <td>
-            <?php echo $this->Html->link($News['News']['title_tr'].' / '.$News['News']['title_en'],
+            <?php echo $this->Html->link($News['News']['title_en'].' / '.$News['News']['title_tr'],
             array('controller' => 'news', 'action' => 'guestview', $News['News']['id'])); ?>
         </td>
         <td><?php echo $News['News']['expiredate']; ?>&nbsp;&nbsp;&nbsp;</td>

@@ -8,7 +8,8 @@ class DepartmentController  extends AppController {
     }
 
     public function index() { 
-        $this->set('r', $this->Department->find('all'));
+        $this->set('r', $this->Department->find('all', array(
+                    'fields' => array('Department.id','Department.name_en','Department.name_tr'))));
     }
     
     public function guestlist() { 

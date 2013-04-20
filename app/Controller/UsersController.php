@@ -73,6 +73,10 @@ class UsersController extends AppController {
                 $this->set('dept_id', $department_id);
             }
         }
+        //Optimization için alt taraf yeterli
+        /*array('fields' => array(
+            'User.id','User.title_'.Configure::read('Config.language'),
+            'User.name','User.surname','User.department_id','User.officeno','User.tel','User.email'));*/
 
         $a = $this->User->find('all', $a);
 
@@ -89,7 +93,8 @@ class UsersController extends AppController {
     }
 
     public function index() { 
-            $this->set('r', $this->User->find('all'));
+            $this->set('r', $this->User->find('all', array(
+            'fields' => array('User.id','User.name','User.surname','User.username','User.email'))));
     } 
 
     public function view($id = null) {

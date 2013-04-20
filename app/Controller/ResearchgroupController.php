@@ -3,7 +3,8 @@ class ResearchgroupController extends AppController {
     public $helpers = array('Html', 'Form');
 
     public function index() {
-        $this->set('researchgroup', $this->Researchgroup->find('all'));
+        $this->set('researchgroup', $this->Researchgroup->find('all', array(
+                    'fields' => array('Researchgroup.id','Researchgroup.name_en','Researchgroup.name_tr'))));
     }
 
     public function guestview($id) {  

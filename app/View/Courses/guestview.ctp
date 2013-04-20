@@ -3,7 +3,7 @@
 	<?php foreach($a as $b){ $dept_name = $this->Lang->ret('Department', $b['department_id'], 'name');?>
 		<i> DEPARTMENT: <?php echo strtoupper($dept_name)?>
 			<br />
-			<?php echo $b['code'].' '.strtoupper($b['name_'.Configure::read('Config.language')]);?>
+			<?php echo $b['code_'.Configure::read('Config.language')].' '.strtoupper($b['name_'.Configure::read('Config.language')]);?>
 		</i>
 		<hr />
 		<p>
@@ -20,7 +20,14 @@
 		</p>
 		<p>
 			<strong>Prerequisite(s):</strong>
-			<?php echo $this->Course->pre_req($b['pre_req1']);?>
+			<?php
+				if(!empty($b['pre_req1'])){
+					$reqs = explode(",", $b['pre_req1']);
+					foreach ($reqs as $req) {
+						echo $this->Course->pre_req($req); 
+					}
+				}else 
+					echo ' - ';?>
 		</p>
 		<p>
 			<strong>Faculty &amp; Department:</strong>

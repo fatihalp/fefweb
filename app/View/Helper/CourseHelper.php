@@ -9,7 +9,7 @@
 			$model = new $table();
 			$a = $model->find('all', array('conditions' => array($table.'.ref_code' => $id)));
 			foreach ($a as $key => $ar) {
-				echo $ar[$table]['name_'.$la].'</a>';
+				echo $ar[$table]['name_'.$la].'<br />';
 			}
 	    }
 	}

@@ -2,7 +2,7 @@
 <p>&plus;&nbsp;<?php echo $this->Html->link('Add A Course', array('controller' => 'Courses', 'action' => 'add')); ?></p>
 <table>
     <tr>
-        <th>Course Code</th>
+        <th>Course Code (EN / TR)</th>
         <th>Course Title (EN / TR)</th>
         <th>Department</th>
         <th>Actions</th>
@@ -13,7 +13,7 @@
     <?php
     foreach ($courses as $course): ?>
     <tr>
-        <td><?php echo $course['Course']['code']; ?></td>
+        <td><?php echo $course['Course']['code_en'].' / '.$course['Course']['code_tr']; ?></td>
         <td>
             <?php echo $this->Html->link($course['Course']['name_en'].' / '.$course['Course']['name_tr'], array('action' => 'view', $course['Course']['id'])); ?> 
         </td>

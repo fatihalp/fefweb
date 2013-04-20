@@ -7,7 +7,8 @@
             $this->Auth->allow('guestlist','guestview');
         }
     	public function index() {
-    		$this->set('posts', $this->News->find('all'));
+    		$this->set('posts', $this->News->find('all', array(
+                        'fields' => array('News.id','News.title_en','News.title_tr','News.expiredate'))));
     	}
 
         public function guestlist() {  

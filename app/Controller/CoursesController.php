@@ -13,7 +13,7 @@ class CoursesController extends AppController {
 
     public function index() {
         $this->set('courses', $this->Course->find('all', array(
-            'fields' => array('Course.id', 'Course.code', 'Course.name_en', 'Course.name_tr', 'Course.department_id')
+            'fields' => array('Course.id', 'Course.code_en', 'Course.code_tr', 'Course.name_en', 'Course.name_tr', 'Course.department_id')
         )));
     }
 
