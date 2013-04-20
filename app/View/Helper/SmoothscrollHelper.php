@@ -9,7 +9,8 @@
 * @@ Plugin coverter : Niceit - tuantinhoc@yahoo.com
 */
     //Javascript file require
-
+    App::uses('HtmlHelper', 'View/Helper');
+    
     $Path = dirname(__FILE__);
     $Path = str_replace("\\", "/", $Path);
     $Path = str_replace("View/Helper", "", $Path);

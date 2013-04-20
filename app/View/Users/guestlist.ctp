@@ -43,7 +43,7 @@
  
  <?php if(Configure::read('Config.language') == 'en' and $a['User']['title_'.Configure::read('Config.language')] != '') { echo " (".$a['User']['title_'.Configure::read('Config.language')].")"; } ?> 
 
-   <img class="linktooltip" src="<?php echo $this->webroot; ?>upload/<?php echo $a['User']['id']; ?>.jpg" alt=""> </a>
+   <img class="linktooltip" width="200" height="250" src="<?php echo $this->webroot; ?>upload/<?php echo $a['User']['id']; ?>.jpg" alt=""> </a>
 
       </td>
           <td>

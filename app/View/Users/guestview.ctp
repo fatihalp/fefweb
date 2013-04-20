@@ -8,7 +8,7 @@
 
     </i>
   <hr>
-  <img src="<?php echo $this->webroot; ?>upload/<?php echo $a['User']['id']; ?>.jpg">
+  <img  width="200" height="250" src="<?php echo $this->webroot; ?>upload/<?php echo $a['User']['id']; ?>.jpg">
 
 
   <p><strong><?php  $this->Department->dept_name1($a['User']['department_id']) ; ?> </strong></p>
