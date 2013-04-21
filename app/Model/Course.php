@@ -8,10 +8,7 @@ class Course extends AppModel {
       'name_tr' => array(
           'rule' => 'notEmpty'
       ),
-      'code_en' => array(
-          'rule' => 'notEmpty'
-      ),
-      'code_tr' => array(
+      'code' => array(
           'rule' => 'notEmpty'
       ),
         'credit' => array(

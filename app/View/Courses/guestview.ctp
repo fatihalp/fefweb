@@ -3,7 +3,7 @@
 	<?php foreach($a as $b){ $dept_name = $this->Lang->ret('Department', $b['department_id'], 'name');?>
 		<i> DEPARTMENT: <?php echo strtoupper($dept_name)?>
 			<br />
-			<?php echo $b['code_'.Configure::read('Config.language')].' '.strtoupper($b['name_'.Configure::read('Config.language')]);?>
+			<?php echo $b['code'].' '.strtoupper($b['name_'.Configure::read('Config.language')]);?>
 		</i>
 		<hr />
 		<p>

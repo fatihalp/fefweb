@@ -12,8 +12,7 @@
 		'selected' => $dummy_id,
 		'label' => 'Program'));
 	echo $this->Form->input('ref_code', array('label' => 'Reference Code'));
-	echo $this->Form->input('code_en', array('label' => 'Course Code (EN)'));
-	echo $this->Form->input('code_tr', array('label' => 'Course Code (TR)'));
+	echo $this->Form->input('code', array('label' => 'Course Code'));
 	echo $this->Form->input('name_en');
 	echo $this->Form->input('name_tr');
 	echo $this->Form->input('credit', array('type' => 'text'));

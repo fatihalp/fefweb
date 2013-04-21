@@ -31,7 +31,7 @@
 				if( $j == $bb['Course']['ac_term'] ) {
 			?>
 				<tr class ="<?php if($i%2 == 0)echo 'even_row'?>">
-					<td><?php echo $bb['Course']['code_'.Configure::read('Config.language')];?></td>
+					<td><?php echo $bb['Course']['code'];?></td>
 					<td>
 						<?php echo $this->Html->link($bb['Course']['name_'.Configure::read('Config.language')],
 							array(

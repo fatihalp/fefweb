@@ -10,7 +10,7 @@
             array('confirm' => 'Are you sure?'));
         ?>
 	</dd>
-	<dt>Code:</dt> <dd><?php echo $course['Course']['code_en'].' / '.$course['Course']['code_tr']; ?></dd>
+	<dt>Code:</dt> <dd><?php echo $course['Course']['code']; ?></dd>
 	<dt>Credit:</dt> <dd><?php echo $course['Course']['credit']; ?></dd>
 	<dt>Prerequisites:</dt> <dd><?php echo $course['Course']['prerequisites']; ?></dd>
 	<dt>Ectscredit:</dt> <dd><?php echo $course['Course']['ectscredit']; ?></dd>
