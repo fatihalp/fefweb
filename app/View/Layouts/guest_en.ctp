@@ -8,6 +8,7 @@
 <title>Departments - Faculty of Arts and Sciences - EMU</title>
 <link href="<?php echo $this->webroot; ?>images/layout.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo $this->webroot; ?>images/style.css" rel="stylesheet" type="text/css" />
+
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
     <td width="210" height="113" align="right" valign="top" id="banner"><a href="http://www.emu.edu.tr"> <img src="<?php echo $this->webroot; ?>images/logo.jpg" alt="EMU" border="0" width="165" height="110" /> </a></td>

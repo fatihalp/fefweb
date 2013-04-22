@@ -21,10 +21,55 @@ class DepartmentController  extends AppController {
 
     public function guestview($id) {  
         $this->layout = 'guest_'.Configure::read('Config.language');    // ziyaretçinin dile göre layout sayfası seçilecek oto
-        $this->set('id', $id); 
-        $this->loadModel('Department');
+        
+        $this->set('id', $id);
         $b = $this->Department->findById($id); 
-        $this->set('b', $b); 
+        $this->set('b', $b);
+
+        $this->loadModel('User');
+        $users = $this->User->find('all', array(
+                                    'fields' => array('User.id', 'User.name','User.surname',
+                                        'User.title_'.Configure::read('Config.language'),'User.email','User.tel','User.officeno'),
+                                    'conditions' => array('department_id' => $id,'status_en' => 'Full Time',
+                                        'category_en' => 'Faculty Member')));
+        $this->set('full', $users);
+
+        $users2 = $this->User->find('all', array(
+                                    'fields' => array('User.id', 'User.name','User.surname',
+                                        'User.title_'.Configure::read('Config.language'),'User.email','User.tel','User.officeno'),
+                                    'conditions' => array('department_id' => $id,'status_en' => 'Part Time',
+                                        'category_en' => 'Senior Instructor')));
+        $this->set('part', $users2);
+
+        $users3 = $this->User->find('all', array(
+                                    'fields' => array('User.id', 'User.name','User.surname',
+                                        'User.title_'.Configure::read('Config.language'),'User.email','User.tel','User.officeno'),
+                                    'conditions' => array('department_id' => $id, 'category_en' => 'Research Assistant')));
+        $this->set('assist', $users3);
+
+        $chair = $this->User->find('all', array(
+                                    'fields' => array('User.id', 'User.name','User.surname',
+                                        'User.title_'.Configure::read('Config.language')),
+                                    'conditions' => array('department_id' => $id, 'position' => 'Chair')));
+        $this->set('chair', $chair);
+
+        $vChair = $this->User->find('all', array(
+                                    'fields' => array('User.id', 'User.name','User.surname',
+                                        'User.title_'.Configure::read('Config.language')),
+                                    'conditions' => array('department_id' => $id, 'position' => 'Vice Chair')));
+        $this->set('vChair', $vChair);
+
+        $secretary = $this->User->find('all', array(
+                                    'fields' => array('User.name','User.surname'),
+                                    'conditions' => array('department_id' => $id, 'position' => 'Secretary')));
+        $this->set('secretary', $secretary);
+
+        $this->loadModel('Program');
+        $prog = $this->Program->find('all', array(
+                                    'fields' => array('Program.id', 'Program.name_'.Configure::read('Config.language'),
+                                        'Program.type'),
+                                    'conditions' => array('department_id' => $id)));
+        $this->set('prog', $prog);
     }
 
     public function sil($id) { 

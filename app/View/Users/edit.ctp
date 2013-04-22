@@ -7,12 +7,23 @@
   ?>
     <fieldset>
         <legend> </legend>
-    <?php 
+    <?php
+    echo $this->Form->input('position', array(
+            'options' => array(
+                'Dean' => 'Dean', 
+                'Vice Dean' => 'Vice Dean',
+                 'Chair' => 'Chair',
+                 'Vice Chair' => 'Vice Chair',
+                 'Secretary' => 'Secretary'
+                
+            ),
+            'empty' => 'Choose A Position'
+        ));
     echo $this->Form->input('title_en', array(
             'options' => array(
                 'Assistant Professor' => 'Assistant Professor', 
                 'Associate Professor' => 'Associate Professor',
-                 'Professor' => 'Professor', 
+                 'Professor' => 'Professor'
                 
             ),
             'empty' => 'Choose An English Title',
@@ -24,7 +35,7 @@
             'options' => array(
                 'Yrd. Doç.' => 'Yrd. Doç.',
                 'Doç.' => 'Doç.',
-                 'Prof. ' => 'Prof. ',
+                 'Prof. ' => 'Prof. '
                 
             ),
             'empty' => 'Choose A Turkish Title',
@@ -35,7 +46,7 @@
     echo $this->Form->input('status_en', array(
             'options' => array(
                 'Part Time' => 'Part Time',
-                'Full Time' => 'Full Time',
+                'Full Time' => 'Full Time'
             ),
             'selected' => $dummy_id,
             'label' => 'Status (EN)'
@@ -43,7 +54,7 @@
         echo $this->Form->input('status_tr', array(
             'options' => array(
                 'Yarı Zamanlı' => 'Yarı Zamanlı',
-                'Tam Zamanlı' => 'Tam Zamanlı',
+                'Tam Zamanlı' => 'Tam Zamanlı'
             ),
             'selected' => $dummy_id,
             'label' => 'Status (TR)'
@@ -54,7 +65,7 @@
                 'Faculty Member' => 'Faculty Member',
                 'Senior Instructor' => 'Senior Instructor',
                 'Lecturer' => 'Lecturer',
-                'Research Assistant' => 'Research Assistant',
+                'Research Assistant' => 'Research Assistant'
             ),
             'selected' => $dummy_id,
             'label' => 'Category (EN)'
@@ -65,7 +76,7 @@
                 'Öğretim Üyesi' => 'Öğretim Üyesi',
                 'Öğretim Görevlisi' => 'Öğretim Görevlisi',
                 'Okutman' => 'Okutman',
-                'Araştırma Görevlisi' => 'Araştırma Görevlisi',
+                'Araştırma Görevlisi' => 'Araştırma Görevlisi'
             ),
             'selected' => $dummy_id,
             'label' => 'Category (TR)'

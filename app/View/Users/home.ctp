@@ -59,8 +59,8 @@
 		<div class="rightbox">
 			<i><?php echo $info;?></i>
 			<hr />
-			<div class="rightboxinfo"><a href="academic_staff.php?id=421"><?php echo $dean;?>:<br /><strong>Dr. Rza Bashirov<br />Professor</strong></a></div>
-			<div class="rightboxinfo"><a href="academic_staff.php?id=476"><?php echo $vDean;?>:<br /><strong>Dr. Mehmet Bozer<br />Assist. Prof.</strong></a></div>
+			<div class="rightboxinfo"><a href="<?php echo $this->webroot; echo 'Users/guestview/160/lang:'.Configure::read('Config.language'); ?>"><?php echo $dean;?>:<br /><strong>Dr. Rza Bashirov<br />Professor</strong></a></div>
+			<div class="rightboxinfo"><a href="<?php echo $this->webroot; echo 'Users/guestview/177/lang:'.Configure::read('Config.language'); ?>"><?php echo $vDean;?>:<br /><strong>Dr. Mehmet Bozer<br />Assist. Prof.</strong></a></div>
 			<div class="rightboxinfo"><i><?php echo $news;?>:</i><br /><hr /><br />
 				<!--SCROLL NEWS -->
 				

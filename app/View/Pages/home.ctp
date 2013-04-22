@@ -1,10 +1,6 @@
-
-<h2>Matematik Kulubu - Yazılım Ekibi</h2>
-
-<p>
- <span class="notice success">
- 	Fen Edebiyat Fakültesi Sitesine hoşgeldiniz!
- 	
- </span>
-</p>
-       
+<div id="widecontent">
+	<h2>Matematik Kulübü - Yazılım Ekibi</h2>
+	<p>
+		<span class="notice success">Fen ve Edebiyat Fakültesi sitesi <b>yönetici paneli</b> çıkışınız yapılmıştır!..</span>
+	</p>
+</div>
