@@ -83,6 +83,12 @@ class DepartmentController  extends AppController {
         if ($this->request->is('post')) {
             $this->Department->create();
             if ($this->Department->save($this->request->data)) {
+                $filename = WWW_ROOT.'upload/dept/';
+                $filename .=    $this->Department->getInsertID();  
+                $filename .=   '.jpg';
+         
+                echo move_uploaded_file($this->request->data['Department']['resim']['tmp_name'],$filename);
+
                 $this->Session->setFlash('Your post has been saved.');
                 $this->redirect(array('action' => 'index'));
             } else {
@@ -93,10 +99,16 @@ class DepartmentController  extends AppController {
 
     public function edit($id = null) { 
     	$post = $this->Department->findById($id); 
-
+        $this->set('id', $id);
 	    if ($this->request->is('post') || $this->request->is('put')) {
 	        $this->Department->id = $id;
 	        if ($this->Department->save($this->request->data)) {
+                $filename = WWW_ROOT.'upload/dept/';
+                $filename .=   $id; 
+                $filename .=   '.jpg';
+         
+                echo move_uploaded_file($this->request->data['Department']['resim']['tmp_name'],$filename);
+
 	            $this->Session->setFlash('Your post has been updated.');
 	            $this->redirect(array('action' => 'index'));
 	        } else {

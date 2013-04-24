@@ -17,7 +17,7 @@
 	?>
 	<div id = "tabular_info">
 	<?php for($j = 1; $j <= $c; $j = $j + 1){?>
-		<div class = "back_button"><a href="<?php echo $this->webroot.'Program/guestview/'.$b['Program']['id'].'/lang:'.Configure::read('Config.language'); ?>"><?php echo $back?></a></div>
+		<div class = "back_button"><a href="<?php echo $this->webroot.'Program/guestview/'.$b['Program']['id'].'/lang:'.Configure::read('Config.language'); ?>"><?php echo $back; ?></a></div>
 		<div class = "curriculum_table_title"><?php echo $sem.' '.$j;?></div>
 		<table class = "tabular_info" cellpadding = "0" cellspacing = "0">
 			<tbody>
@@ -32,13 +32,7 @@
 			?>
 				<tr class ="<?php if($i%2 == 0)echo 'even_row'?>">
 					<td><?php echo $bb['Course']['code'];?></td>
-					<td>
-						<?php echo $this->Html->link($bb['Course']['name_'.Configure::read('Config.language')],
-							array(
-						    'controller' => 'Courses',
-						    'action' => 'guestview', 
-						     $bb['Course']['id'])
-						); ?>
+					<td><a href="<?php echo $this->webroot.'courses/guestview/'.$bb['Course']['id'].'/lang:'.Configure::read('Config.language'); ?>"><?php echo $bb['Course']['name_'.Configure::read('Config.language')];?></a>
 					</td>
 					<td><?php echo $bb['Course']['credit'];?></td>
 					<td><?php echo $bb['Course']['ectscredit'];?></td>

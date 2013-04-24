@@ -5,7 +5,7 @@
 <meta http-equiv="Expires" content="now" />
 <meta http-equiv="pragma" content="no-cache" />
 <meta http-equiv="cache-control" content="no-cache" />
-<title>Bölümler - Fen Ve Edebiyat Fakültesi - DAÜ</title>
+<title>Fen ve Edebiyat Fakültesi - DAÜ</title>
 <link href="<?php echo $this->webroot; ?>images/layout.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo $this->webroot; ?>images/style.css" rel="stylesheet" type="text/css" />
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
@@ -35,7 +35,6 @@
   <tr>
     <td colspan="2"><div id="banner2">
         <div  id="search_form" style = "left: 10px;">
-          <!--<a href="<?php //echo $this->webroot; ?>">Anasayfa</a>-->
           <img src="<?php echo $this->webroot; ?>images/EnglishFlag.gif">
           &nbsp;<a href="<?php echo Configure::read('Config.languageChange'); ?>">English</a>
         </div>

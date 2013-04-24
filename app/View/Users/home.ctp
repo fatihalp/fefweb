@@ -2,14 +2,14 @@
   if(Configure::read('Config.language') == 'en'){
     $title1 = "Welcome to EMU Arts and Sciences Faculty's Webpage";
     $title2 = "EMU Arts and Sciences Faculty Video Tour";
-    $info = "General Info"; $dean = "Dean"; $vDean = "Vice Dean";
+    $info = "General Info"; $tdean = "Dean"; $tvDean = "Vice Dean";
     $news = 'News';
     $contact = "Contact Info"; $tel = "Telephone"; $fax = "Fax"; $secretary = "Secretary"; $email = "E-Mail";
   } 
   if(Configure::read('Config.language') == 'tr'){
     $title1 = "DAÜ Fen ve Edebiyat Fakültesi' nin Sayfasına Hoşgeldiniz";
     $title2 = "DAÜ Fen ve Edebiyat Fakültesi Tanıtım Videosu";
-    $info = "Genel Bilgi"; $dean = "Dekan"; $vDean = "Dekan Yardımcısı";
+    $info = "Genel Bilgi"; $tdean = "Dekan"; $tvDean = "Dekan Yardımcısı";
     $news = 'Haberler';
     $contact = "İletişim"; $tel = "Telefon No"; $fax = "Faks No"; $secretary = "Sekreter"; $email = "E-Posta";
   }
@@ -34,8 +34,10 @@
 	</table>	
 	<i><?php echo $title1;?></i>
 	<hr /><br>
+<?php if(Configure::read('Config.language') == 'en'){ ?>
   	<p align="justify">With our faculty members, research oppurtunities, and our  international quality and understanding of continous education, we have been one of the top faculties of Eastern Mediterranean University and one of the best Arts and Sciences faculties in the region. Our main asset is our teaching members, who think universally, are open to innovation, and always develop themselves; and the students they teach. The students who enter the faculty of Arts and Humanities find programs in step with the  times. These programs enable them to gain both theoretical background and skills practiced in the fully-equipped labs. On completing their undergraduate studies, our students find themselves ready and competent to find jobs in the most sought-after professions according to their knowledge and skills, and can study further to become faculty members in their related fields at universities after completing their graduate studies in the fields they have chosen, or they can be employed as teachers upon completing their teacher training certificate program.  All  would-be students  are invited  to the Facultry of Arts and Sciences, where you can get quality education in a broad range of subjects from Literature to Maths, from Computer Sciences to Molecular Biology and Genetics, from Psychology to Translation-Interpretation.</p>
   	<p align="justify">
+<?php }else echo '<p align="justify">Çeviri Bekleniyor!..</p>'; ?>
     
     <div>
     	<a href="http://www.youtube.com/user/emufas" target="_new"> <img src="<?php echo $this->webroot; ?>images/youtube.png" border="0"></a>
@@ -59,8 +61,10 @@
 		<div class="rightbox">
 			<i><?php echo $info;?></i>
 			<hr />
-			<div class="rightboxinfo"><a href="<?php echo $this->webroot; echo 'Users/guestview/160/lang:'.Configure::read('Config.language'); ?>"><?php echo $dean;?>:<br /><strong>Dr. Rza Bashirov<br />Professor</strong></a></div>
-			<div class="rightboxinfo"><a href="<?php echo $this->webroot; echo 'Users/guestview/177/lang:'.Configure::read('Config.language'); ?>"><?php echo $vDean;?>:<br /><strong>Dr. Mehmet Bozer<br />Assist. Prof.</strong></a></div>
+			<div class="rightboxinfo"><a href="<?php echo $this->webroot; echo 'Users/guestview/'.$dean[0]['User']['id'].'/lang:'.Configure::read('Config.language'); ?>"><?php echo $tdean;?>:<br /><strong>Dr. 
+				<?php echo $dean[0]['User']['name'].''.$dean[0]['User']['surname'].'<br />'.$dean[0]['User']['title_'.Configure::read('Config.language')]?></strong></a></div>
+			<div class="rightboxinfo"><a href="<?php echo $this->webroot; echo 'Users/guestview/'.$vDean[0]['User']['id'].'/lang:'.Configure::read('Config.language'); ?>"><?php echo $tvDean;?>:<br /><strong>Dr. 
+				<?php echo $vDean[0]['User']['name'].''.$vDean[0]['User']['surname'].'<br />'.$vDean[0]['User']['title_'.Configure::read('Config.language')]?></strong></a></div>
 			<div class="rightboxinfo"><i><?php echo $news;?>:</i><br /><hr /><br />
 				<!--SCROLL NEWS -->
 				

@@ -5,7 +5,7 @@
 <meta http-equiv="Expires" content="now" />
 <meta http-equiv="pragma" content="no-cache" />
 <meta http-equiv="cache-control" content="no-cache" />
-<title>Departments - Faculty of Arts and Sciences - EMU</title>
+<title>Faculty of Arts and Sciences - EMU</title>
 <link href="<?php echo $this->webroot; ?>images/layout.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo $this->webroot; ?>images/style.css" rel="stylesheet" type="text/css" />
 
@@ -36,7 +36,6 @@
   <tr>
     <td colspan="2"><div id="banner2">
         <div  id="search_form" style = "left: 10px;">
-          <!--<a href="<?php //echo $this->webroot; ?>">Home</a>-->
           <img src="<?php echo $this->webroot; ?>images/TurkishFlag.gif">&nbsp;
           <a href="<?php echo Configure::read('Config.languageChange'); ?>">Türkçe</a>
         </div>

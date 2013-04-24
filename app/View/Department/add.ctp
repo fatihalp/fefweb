@@ -1,7 +1,7 @@
 <h1>Add A Department</h1>
 <?php
 	echo $this->Html->link('Back', array('action' => 'index'));
-	echo $this->Form->create('Department');
+	echo $this->Form->create('Department', array('enctype' => 'multipart/form-data'));
 	echo $this->Form->input('name_en');
 	echo $this->Form->input('name_tr');
 	echo $this->Form->input('summary_en', array('rows' => '3'));
@@ -15,5 +15,6 @@
 	echo $this->Form->input('code');
 	echo $this->Form->input('telephone');
 	echo $this->Form->input('fax');
+	echo $this->Form->input('Department.resim', array('type' => 'file', 'label' => 'Photo (Width must be 1000px)'));
 	echo $this->Form->end('Save');
 ?>

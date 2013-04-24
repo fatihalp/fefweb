@@ -30,6 +30,9 @@ class UsersController extends AppController {
     }
 
     public function home() {
+        $home = true; //Disables social media icons in footer
+        $this->set('home', $home);
+
         $this->loadModel('News');
         $this->layout = 'guest_'.Configure::read('Config.language');    // ziyaretçinin dile göre layout sayfası seçilecek oto
 
@@ -44,8 +47,15 @@ class UsersController extends AppController {
          
         $this->set('rs', $result);
 
-        $home = true;
-        $this->set('home', $home);
+        $dean = $this->User->find('all', array('fields' => array('User.id', 
+                                                    'User.title_'.Configure::read('Config.language'), 'User.name', 'User.surname'),
+                                                'conditions' => array('position' => 'Dean')));
+        $this->set('dean', $dean);
+
+        $vDean = $this->User->find('all', array('fields' => array('User.id', 
+                                                    'User.title_'.Configure::read('Config.language'), 'User.name', 'User.surname'),
+                                                'conditions' => array('position' => 'Vice Dean')));
+        $this->set('vDean', $vDean);
     }
 
     public function guestlist() {
@@ -119,7 +129,7 @@ class UsersController extends AppController {
                 $filename .=    $this->User->getInsertID();  
                 $filename .=   '.jpg';
          
-     echo move_uploaded_file($this->request->data['User']['resim']['tmp_name'],$filename);
+                echo move_uploaded_file($this->request->data['User']['resim']['tmp_name'],$filename);
           
                 $this->Session->setFlash(__('The user has been saved'));
                 $this->redirect(array('action' => 'index'));
@@ -141,20 +151,18 @@ class UsersController extends AppController {
         ));
         $this->set('dept', $depts);
 
-         $this->set('id', $id);
+        $this->set('id', $id);
         $this->User->id = $id;
         if (!$this->User->exists()) {
             throw new NotFoundException(__('Invalid user'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->User->save($this->request->data)) {
-
                 $filename = WWW_ROOT.'upload/';
                 $filename .=   $id; 
                 $filename .=   '.jpg';
          
-     echo move_uploaded_file($this->request->data['User']['resim']['tmp_name'],$filename);
-          
+                echo move_uploaded_file($this->request->data['User']['resim']['tmp_name'],$filename);
 
                 $this->Session->setFlash(__('The user has been saved'));
                 $this->redirect(array('action' => 'index'));

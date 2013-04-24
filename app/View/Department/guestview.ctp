@@ -26,7 +26,7 @@
 <div id="centercontent" class="dept">
   <i><?php echo $dept_en.strtoupper($b['Department']['name_'.Configure::read('Config.language')]).$dept_tr;?></i>
   <hr />
-    <div id="dept_img"></div>
+    <div id="dept_img" style="background-image: url(<?php echo $this->webroot.'upload/dept/'.$b['Department']['id'].'.jpg'; ?>);"></div>
   <div id="tabs">
     <ul>
       <li><a href="#tabs-1"><?php echo $t1;?></a></li>
