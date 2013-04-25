@@ -59,11 +59,6 @@ class DepartmentController  extends AppController {
                                     'conditions' => array('department_id' => $id, 'position' => 'Vice Chair')));
         $this->set('vChair', $vChair);
 
-        $secretary = $this->User->find('all', array(
-                                    'fields' => array('User.name','User.surname'),
-                                    'conditions' => array('department_id' => $id, 'position' => 'Secretary')));
-        $this->set('secretary', $secretary);
-
         $this->loadModel('Program');
         $prog = $this->Program->find('all', array(
                                     'fields' => array('Program.id', 'Program.name_'.Configure::read('Config.language'),

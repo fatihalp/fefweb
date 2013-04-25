@@ -159,7 +159,7 @@
     <i><?php echo $contact;?></i>
     <hr />
     <div class="rightboxinfo"><?php echo $tel;?>:<br /><?php echo $b['Department']['telephone'];?></div>
-    <div class="rightboxinfo"><?php echo $fax;?>:<br /><?php echo $b['Department']['fax'];?></div>   <div class="rightboxinfo"><?php echo $sect;?>:<br /><?php echo $secretary[0]['User']['name'].' '.$secretary[0]['User']['surname'];?></div>
+    <div class="rightboxinfo"><?php echo $fax;?>:<br /><?php echo $b['Department']['fax'];?></div>   <div class="rightboxinfo"><?php echo $sect;?>:<br /><?php echo $b['Department']['secretary'];?></div>
     <div class="rightboxinfo"><?php echo $email;?>:<br /><a href="mailto:<?php echo $b['Department']['email'];?>"><?php echo $b['Department']['email'];?></a></div>
   </div>
 </div>
