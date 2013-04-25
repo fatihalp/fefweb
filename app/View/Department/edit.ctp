@@ -17,8 +17,8 @@
 	echo $this->Form->input('fax');
 	echo '<img src="';
   	echo $this->webroot.'upload/dept/'.$id.'.jpg"';
-  	echo ' width="1000" /> ';
-	echo $this->Form->input('Department.resim', array('type' => 'file', 'label' => 'Photo (Width must be 1000px)'));
+  	echo ' width="1000" height="136"/> ';
+	echo $this->Form->input('Department.resim', array('type' => 'file', 'label' => 'Photo (1000x136 px)'));
     echo $this->Form->input('id', array('type' => 'hidden'));
 	echo $this->Form->end('Save');
 ?>

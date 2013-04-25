@@ -15,6 +15,6 @@
 	echo $this->Form->input('code');
 	echo $this->Form->input('telephone');
 	echo $this->Form->input('fax');
-	echo $this->Form->input('Department.resim', array('type' => 'file', 'label' => 'Photo (Width must be 1000px)'));
+	echo $this->Form->input('Department.resim', array('type' => 'file', 'label' => 'Photo (1000x136 px)'));
 	echo $this->Form->end('Save');
 ?>
