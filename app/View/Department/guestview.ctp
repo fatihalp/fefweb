@@ -1,7 +1,7 @@
 <!--TABS-->
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="<?php echo $this->webroot;?>css/jquery-ui.css" />
+<script src="<?php echo $this->webroot;?>js/jquery-1.9.1.js"></script>
+<script src="<?php echo $this->webroot;?>js/jquery-ui.js"></script>
 <script type="text/javascript">
   $(function() {
     $( "#tabs" ).tabs();
@@ -14,6 +14,7 @@
     $t1 = 'General'; $t2 = 'Full-Time Staff'; $t3 = 'Part-Time Staff'; $t4 = 'Research Assistants'; $t5 = 'Programs';  $total = 'Total';
     $info = "General Info"; $ch = "Chair"; $vCh = "Vice Chair";
     $contact = "Contact Info"; $tel = "Telephone"; $fax = "Fax"; $sect = "Secretary"; $email = "E-Mail";
+    $url_title = 'Department Home Page';
   } 
   if(Configure::read('Config.language') == 'tr'){
     $dept_tr = " BÖLÜMÜ";
@@ -21,6 +22,7 @@
     $info = "Genel Bilgi"; $ch = "Bölüm Başkanı"; $vCh = "Bölüm Başkan Yardımcısı";
     $news = 'Haberler';
     $contact = "İletişim"; $tel = "Telefon No"; $fax = "Faks No"; $sect = "Sekreter"; $email = "E-Posta";
+    $url_title = 'Bölüm Sayfası';
   }
 ?>
 <div id="centercontent" class="dept">
@@ -37,7 +39,10 @@
     </ul>
 
     <div id="tabs-1">
-      <p><?php echo $b['Department']['summary_'.Configure::read('Config.language')]?></p>
+      <p>
+        <br /><b><?php echo $url_title; ?>: </b><a href="<?php echo $b['Department']['url']?>" target="_blank"><?php echo $b['Department']['url']?></a> <br /><br />
+          <?php echo $b['Department']['summary_'.Configure::read('Config.language')]?>
+      </p>
       
       <!--<h2>Statistics</h2>
       <dl>

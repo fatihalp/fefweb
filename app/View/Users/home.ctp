@@ -17,7 +17,7 @@
 <div id="centercontent">
 	<table width="100%" border="0" cellpadding="0" cellspacing="0">
   		<tr>
-    		<td height="203" colspan="2" align="center"><div id="blinds">
+    		<td width="1000" height="203" colspan="2" align="center"><div id="blinds">
     			<img src="<?php echo $this->webroot;?>images/home.jpg" height="203" width="862" />
     		</div></td>
      		<td width="2%">&nbsp;</td>

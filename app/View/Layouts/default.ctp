@@ -71,7 +71,7 @@
                      <li>                      
     <a href="<?php echo $this->webroot; ?>Courses" class="icon-menu corners">
                         <img src="<?php echo $this->webroot; ?>panel/images/icons/48/preferences-desktop-theme.png" alt="" title="" />
-                        <span>Curriculum</span>
+                        <span>Courses</span>
                     </a>
                 </li>  
  
