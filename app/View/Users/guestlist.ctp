@@ -76,7 +76,12 @@
 
 <?php echo $a['User']['surname']; ?>
 
-   <img class="linktooltip" width="200" height="250" src="<?php echo $this->webroot; ?>upload/<?php echo $a['User']['id']; ?>.jpg" alt=""> </a>
+<?php
+  $check_root = APP . 'webroot'.DS.'upload'. DS . $a['User']['id'] . '.jpg';
+  $photo_root = $this->webroot.'upload/'.$a['User']['id'].'.jpg';
+  $default = $this->webroot.'upload/no_photo.jpg';
+?>
+   <img class="linktooltip" width="200" height="250" src="<?php if(file_exists($check_root)) echo $photo_root; else echo $default; ?>" alt=""> </a>
 
       </td>
           <td>

@@ -1,3 +1,21 @@
+<link rel="stylesheet" href="<?php echo $this->webroot;?>css/totemticker.css" />
+<script src="<?php echo $this->webroot;?>js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="<?php echo $this->webroot;?>js/jquery.totemticker.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#vertical-ticker').totemticker({
+			row_height	:	'100px',
+			next		:	'#ticker-next',
+			previous	:	'#ticker-previous',
+			stop		:	'#stop',
+			start		:	'#start',
+			speed       :   1800,
+			interval    :   4000,
+			max_items   :   3,
+			mousestop   :   true,
+		});
+	});
+</script>
 <?php 
   if(Configure::read('Config.language') == 'en'){
     $title1 = "Welcome to EMU Arts and Sciences Faculty's Webpage";
@@ -61,39 +79,40 @@
 		<div class="rightbox">
 			<i><?php echo $info;?></i>
 			<hr />
-			<div class="rightboxinfo"><a href="<?php echo $this->webroot; echo 'Users/guestview/'.$dean[0]['User']['id'].'/lang:'.Configure::read('Config.language'); ?>"><?php echo $tdean;?>:<br /><strong>Dr. 
-				<?php echo $dean[0]['User']['name'].''.$dean[0]['User']['surname'].'<br />'.$dean[0]['User']['title_'.Configure::read('Config.language')]?></strong></a></div>
-			<div class="rightboxinfo"><a href="<?php echo $this->webroot; echo 'Users/guestview/'.$vDean[0]['User']['id'].'/lang:'.Configure::read('Config.language'); ?>"><?php echo $tvDean;?>:<br /><strong>Dr. 
-				<?php echo $vDean[0]['User']['name'].''.$vDean[0]['User']['surname'].'<br />'.$vDean[0]['User']['title_'.Configure::read('Config.language')]?></strong></a></div>
+			<div class="rightboxinfo">
+				<a href="<?php echo $this->webroot; echo 'Users/guestview/'.$dean[0]['User']['id'].'/lang:'.Configure::read('Config.language'); ?>"><?php echo $tdean;?>:<br /><strong>Dr. 
+				<?php echo $dean[0]['User']['name'].''.$dean[0]['User']['surname'].'<br />'.$dean[0]['User']['title_'.Configure::read('Config.language')]?></strong></a>
+			</div>
+			<div class="rightboxinfo">
+				<a href="<?php echo $this->webroot; echo 'Users/guestview/'.$vDean[0]['User']['id'].'/lang:'.Configure::read('Config.language'); ?>"><?php echo $tvDean;?>:<br /><strong>Dr. 
+				<?php echo $vDean[0]['User']['name'].''.$vDean[0]['User']['surname'].'<br />'.$vDean[0]['User']['title_'.Configure::read('Config.language')]?></strong></a>
+			</div>
 			<div class="rightboxinfo"><i><?php echo $news;?>:</i><br /><hr /><br />
-				<!--SCROLL NEWS -->
-				
-					<div id="scrollMe">
-					    <div class="scrollingHotSpotLeft" style = "display: none;"></div>
-					    <div class="scrollingHotSpotRight" style = "display: none;"></div>
-					    <div class="scrollWrapper">
-					      	<div class="scrollableArea>"
-					      		<li id="startAtMe"></li>
-					<?php foreach ($rs as $j): ?> 
-					  			<p>
-					  				<b>
-									    <?php echo $this->Html->link($this->Lang->ret('News',$j['News']['id'],'title'), 
-									        array(
-									      'controller' => 'News', 
-									      'action' => 'guestview',
-									      'lang'  => Configure::read('Config.language'),
-									       $j['News']['id'])
-									      ); 
-									      ?>
-									</b>
-									<?php  echo $this->Time->format('m.d.y', $j['News']['modified']); ?>
-					  			</p>
-					<?php  	endforeach; unset($post); ?>
-					 		</div>
-					 	</div>
-					</div>
-				
-				<?php $this->Smoothscroll->SmoothDivScroller("scrollMe"); ?>
+				<!--TOTEM TICKER-->
+				<div id="wrapper">
+				    <ul id="vertical-ticker">
+						<?php foreach ($rs as $j): ?>
+				  			<li>
+				  				<b>
+								    <?php echo $this->Html->link($this->Lang->ret('News',$j['News']['id'],'title'), 
+								        array(
+								      'controller' => 'News', 
+								      'action' => 'guestview',
+								      'lang'  => Configure::read('Config.language'),
+								       $j['News']['id'])
+								      ); 
+								      ?>
+								</b>
+								<?php  echo $this->Time->format('m.d.y', $j['News']['modified']); ?>
+				  			</li>
+						<?php  	endforeach; unset($post); ?>
+					</ul>
+				 	<p>
+				 		<a href="#" id="ticker-previous" alt="Previous/Önceki">&lt;--&nbsp;&nbsp;</a>
+				 		<a id="start" href="#" alt="Start/Başlat">&nbsp;&nbsp;I&nbsp;&nbsp;</a> / <a id="stop" href="#"  alt="Stop/Durdur">&nbsp;&nbsp;O&nbsp;&nbsp;</a>
+				 		<a href="#" id="ticker-next" alt="Next/Sonraki">&nbsp;&nbsp;--&gt;</a>
+				 	</p>
+				</div>
         	</div>
 		</div>
 		<div class="rightbox">
@@ -103,6 +122,5 @@
 			<div class="rightboxinfo"><?php echo $fax;?>:<br />+90 392 3651604</div>
 			<div class="rightboxinfo"><?php echo $secretary;?>:<br />Sevtap Tahsiner</div>
 			<div class="rightboxinfo"><?php echo $email;?>:<br /><a href="mailto:sevtap.tahsiner@emu.edu.tr">sevtap.tahsiner@emu.edu.tr</a></div><br><br><br>
-        	
 		</div>   
 	</div>

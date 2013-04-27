@@ -12,7 +12,13 @@
 
     </i>
   <hr>
-  <img  width="200" height="250" src="<?php echo $this->webroot; ?>upload/<?php echo $a['User']['id']; ?>.jpg">
+
+<?php
+  $check_root = APP . 'webroot'.DS.'upload'. DS . $a['User']['id'] . '.jpg';
+  $photo_root = $this->webroot.'upload/'.$a['User']['id'].'.jpg';
+  $default = $this->webroot.'upload/no_photo.jpg';
+?>
+  <img  width="200" height="250" src="<?php if(file_exists($check_root)) echo $photo_root; else echo $default; ?>">
 
 
   <p><strong><?php if(Configure::read('Config.language') == 'en') echo 'Department of '; $this->Department->dept_name1($a['User']['department_id']); if(Configure::read('Config.language') == 'tr') echo ' Bölümü'; ?> </strong></p>

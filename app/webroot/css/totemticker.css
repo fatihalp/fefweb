@@ -1,0 +1,35 @@
+/*
+	Totem Ticker Stylesheet
+	Zach Dunn / Build Internet (buildinternet.com)
+	Winter 2011
+*/
+
+#wrapper{
+	padding:0px;
+	width: auto;
+	margin:0 auto;
+}
+
+#wrapper p{text-align:center;}
+#wrapper a {color:#8692D2; text-decoration:none; border-bottom:1px dotted #8692D2;}
+#wrapper a:hover {color:#3D4EBB; text-decoration:none; border-bottom:1px solid #3D4EBB;}
+
+#vertical-ticker{
+	background:#E8EBF0;
+	position: relative;
+	left: -15px;
+	height:400px;
+	overflow:hidden;
+	margin:0; padding:0;
+	-webkit-box-shadow:0 1px 3px rgba(0,0,0, .4);
+}
+
+#vertical-ticker li{
+	padding:35px 20px;
+	display:block;
+	color:#333;
+	border-bottom:1px solid #ddd;
+	text-align:center;
+	font-size:15px;
+	font-family: Helvetica Neue, times, serif;
+}
