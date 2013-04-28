@@ -12,9 +12,7 @@
                 'Dean' => 'Dean', 
                 'Vice Dean' => 'Vice Dean',
                  'Chair' => 'Chair',
-                 'Vice Chair' => 'Vice Chair',
-                 'Secretary' => 'Secretary'
-                
+                 'Vice Chair' => 'Vice Chair'                
             ),
             'empty' => 'Choose A Position'
         ));
@@ -96,9 +94,12 @@
                 'label' => 'Department')
         );
 
-    echo '<img src="';
+    $check_root = APP . 'webroot'.DS.'upload'. DS . $id . '.jpg';
+    $photo_root = $this->webroot.'upload/'.$id.'.jpg"';
+    $default = $this->webroot.'upload/no_photo.jpg"';
 
-    echo $this->webroot.'upload/'.$id.'.jpg"';
+    echo '<img src="';
+    if(file_exists($check_root)) echo $photo_root; else echo $default;
     echo ' width="150" height="150" /> ';
 
     echo $this->Form->input('User.resim', array('type' => 'file', 'label' => 'Photo'));

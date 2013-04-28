@@ -72,7 +72,7 @@
  
     
       <li><a href="<?php echo $this->webroot; ?>News/guestview/11/lang:<?php echo Configure::read('Config.language'); ?>">Vizyon-Misyon</a></li>
-      <li><a href="<?php echo $this->webroot; ?>News/guestview/12/lang:<?php echo Configure::read('Config.language'); ?>" >Stratejik Plan</a></li>
+      <li><a href="#" >Stratejik Plan</a></li>
       <li ><a href="<?php echo $this->webroot; ?>News/guestview/9/lang:<?php echo Configure::read('Config.language'); ?>">İletişim</a>
     
     </ul>

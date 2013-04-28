@@ -11,9 +11,7 @@
                 'Dean' => 'Dean', 
                 'Vice Dean' => 'Vice Dean',
                  'Chair' => 'Chair',
-                 'Vice Chair' => 'Vice Chair',
-                 'Secretary' => 'Secretary'
-                
+                 'Vice Chair' => 'Vice Chair'                
             ),
             'empty' => 'Choose A Position'
         ));
