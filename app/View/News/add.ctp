@@ -1,11 +1,11 @@
 <h1>Add A New Content</h1>
 <?php
-	echo $this->Html->link('Back', array('action' => 'index'));
+	echo $this->Html->link('Back', array('action' => 'index/'.$type));
 	echo $this->Form->create('News');
 	echo $this->Form->input('type', array(
 									'type' => 'select',
 									'options' => array('news'=>'News', 'static'=>'Static'),
-									'empty' => 'Choose A Content Type')
+									'selected' => $type)
 						);
 	echo $this->Form->input('title_en', array('label' => 'Title (EN)'));
 	echo $this->Form->input('title_tr', array('label' => 'Title (TR)'));

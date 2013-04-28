@@ -16,7 +16,7 @@ class UsersController extends AppController {
     if ($this->request->is('post')) {
         if ($this->Auth->login()) {
             $this->redirect(
-                array("controller" => "news", 
+                array("controller" => "department", 
                       "action" => "index")
             );
         } else {
@@ -36,13 +36,13 @@ class UsersController extends AppController {
         $this->loadModel('News');
         $this->layout = 'guest_'.Configure::read('Config.language');    // ziyaretçinin dile göre layout sayfası seçilecek oto
 
-        $result = Cache::read('news_guestlist', 'long');
+        $result = Cache::read('news_guestlist', 'short');
         if (!$result) {
             $result = $this->News->find('all',
-         array('conditions' =>  array ( 'News.type' => 'news'  )
+         array('conditions' =>  array ( 'News.type' => 'news', 'News.expiredate >=' => date("Y-m-d"))
             )
          );   
-            Cache::write('news_guestlist', $result, 'long');
+            Cache::write('news_guestlist', $result, 'short');
         }  
          
         $this->set('rs', $result);

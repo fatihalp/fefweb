@@ -6,11 +6,14 @@
 <meta http-equiv="pragma" content="no-cache" />
 <meta http-equiv="cache-control" content="no-cache" />
 <title>Fen ve Edebiyat Fakültesi - DAÜ</title>
+<link href="<?php echo $this->webroot; ?>images/favicon.ico" type="image/x-icon" rel="icon" />
+<link rel="shortcut icon" href="<?php echo $this->webroot; ?>images/favicon.ico">
 <link href="<?php echo $this->webroot; ?>images/layout.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo $this->webroot; ?>images/style.css" rel="stylesheet" type="text/css" />
+</head>
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
-    <td width="210" height="113" align="right" valign="top" id="banner"><a href="http://www.emu.edu.tr"> <img src="<?php echo $this->webroot; ?>images/logo.jpg" alt="EMU" border="0" width="165" height="110" /> </a></td>
+    <td width="210" height="113" align="right" valign="top" id="banner"><a href="#"> <img src="<?php echo $this->webroot; ?>images/logo.jpg" alt="EMU" border="0" width="165" height="110" /> </a></td>
     <td width="500" height="113" align="center" valign="top" id="banner"><br>
       <br>
     <img src="<?php echo $this->webroot; ?>images/header_tr.jpg" alt="EMU - Faculty of Arts and Sciences" name="header_script" width="409" height="40" border="0" /></td>
@@ -58,7 +61,6 @@
       );
       ?>
     </li>
-      <li ><a href="<?php echo $this->webroot; ?>News/guestlist/lang:<?php echo Configure::read('Config.language'); ?>">Haberler</a> </li>
       <li ><a href="<?php echo $this->webroot; ?>news/guestview/6/lang:<?php echo Configure::read('Config.language'); ?>">Dekanın Mesajı</a> </li>
 
       <li ><a href="<?php echo $this->webroot; ?>Users/guestlist/lang:<?php echo Configure::read('Config.language'); ?>">Kadro</a>
@@ -88,7 +90,7 @@
  &copy; DAÜ - Fen Edebiyat Fakültesi, Tüm Hakları saklıdır. 
  <br/>
  Kıbrıs'ta sevgi ile yapılmıştır. 
- <a href="<?php echo $this->webroot; ?>News/guestview/12/lang:<?php echo Configure::read('Config.language'); ?>" target="_blank">Emeği geçenler</a>
+ <a href="<?php echo $this->webroot; ?>News/guestview/12/lang:<?php echo Configure::read('Config.language'); ?>">Emeği geçenler</a>
    -- <a href="<?php echo $this->webroot; ?>Users/login">Giriş </a>
 
  <?php if(!$home): ?>

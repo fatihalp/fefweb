@@ -2,6 +2,7 @@
 	Totem Ticker Stylesheet
 	Zach Dunn / Build Internet (buildinternet.com)
 	Winter 2011
+	Edited by Yılmaz Demirci for brahms.emu.edu.tr
 */
 
 #wrapper{
@@ -17,7 +18,7 @@
 #vertical-ticker{
 	background:#E8EBF0;
 	position: relative;
-	left: -15px;
+	left: -12px;
 	height:400px;
 	overflow:hidden;
 	margin:0; padding:0;

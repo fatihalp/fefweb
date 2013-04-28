@@ -21,14 +21,14 @@
     $title1 = "Welcome to EMU Arts and Sciences Faculty's Webpage";
     $title2 = "EMU Arts and Sciences Faculty Video Tour";
     $info = "General Info"; $tdean = "Dean"; $tvDean = "Vice Dean";
-    $news = 'News';
+    $news = 'News'; $archive = 'Archive';
     $contact = "Contact Info"; $tel = "Telephone"; $fax = "Fax"; $secretary = "Secretary"; $email = "E-Mail";
   } 
   if(Configure::read('Config.language') == 'tr'){
     $title1 = "DAÜ Fen ve Edebiyat Fakültesi' nin Sayfasına Hoşgeldiniz";
     $title2 = "DAÜ Fen ve Edebiyat Fakültesi Tanıtım Videosu";
     $info = "Genel Bilgi"; $tdean = "Dekan"; $tvDean = "Dekan Yardımcısı";
-    $news = 'Haberler';
+    $news = 'Haberler'; $archive = 'Arşiv';
     $contact = "İletişim"; $tel = "Telefon No"; $fax = "Faks No"; $secretary = "Sekreter"; $email = "E-Posta";
   }
 ?>
@@ -36,7 +36,7 @@
 	<table width="100%" border="0" cellpadding="0" cellspacing="0">
   		<tr>
     		<td width="1000" height="203" colspan="2" align="center"><div id="blinds">
-    			<img src="<?php echo $this->webroot;?>images/home.jpg" height="203" width="862" />
+    			<img id="home_photo" src="<?php echo $this->webroot;?>images/home.jpg" height="203" width="862" style="float: none;" />
     		</div></td>
      		<td width="2%">&nbsp;</td>
   		</tr>
@@ -103,15 +103,16 @@
 								      ); 
 								      ?>
 								</b>
-								<?php  echo $this->Time->format('m.d.y', $j['News']['modified']); ?>
+								<?php  echo $this->Time->format('d.m.Y', $j['News']['modified']); ?>
 				  			</li>
-						<?php  	endforeach; unset($post); ?>
+						<?php  	endforeach; ?>
 					</ul>
 				 	<p>
 				 		<a href="#" id="ticker-previous" alt="Previous/Önceki">&lt;--&nbsp;&nbsp;</a>
 				 		<a id="start" href="#" alt="Start/Başlat">&nbsp;&nbsp;I&nbsp;&nbsp;</a> / <a id="stop" href="#"  alt="Stop/Durdur">&nbsp;&nbsp;O&nbsp;&nbsp;</a>
 				 		<a href="#" id="ticker-next" alt="Next/Sonraki">&nbsp;&nbsp;--&gt;</a>
 				 	</p>
+				 	<p><a href="<?php echo $this->webroot.'news/guestlist/lang:'.Configure::read('Config.language'); ?>"><?php echo $archive; ?></a></p>
 				</div>
         	</div>
 		</div>

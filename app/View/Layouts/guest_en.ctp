@@ -6,12 +6,14 @@
 <meta http-equiv="pragma" content="no-cache" />
 <meta http-equiv="cache-control" content="no-cache" />
 <title>Faculty of Arts and Sciences - EMU</title>
+<link href="<?php echo $this->webroot; ?>images/favicon.ico" type="image/x-icon" rel="icon" />
+<link rel="shortcut icon" href="<?php echo $this->webroot; ?>images/favicon.ico">
 <link href="<?php echo $this->webroot; ?>images/layout.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo $this->webroot; ?>images/style.css" rel="stylesheet" type="text/css" />
-
+</head>
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
-    <td width="210" height="113" align="right" valign="top" id="banner"><a href="http://www.emu.edu.tr"> <img src="<?php echo $this->webroot; ?>images/logo.jpg" alt="EMU" border="0" width="165" height="110" /> </a></td>
+    <td width="210" height="113" align="right" valign="top" id="banner"><a href="#"> <img src="<?php echo $this->webroot; ?>images/logo.jpg" alt="EMU" border="0" width="165" height="110" /> </a></td>
     <td width="500" height="113" align="center" valign="top" id="banner"><br>
       <br>
     <img src="<?php echo $this->webroot; ?>images/colors/header_script/header_script_0.jpg" alt="EMU - Faculty of Arts and Sciences" name="header_script" width="409" height="40" border="0" /></td>
@@ -63,19 +65,6 @@
 
       <li >
         <?php 
-      echo   $this->Html->link('Announcement',
-      array(
-            'controller' => 'News',
-           'action' => 'guestlist', 
-           'langid' => Configure::read('Config.language'), 
-           'full_base' => true
-         )
-      );
-      ?>
-       </li>
-
-      <li >
-        <?php 
         echo $this->Html->link(
      "Dean's Message",
       array(
@@ -118,7 +107,7 @@
  &copy; EMU - Faculty of Arts and Sciences, All Rights Reserved. <br/>
 
  Made with Love in Cyprus
-  <a href="<?php echo $this->webroot; ?>News/guestview/12/lang:<?php echo Configure::read('Config.language'); ?>" target="_blank">Credits</a>
+  <a href="<?php echo $this->webroot; ?>News/guestview/12/lang:<?php echo Configure::read('Config.language'); ?>">Credits</a>
   -- <a href="<?php echo $this->webroot; ?>Users/login">Login </a>
 
   <?php if(!$home): ?>

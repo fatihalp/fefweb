@@ -1,4 +1,4 @@
-<p>&plus;&nbsp;<?php echo $this->Html->link('Add A New Content', array('controller' => 'news', 'action' => 'add'));?></p>
+<p>&plus;&nbsp;<?php echo $this->Html->link('Add A New Content', array('controller' => 'news', 'action' => 'add/'.$type));?></p>
 <table>
     <tr>
         <th>Content Title (EN / TR)</th>
@@ -13,10 +13,10 @@
             array('controller' => 'news', 'action' => 'guestview', $News['News']['id'])); ?>
         </td>
         <td><?php echo $News['News']['expiredate']; ?>&nbsp;&nbsp;&nbsp;</td>
-        <td><?php echo $this->Html->link('Edit', array('action' => 'edit', $News['News']['id'])); ?></td>
+        <td><?php echo $this->Html->link('Edit', array('action' => 'edit', $News['News']['id'], $type)); ?></td>
         <td>
             <?php echo $this->Form->postLink('Delete',
-                                        array('action' => 'delete', $News['News']['id']),
+                                        array('action' => 'delete', $News['News']['id'], $type),
                                         array('confirm' => 'Do you really want to delete?')
                                     );
             ?>

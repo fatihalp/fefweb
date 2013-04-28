@@ -3,8 +3,7 @@
     echo $this->Html->link('Back', array('action' => 'index'));
     $dummy_id = null;
     echo $this->Form->create('User', array('enctype' => 'multipart/form-data'));
- 
-  ?>
+?>
     <fieldset>
         <legend> </legend>
     <?php
@@ -82,7 +81,7 @@
             'label' => 'Category (TR)'
     ));
 
-    echo $this->Form->input('name');
+    echo $this->Form->input('name', array('label' => 'Name - If only prefix is Dr. then add it here before name (e.g. "Dr. Burak")'));
     echo $this->Form->input('surname');
     echo $this->Form->input('username');
     echo $this->Form->input('password');
@@ -97,14 +96,14 @@
                 'label' => 'Department')
         );
 
-  echo '<img src="';
+    echo '<img src="';
 
-  echo $this->webroot.'upload/'.$id.'.jpg"';
-  echo ' width="150" height="150" /> ';
+    echo $this->webroot.'upload/'.$id.'.jpg"';
+    echo ' width="150" height="150" /> ';
 
-      echo $this->Form->input('User.resim', array('type' => 'file', 'label' => 'Photo'));
+    echo $this->Form->input('User.resim', array('type' => 'file', 'label' => 'Photo'));
 
-      echo $this->Form->input('interests', array('rows' => '5', 'label' => 'Research Interests'));
+    echo $this->Form->input('interests', array('rows' => '5', 'label' => 'Research Interests'));
     ?>
     </fieldset>
 <?php echo $this->Form->end('Save'); ?> 

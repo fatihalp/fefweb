@@ -38,7 +38,6 @@
             'empty' => 'Choose A Turkish Title',
             'label' => 'Title (TR)'
     ));
-
     
     echo $this->Form->input('status_en', array(
             'options' => array(  
@@ -57,7 +56,6 @@
             'label' => 'Status (TR)'
     )); 
 
-   
     echo $this->Form->input('category_en', array(
             'options' => array(  
                 'Faculty Member' => 'Faculty Member',   
@@ -80,26 +78,24 @@
             'label' => 'Category (TR)'
     )); 
 
-        echo $this->Form->input('name');
-        echo $this->Form->input('surname');
+    echo $this->Form->input('name', array('label' => 'Name - If only prefix is Dr. then add it here before name (e.g. "Dr. Burak")'));
+    echo $this->Form->input('surname');
+    echo $this->Form->input('username');
+    echo $this->Form->input('password');
+    echo $this->Form->input('email');  
+    echo $this->Form->input('tel');  
+    echo $this->Form->input('officeno');  
+    echo $this->Form->input('url');   
 
-        echo $this->Form->input('username');
-        echo $this->Form->input('password');
+    echo $this->Form->input('department_id', 
+        array('type' => 'select',
+                'options' => $dept,
+                'empty' => 'Choose A Department',
+                'label' => 'Department')
+        );
+    echo $this->Form->input('User.resim', array('type' => 'file', 'label' => 'Photo'));
 
-        echo $this->Form->input('email');  
-        echo $this->Form->input('tel');  
-        echo $this->Form->input('officeno');  
-        echo $this->Form->input('url');   
-
-        echo $this->Form->input('department_id', 
-            array('type' => 'select',
-                    'options' => $dept,
-                    'empty' => 'Choose A Department',
-                    'label' => 'Department')
-            );
-        echo $this->Form->input('User.resim', array('type' => 'file', 'label' => 'Photo'));
-
-        echo $this->Form->input('interests', array('rows' => '5', 'label' => 'Research Interests'));
-    ?>
+    echo $this->Form->input('interests', array('rows' => '5', 'label' => 'Research Interests'));
+?>
     </fieldset>
 <?php echo $this->Form->end('Save'); ?> 

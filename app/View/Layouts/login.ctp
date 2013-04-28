@@ -33,21 +33,9 @@
 <body>
     <div id="container">
 
-
-            
-
-            <?php echo $this->fetch('content'); ?>
-
-
-        
-           
-      
-
-
+        <?php echo $this->fetch('content'); ?>
 
     </div><!-- END "#container" -->
            
-    
-        
 </body>
 </html>
