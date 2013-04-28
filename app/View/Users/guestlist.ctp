@@ -35,24 +35,6 @@
       <br />
     </div>
 
-    <!--
-    <div id="browser">
-      <div id="browser_title"> <strong>BROWSE OPTIONS</strong></div>
-      <span class="browse_options">DEPARTMENT:
-      <select name="department" title="Department" disabled>
-        <option selected="selected" value="0">All</option>
-      </select>
-      </span> <span class="browse_options">TYPES:
-      <select name="typeSel" title="Types" disabled>
-       <option selected="selected" value="0">All</option>
-        <option value="1">Faculty Members</option>
-        <option value="2">Part-time Instructors</option>
-        <option selected="selected" value="3">Research Assistants</option>
-      </select>
-      </span><br>
-      <br>
-    </div>
--->
     <table class="tabular_info" cellpadding="0" cellspacing="0">
       <tbody>
         <tr class="first_row">

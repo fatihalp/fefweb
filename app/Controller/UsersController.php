@@ -7,7 +7,7 @@ class UsersController extends AppController {
 
     public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('guestlist','guestview','add', 'home');
+        $this->Auth->allow('guestlist','guestview','home');
     }
 
     public function login() {
@@ -83,11 +83,18 @@ class UsersController extends AppController {
                 $this->set('dept_id', $department_id);
             }
         }
-        //Optimization için alt taraf yeterli
-        /*array('fields' => array(
-            'User.id','User.title_'.Configure::read('Config.language'),
-            'User.name','User.surname','User.department_id','User.officeno','User.tel','User.email'));*/
-
+        //Optimizasyon için:
+        $a['fields'][0] = 'User.id';
+        $a['fields'][1] = 'User.title_'.Configure::read('Config.language');
+        $a['fields'][2] = 'User.name';
+        $a['fields'][3] = 'User.surname';
+        $a['fields'][4] = 'User.department_id';
+        $a['fields'][5] = 'User.officeno';
+        $a['fields'][6] = 'User.tel';
+        $a['fields'][7] = 'User.email';
+        $a['order'][0] = 'User.department_id';
+        $a['order'][1] = 'User.name ASC';
+        
         $a = $this->User->find('all', $a);
 
         $this->layout = 'guest_'.Configure::read('Config.language');   
@@ -104,7 +111,8 @@ class UsersController extends AppController {
 
     public function index() { 
             $this->set('r', $this->User->find('all', array(
-            'fields' => array('User.id','User.name','User.surname','User.username','User.email'))));
+            'fields' => array('User.id','User.name','User.surname','User.username','User.email'),
+            'order' => 'User.department_id', 'User.name ASC')));
     } 
 
     public function view($id = null) {

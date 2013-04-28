@@ -36,7 +36,7 @@
 	<table width="100%" border="0" cellpadding="0" cellspacing="0">
   		<tr>
     		<td width="1000" height="203" colspan="2" align="center"><div id="blinds">
-    			<img id="home_photo" src="<?php echo $this->webroot;?>images/home.jpg" height="203" width="862" style="float: none;" />
+    			<img id="home_photo" src="<?php echo $this->webroot;?>images/home.jpg" height="100%" width="100%" style="float: none;" />
     		</div></td>
      		<td width="2%">&nbsp;</td>
   		</tr>
